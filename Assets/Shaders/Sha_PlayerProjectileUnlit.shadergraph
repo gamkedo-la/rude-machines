@@ -87,8 +87,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": -39.0000114440918,
+            "y": -47.0000114440918
         },
         "m_Blocks": [
             {
@@ -104,8 +104,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": -39.0000114440918,
+            "y": 153.00001525878907
         },
         "m_Blocks": [
             {
@@ -161,12 +161,6 @@
     },
     "m_Labels": [],
     "m_Space": 2
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
-    "m_ObjectId": "060f6ca3961b427a990126b3ebd52b5c"
 }
 
 {
@@ -329,6 +323,12 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.BaseColor"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
+    "m_ObjectId": "48240676a8c64c5ca45e9a27d97b9381"
 }
 
 {
@@ -728,7 +728,7 @@
     "m_Color": {
         "color": {
             "r": 1.0,
-            "g": 0.6274510025978088,
+            "g": 0.7843137383460999,
             "b": 0.0,
             "a": 1.0
         },
@@ -749,7 +749,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "c9aebf0a92f24c9688727cb2abca487f",
     "m_ActiveSubTarget": {
-        "m_Id": "060f6ca3961b427a990126b3ebd52b5c"
+        "m_Id": "48240676a8c64c5ca45e9a27d97b9381"
     },
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
