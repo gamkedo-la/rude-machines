@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,7 +15,9 @@ public class Scr_UIController : MonoBehaviour
 
     void Play()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Scr_PlayerController>().enabled = true;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Scr_PlayerController>().enabled = true;
+        player.GetComponent<Scr_HandController>().enabled = true;
         GetComponent<UIDocument>().enabled = false;
     }
 }
