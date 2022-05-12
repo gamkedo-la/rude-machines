@@ -227,7 +227,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23326
+  m_Name: pb_Mesh24992
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6787,9 +6787,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 4, g: 4, b: 4, a: 1}
+    - _Color: {r: 4, g: 4, b: 4, a: 1}
+    - _EmissionColor: {r: 4, g: 4, b: 4, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &391701567
@@ -14819,6 +14819,37 @@ Transform:
   m_Father: {fileID: 580341699}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: -211.945, z: 0}
+--- !u!1 &1378263405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1378263406}
+  m_Layer: 0
+  m_Name: ForwardRotationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1378263406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378263405}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -40, z: 1}
+  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2069795530}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417526316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17550,6 +17581,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2069795530}
   - component: {fileID: 2069795531}
+  - component: {fileID: 2069795532}
+  - component: {fileID: 2069795533}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -17571,6 +17604,7 @@ Transform:
   m_Children:
   - {fileID: 68357754}
   - {fileID: 509125002}
+  - {fileID: 1378263406}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17588,7 +17622,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 0.5
-  moveSpeed: 10
+  moveSpeed: 2
+  rotation: 1
+  tiltRatioFactor: 0.25
+  forwardRotationPoint: {fileID: 1378263406}
+--- !u!114 &2069795532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069795529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 509125002}
+  lightColor: {r: 4, g: 4, b: 4, a: 1}
+  lightBlinkDelay: 0
+  delay: 8
+  distance: 2
+--- !u!114 &2069795533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069795529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18116dc47d5df848a391bd8deebf32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  barMinScale: {x: 0, y: 0, z: 0}
+  barMaxScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2080558924
 GameObject:
   m_ObjectHideFlags: 0
