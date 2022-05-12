@@ -15,6 +15,7 @@ public class Scr_StateIdle : Scr_State
     {
         controller = GetComponent<Scr_AIController>();
         startingPosition = transform.position;
+        timer = Random.value * delay;
     }
 
     protected override void StateActivity()

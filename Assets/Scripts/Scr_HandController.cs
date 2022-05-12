@@ -69,7 +69,8 @@ public class Scr_HandController : MonoBehaviour
             muzzleParticle.SetActive(true);
             Vector3 rot = muzzle.rotation.eulerAngles;
             float spreadAngle = fireSpreadAngle * (1.0f - power.Value);
-            Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+            GameObject newProjectile = Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+            newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
             hands.transform.position -= hands.transform.forward * recoilFactor;
             power.Value -= firePowerCost;
         }
@@ -96,7 +97,8 @@ public class Scr_HandController : MonoBehaviour
 
                     Vector3 rot = muzzle.rotation.eulerAngles;
                     float spreadAngle = burstSpreadAngle * (1.0f - power.Value);
-                    Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+                    GameObject newProjectile = Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+                    newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
 
                     hands.transform.position -= hands.transform.forward * recoilFactor;
                     power.Value -= firePowerCost / 1.5f;

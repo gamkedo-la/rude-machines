@@ -6,7 +6,13 @@ public class Scr_Projectile : MonoBehaviour
 {
     public float force = 10.0f;
 
+    private GameObject self;
     private Rigidbody rb;
+
+    public void SetGameobject(GameObject obj)
+    {
+        self = obj;
+    }
 
     void Start()
     {
@@ -21,12 +27,15 @@ public class Scr_Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
-        if (damageable != null)
+        if (collision.gameObject != self)
         {
-            damageable.Damage(0.25f, gameObject);
-            collision.transform.parent.parent.position += (collision.transform.parent.parent.position - transform.position) / 4.0f;
+            Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
+            if (damageable != null)
+            {
+                damageable.Damage(0.25f, gameObject);
+                collision.transform.parent.parent.position += (collision.transform.parent.parent.position - transform.position) / 4.0f;
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
