@@ -25,10 +25,12 @@ public class Scr_State : MonoBehaviour
         }
     }
 
+    protected virtual void StateInitialize() { }
+
     void Start()
     {
+        StateInitialize();
         lights.Clear();
-
         foreach (var l in lightGroup.GetComponentsInChildren<MeshRenderer>())
         {
             lights.Add(l);
@@ -41,7 +43,7 @@ public class Scr_State : MonoBehaviour
         UpdateLight();
     }
 
-    public virtual void StateActivity() { }
+    protected virtual void StateActivity() { }
 
     void UpdateLight()
     {
