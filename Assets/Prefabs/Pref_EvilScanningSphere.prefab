@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1251313420253705067}
   - component: {fileID: 1251313420253705070}
   m_Layer: 0
-  m_Name: Evil Scanning Sphere
+  m_Name: Pref_EvilScanningSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   zMinAngle: 0
   zMaxAngle: 0
   zWobbleSpeed: 1
+  trail: {fileID: 1251313420376711690}
 --- !u!1 &1251313420376711688
 GameObject:
   m_ObjectHideFlags: 0
