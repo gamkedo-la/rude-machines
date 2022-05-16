@@ -432,7 +432,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24510
+  m_Name: pb_Mesh24508
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22830,6 +22830,7 @@ GameObject:
   - component: {fileID: 1332376080}
   - component: {fileID: 1332376083}
   - component: {fileID: 1332376082}
+  - component: {fileID: 1332376084}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -23051,6 +23052,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 88c61eac-c0c0-4817-ae78-cd24590438f8
     m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1332376084}
+        m_TargetAssemblyTypeName: Scr_DebugSpawner, Assembly-CSharp
+        m_MethodName: SpawnDefaultEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3203b8f9-8b0b-4a9d-bd34-5c90dff021c7
+    m_ActionName: Player/Dbg_SpawnDefaultEnemy[/Keyboard/slash]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -23115,6 +23132,18 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
+--- !u!114 &1332376084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332376074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0a2338ee4c8d74e8f481e84c94518d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1335083587
 GameObject:
   m_ObjectHideFlags: 0
