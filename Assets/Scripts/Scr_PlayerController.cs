@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Scr_PlayerController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Scr_PlayerController : MonoBehaviour
     [HideInInspector] public Vector2 rotation = Vector2.zero;
 
     private float jumpAcceleration = 0.0f;
+    private float secondsWhenRoundStarted = 0.0f; // to subtract menu time from play time when dying
+    private float secondsWhenDied = 0.0f; 
 
     void Start()
     {
@@ -29,6 +32,15 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        secondsWhenRoundStarted = Time.timeSinceLevelLoad;
+    }
+
+    public void Die(){
+        secondsWhenDied = Time.timeSinceLevelLoad;
+        float timeScore = secondsWhenDied - secondsWhenRoundStarted;
+        Debug.Log("Time score: "+timeScore);
+        // TODO: Make a timer before restart
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FirstPersonMovement()
