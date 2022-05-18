@@ -32,13 +32,23 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        secondsWhenRoundStarted = Time.timeSinceLevelLoad;
+        secondsWhenRoundStarted = Time.timeSinceLevelLoad; 
+        float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
+        Debug.Log("Best survival time score is "+bestTime);
     }
 
     public void Die(){
         secondsWhenDied = Time.timeSinceLevelLoad;
         float timeScore = secondsWhenDied - secondsWhenRoundStarted;
         Debug.Log("Time score: "+timeScore);
+        float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
+        if(timeScore > bestTime){
+            Debug.Log("New best time");
+            PlayerPrefs.SetFloat("bestTime", timeScore);
+        } else {
+            Debug.Log("This was not the best time score");
+        }
+
         // TODO: Make a timer before restart
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
