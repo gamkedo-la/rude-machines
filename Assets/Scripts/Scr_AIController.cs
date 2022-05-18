@@ -35,6 +35,9 @@ public class Scr_AIController : MonoBehaviour
     void UpdateDirectionalTilt(Vector3 position)
     {
         moveDirection = Vector3.Normalize(position - transform.position);
+        if(moveDirection.magnitude == 0.0f){
+            return;
+        }
         Vector3 moveRotation = Quaternion.LookRotation(moveDirection).eulerAngles;
         Vector3 forwardRotation = Quaternion.LookRotation(forwardRotationPoint.position).eulerAngles;
         float ratio = (rotation == RotationUpdateType.YAW_TILT)
