@@ -17096,6 +17096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8695066661870838367}
   - component: {fileID: 8695066661870838366}
+  - component: {fileID: 250345326436607097}
   - component: {fileID: 8695066661870838365}
   - component: {fileID: 8695066661870838364}
   m_Layer: 0
@@ -17135,13 +17136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  moveThreshold: 2
-  moveSpeed: 20
+  moveThreshold: 4
+  moveSpeed: 50
   yPositionLimit: 0.5
   rotation: 1
   tiltRatioFactor: 1.5
   forwardRotationPoint: {fileID: 8695066660380620533}
---- !u!114 &8695066661870838365
+--- !u!114 &250345326436607097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17149,6 +17150,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695066661870838363}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e178ac01c510048489fd2f48ff79a017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 2288693141329853211}
+  lightColor: {r: 0.5882353, g: 1, b: 0, a: 1}
+  lightBlinkDelay: 0.25
+  target: {fileID: 0}
+  rotationSpeed: 90
+  minDistanceFromTarget: 9
+  maxDistanceFromTarget: 16
+--- !u!114 &8695066661870838365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
   m_Name: 
