@@ -33,7 +33,6 @@ public class Scr_Projectile : MonoBehaviour
             if (damageable != null)
             {
                 damageable.Damage(0.25f, gameObject);
-                collision.transform.parent.parent.position += (collision.transform.parent.parent.position - transform.position) / 4.0f;
             }
             Destroy(gameObject);
         }
