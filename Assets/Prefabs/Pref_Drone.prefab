@@ -17095,9 +17095,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8695066661870838367}
-  - component: {fileID: 8695066661870838366}
   - component: {fileID: 250345326436607097}
+  - component: {fileID: 8695066661870838366}
+  - component: {fileID: 6215989505751229095}
   - component: {fileID: 8695066661870838365}
+  - component: {fileID: 1527336830400275965}
   - component: {fileID: 8695066661870838364}
   m_Layer: 0
   m_Name: Pref_Drone
@@ -17123,25 +17125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8695066661870838366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695066661870838363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7091566b18a214c8c3239081adccdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  moveThreshold: 4
-  moveSpeed: 50
-  yPositionLimit: 0.5
-  rotation: 1
-  tiltRatioFactor: 1.5
-  forwardRotationPoint: {fileID: 8695066660380620533}
 --- !u!114 &250345326436607097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17161,6 +17144,37 @@ MonoBehaviour:
   rotationSpeed: 90
   minDistanceFromTarget: 9
   maxDistanceFromTarget: 16
+--- !u!114 &8695066661870838366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7091566b18a214c8c3239081adccdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
+  moveThreshold: 0.5
+  moveSpeed: 50
+  yPositionLimit: 0.5
+  rotation: 1
+  tiltRatioFactor: 1.5
+  forwardRotationPoint: {fileID: 8695066660380620533}
+--- !u!114 &6215989505751229095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8695066661870838365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17178,6 +17192,22 @@ MonoBehaviour:
   lightBlinkDelay: 0.4
   delay: 2
   distance: 3
+--- !u!114 &1527336830400275965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: MotherDrone
+  detectedTarget: {fileID: 0}
+  delay: 0.1
+  radius: 20
 --- !u!114 &8695066661870838364
 MonoBehaviour:
   m_ObjectHideFlags: 0

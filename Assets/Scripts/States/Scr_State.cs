@@ -20,8 +20,11 @@ public class Scr_State : MonoBehaviour
 
         foreach (var l in lights)
         {
-            l.material.SetColor("_BaseColor", lightColor);
-            l.material.SetColor("_EmissionColor", lightColor);
+            if (l != null && l.material != null)
+            {
+                l.material.SetColor("_BaseColor", lightColor);
+                l.material.SetColor("_EmissionColor", lightColor);
+            }
         }
     }
 

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Scr_StateManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Scr_AIController controller;
+    private Scr_StateIdle idle;
+    private Scr_StateRevolve revolve;
+
     void Start()
     {
-        
+        controller = GetComponent<Scr_AIController>();
+        idle = GetComponent<Scr_StateIdle>();
+        revolve = GetComponent<Scr_StateRevolve>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
