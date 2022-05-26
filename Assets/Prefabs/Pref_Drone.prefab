@@ -17101,6 +17101,7 @@ GameObject:
   - component: {fileID: 8695066661870838365}
   - component: {fileID: 1527336830400275965}
   - component: {fileID: 8695066661870838364}
+  - component: {fileID: 7923487591000799621}
   m_Layer: 0
   m_Name: Pref_Drone
   m_TagString: Untagged
@@ -17205,7 +17206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: MotherDrone
-  detectedTarget: {fileID: 0}
+  detectedTarget: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc,
+    type: 3}
   delay: 0.1
   radius: 20
 --- !u!114 &8695066661870838364
@@ -17223,6 +17225,20 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
+--- !u!114 &7923487591000799621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc, type: 3}
+  proximity: 5
 --- !u!1 &9178213435842232924
 GameObject:
   m_ObjectHideFlags: 0
