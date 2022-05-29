@@ -7,6 +7,7 @@ public class Scr_AIController : MonoBehaviour
     public Vector3 targetPosition;
     public float moveThreshold = 4.0f;
     public float moveSpeed = 10.0f;
+    public bool fixYPosition = false;
     public float yPositionLimit = 0.5f;
 
     public enum RotationUpdateType
@@ -21,6 +22,7 @@ public class Scr_AIController : MonoBehaviour
     public Transform forwardRotationPoint;
 
     private Vector3 moveDirection = Vector3.zero;
+    private float fixedY = 0.0f;
 
     public void Move(Vector3 position)
     {
@@ -30,6 +32,7 @@ public class Scr_AIController : MonoBehaviour
     void Start()
     {
         targetPosition = transform.position;
+        fixedY = transform.position.y;
     }
 
     void UpdateDirectionalTilt(Vector3 position)
@@ -54,6 +57,7 @@ public class Scr_AIController : MonoBehaviour
             position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
         }
         if (position.y < yPositionLimit) position.y = yPositionLimit;
+        if (fixYPosition) position.y = fixedY;
         UpdateDirectionalTilt(position);
         transform.position = Vector3.Lerp(transform.position, position, 10.0f * Time.deltaTime);
     }
