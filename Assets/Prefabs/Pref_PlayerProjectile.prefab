@@ -5163,3 +5163,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 50
+  damageSphere: {fileID: 2012574628281786327, guid: 35366de28428c7c41860981508ef9e20,
+    type: 3}
