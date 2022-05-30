@@ -17,7 +17,7 @@ public class Scr_StateSelfDestruct : Scr_State
 
     protected override void StateActivity()
     {
-        if (detector.detectedTarget != null)
+        if (detector!=null && detector.detectedTarget != null)
         {
             if (timer <= 0.0f)
             {

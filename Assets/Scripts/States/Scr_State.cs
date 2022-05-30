@@ -20,7 +20,7 @@ public class Scr_State : MonoBehaviour
 
         foreach (var l in lights)
         {
-            if (l != null && l.material != null)
+            if (l != null && l.material != null) // FIXME: causes errors in edit mode
             {
                 l.material.SetColor("_BaseColor", lightColor);
                 l.material.SetColor("_EmissionColor", lightColor);
