@@ -11,8 +11,8 @@ public class Scr_State : MonoBehaviour
 
     private List<MeshRenderer> lights = new List<MeshRenderer>();
     private float lightBlinkTimer = 0.0f;
-
     private bool lightAlternate = false;
+    protected Scr_Detect detector = null;
 
     void OnValidate()
     {
@@ -28,7 +28,15 @@ public class Scr_State : MonoBehaviour
         }
     }
 
-    protected virtual void StateInitialize() { }
+    public void SetDetector(Scr_Detect newDetector)
+    {
+        detector = newDetector;
+    }
+
+    public virtual void StateInitialize()
+    {
+        this.enabled = true;
+    }
 
     void Start()
     {
@@ -46,7 +54,15 @@ public class Scr_State : MonoBehaviour
         UpdateLight();
     }
 
-    protected virtual void StateActivity() { }
+    protected virtual void StateActivity()
+    {
+        //nothing
+    }
+
+    public virtual void StateTerminate()
+    {
+        this.enabled = false;
+    } 
 
     void UpdateLight()
     {

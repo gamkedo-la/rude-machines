@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_Projectile : MonoBehaviour
 {
+    public float damageValue = 0.25f;
     public float force = 10.0f;
     public GameObject damageSphere;
 
@@ -33,7 +34,7 @@ public class Scr_Projectile : MonoBehaviour
             Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(0.25f, gameObject);
+                damageable.Damage(damageValue, gameObject);
                 Instantiate(damageSphere, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);

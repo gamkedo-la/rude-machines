@@ -17095,12 +17095,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8695066661870838367}
-  - component: {fileID: 250345326436607097}
   - component: {fileID: 8695066661870838366}
   - component: {fileID: 6215989505751229095}
-  - component: {fileID: 8695066661870838365}
+  - component: {fileID: 250345326436607097}
+  - component: {fileID: 7110519974685885447}
   - component: {fileID: 7923487591000799621}
   - component: {fileID: 1527336830400275965}
+  - component: {fileID: 8695066661870838365}
   - component: {fileID: 8695066661870838364}
   m_Layer: 0
   m_Name: Pref_Drone
@@ -17126,25 +17127,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &250345326436607097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695066661870838363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e178ac01c510048489fd2f48ff79a017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 0.5882353, g: 1, b: 0, a: 1}
-  lightBlinkDelay: 0.25
-  target: {fileID: 0}
-  rotationSpeed: 90
-  minDistanceFromTarget: 9
-  maxDistanceFromTarget: 16
 --- !u!114 &8695066661870838366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17177,41 +17159,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8695066661870838365
+  controller: {fileID: 8695066661870838366}
+  stateDetectorPairs:
+  - state: {fileID: 7923487591000799621}
+    detector: {fileID: 1527336830400275965}
+  - state: {fileID: 250345326436607097}
+    detector: {fileID: 7110519974685885447}
+  defaultState: {fileID: 8695066661870838365}
+--- !u!114 &250345326436607097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695066661870838363}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
+  m_Script: {fileID: 11500000, guid: e178ac01c510048489fd2f48ff79a017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
-  lightBlinkDelay: 0.4
-  delay: 2
-  distance: 3
---- !u!114 &7923487591000799621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695066661870838363}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
-  lightBlinkDelay: 0.05
-  delay: 2
-  detector: {fileID: 1527336830400275965}
---- !u!114 &1527336830400275965
+  lightColor: {r: 0.5882353, g: 1, b: 0, a: 1}
+  lightBlinkDelay: 0.25
+  rotationSpeed: 90
+  minDistanceFromTarget: 9
+  maxDistanceFromTarget: 16
+--- !u!114 &7110519974685885447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17227,7 +17200,57 @@ MonoBehaviour:
   detectedTarget: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc,
     type: 3}
   delay: 0.1
-  radius: 20
+  radius: 50
+--- !u!114 &7923487591000799621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 2288693141329853211}
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 0.05
+  delay: 2
+--- !u!114 &1527336830400275965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  detectedTarget: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc,
+    type: 3}
+  delay: 0.1
+  radius: 3
+--- !u!114 &8695066661870838365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 2288693141329853211}
+  lightColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
+  lightBlinkDelay: 0.4
+  delay: 2
+  distance: 3
 --- !u!114 &8695066661870838364
 MonoBehaviour:
   m_ObjectHideFlags: 0

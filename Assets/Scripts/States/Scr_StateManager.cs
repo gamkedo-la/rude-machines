@@ -4,32 +4,50 @@ using UnityEngine;
 
 public class Scr_StateManager : MonoBehaviour
 {
-    private Scr_AIController controller;
-    private Scr_StateIdle idle;
-    private Scr_StateRevolve revolve;
-    private Scr_StateSelfDestruct selfDestruct;
-    private Scr_Detect detector;
+    public Scr_AIController controller = null;
+
+    [System.Serializable]
+    public struct StateDetectorPair
+    {
+        public Scr_State state;
+        public Scr_Detect detector;
+    }
+    public List<StateDetectorPair> stateDetectorPairs = new List<StateDetectorPair>();
+    public Scr_State defaultState = null;
+
+    private Scr_State currentState = null;
 
     void Start()
     {
-        controller = GetComponent<Scr_AIController>();
-        idle = GetComponent<Scr_StateIdle>();
-        revolve = GetComponent<Scr_StateRevolve>();
-        selfDestruct = GetComponent<Scr_StateSelfDestruct>();
-        detector = GetComponent<Scr_Detect>();
+        if(controller == null)
+            controller = GetComponent<Scr_AIController>();
+
+        foreach(var pair in stateDetectorPairs) pair.state.StateTerminate();
+        defaultState.StateInitialize();
+        currentState = defaultState;
+    }
+
+    void SetCurrentState(Scr_State state)
+    {
+        currentState.StateTerminate();
+        state.StateInitialize();
+        currentState = state;
     }
 
     void Update()
     {
-        if(detector.detectedTarget != null)
+        bool detectionFound = false;
+        foreach(var pair in stateDetectorPairs)
         {
-            revolve.enabled = false;
-            selfDestruct.enabled = true;
+            if(pair.detector != null && pair.detector.detectedTarget != null)
+            {
+                SetCurrentState(pair.state);
+                detectionFound = true;
+                break;
+            }
         }
-        else
-        {
-            revolve.enabled = true;
-            selfDestruct.enabled = false;
-        }
+
+        if(!detectionFound)
+            SetCurrentState(defaultState);
     }
 }
