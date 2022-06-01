@@ -7696,12 +7696,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2662514226612993607}
-  - component: {fileID: 2662514226612993606}
-  - component: {fileID: 2662514226612993605}
   - component: {fileID: 2662514226612993604}
   - component: {fileID: 2340622815666105521}
   - component: {fileID: 8195665517492033424}
-  - component: {fileID: 4473806557199989903}
   m_Layer: 0
   m_Name: Pref_MotherDrone
   m_TagString: MotherDrone
@@ -7726,42 +7723,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2662514226612993606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2662514226612993603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7091566b18a214c8c3239081adccdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  moveThreshold: 2
-  moveSpeed: 20
-  yPositionLimit: 0.5
-  rotation: 0
-  tiltRatioFactor: 1
-  forwardRotationPoint: {fileID: 2662514227302099693}
---- !u!114 &2662514226612993605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2662514226612993603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightGroup: {fileID: 4871524613550597891}
-  lightColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
-  lightBlinkDelay: 0.4
-  delay: 2
-  distance: 3
 --- !u!114 &2662514226612993604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7806,20 +7767,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4473806557199989903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2662514226612993603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc, type: 3}
-  chaseRange: 5
 --- !u!1 &2662514226876599010
 GameObject:
   m_ObjectHideFlags: 0

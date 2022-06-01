@@ -11,9 +11,10 @@ public class Scr_StateIdle : Scr_State
     private Vector3 startingPosition;
     private float timer = 0.0f;
 
-    protected override void StateInitialize()
+    public override void StateInitialize()
     {
-        controller = GetComponent<Scr_AIController>();
+        base.StateInitialize();
+        controller = GetComponent<Scr_StateManager>().controller;
         startingPosition = transform.position;
         timer = Random.value * delay;
     }

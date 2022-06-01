@@ -5,32 +5,24 @@ using UnityEngine;
 public class Scr_StateSelfDestruct : Scr_State
 {
     public float delay = 2.0f;
-    public Scr_Detect detector = null;
 
     private float timer = 0.0f;
 
-    protected override void StateInitialize()
+    public override void StateInitialize()
     {
-        detector = GetComponent<Scr_Detect>();
+        base.StateInitialize();
         timer = delay;
     }
 
     protected override void StateActivity()
     {
-        if (detector!=null && detector.detectedTarget != null)
-        {
-            if (timer <= 0.0f)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            timer = delay;
-        }
+        if (timer <= 0.0f) Destroy(this.gameObject);
+        else timer -= Time.deltaTime;
+    }
+
+    public override void StateTerminate()
+    {
+        base.StateTerminate();
+        timer = delay;
     }
 }
