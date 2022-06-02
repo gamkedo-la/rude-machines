@@ -14,7 +14,7 @@ public class Scr_StateIdle : Scr_State
     public override void StateInitialize()
     {
         base.StateInitialize();
-        controller = GetComponent<Scr_StateManager>().controller;
+        controller = GetComponent<Scr_AIController>();
         startingPosition = transform.position;
         timer = Random.value * delay;
     }

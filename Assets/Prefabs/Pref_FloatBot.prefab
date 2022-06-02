@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4942777862572221758}
   - component: {fileID: 2649178228386542011}
   - component: {fileID: 1657720175540031932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8440352827058594713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BotMuzzleLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 9221713109769204086}
   - component: {fileID: 7275607337019235021}
   - component: {fileID: 8056194645764609622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4498710026846700469}
   - component: {fileID: 3942782306868437378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3713746773438684207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ForwardRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 632619809861680882}
   - component: {fileID: 6699590903619468740}
   - component: {fileID: 8826137317288723763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 5145392876965359661}
   - component: {fileID: 3088218589905248410}
   - component: {fileID: 8342260618138821483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pref_FloatBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,6 @@ MonoBehaviour:
   lightGroup: {fileID: 2107362636515748788}
   lightColor: {r: 1, g: 0.87056196, b: 0.24213827, a: 1}
   lightBlinkDelay: 0.1
-  detector: {fileID: 5145392876965359661}
   projectile: {fileID: 8774191537290426389, guid: ecdba4017351d1748a6906da8fad1e3c,
     type: 3}
   muzzle: {fileID: 8440352827058594713}
@@ -504,7 +503,7 @@ GameObject:
   - component: {fileID: 637387626669327926}
   - component: {fileID: 8150187459340571294}
   - component: {fileID: 5035238529605719871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WindParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5326,7 +5325,7 @@ GameObject:
   - component: {fileID: 546216734728784507}
   - component: {fileID: 2084943837282680516}
   - component: {fileID: 7445534794316003704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DownThrustParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10139,7 +10138,7 @@ GameObject:
   - component: {fileID: 3082378314029846369}
   - component: {fileID: 6936032134689622922}
   - component: {fileID: 5652312551358112825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10220,7 +10219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107362636515748788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEDs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10257,6 +10256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MuzzleFlashParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357153256305242900, guid: 05bdcc567a78c484e8558115f09b2e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3357153256305242900, guid: 05bdcc567a78c484e8558115f09b2e69,
         type: 3}
@@ -10399,10 +10403,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 90fa9b1038751954e91848f91ce3a713, type: 2}
+    - target: {fileID: -4819223349682164798, guid: 98e0e874d52ad264eb8bb78f19d04793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 98e0e874d52ad264eb8bb78f19d04793,
         type: 3}
       propertyPath: m_Name
       value: med-float-bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 98e0e874d52ad264eb8bb78f19d04793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753705370032899036, guid: 98e0e874d52ad264eb8bb78f19d04793,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8449996119470504636, guid: 98e0e874d52ad264eb8bb78f19d04793,
         type: 3}

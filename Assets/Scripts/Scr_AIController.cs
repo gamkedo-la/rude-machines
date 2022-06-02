@@ -56,9 +56,12 @@ public class Scr_AIController : MonoBehaviour
         {
             position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
         }
+        
         if (position.y < yPositionLimit) position.y = yPositionLimit;
         if (fixYPosition) position.y = fixedY;
+
         UpdateDirectionalTilt(position);
+
         transform.position = Vector3.Lerp(transform.position, position, 10.0f * Time.deltaTime);
     }
 

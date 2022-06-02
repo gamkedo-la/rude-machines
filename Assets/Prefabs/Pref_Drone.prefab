@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6021091727636595975}
   - component: {fileID: 4356466301763134814}
   - component: {fileID: 3643436626422486950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7917276039990779999}
   - component: {fileID: 2905284302068136012}
   - component: {fileID: 2234438978652166030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8052916013654928163}
   - component: {fileID: 5161633071319871779}
   - component: {fileID: 3345540004915508725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2288693141329853211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEDs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 8695066659786123282}
   - component: {fileID: 8695066659786123281}
   - component: {fileID: 8695066659786123280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stabilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 8695066659801958319}
   - component: {fileID: 8695066659801958318}
   - component: {fileID: 8695066659801958317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stabilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 8695066659827437604}
   - component: {fileID: 8695066659827437603}
   - component: {fileID: 8695066659827437602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stabilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 8695066659948316131}
   - component: {fileID: 8695066659948316130}
   - component: {fileID: 8695066659948316129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rotor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 8695066660041499160}
   - component: {fileID: 8695066660041499159}
   - component: {fileID: 8695066660041499158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 8695066660057113674}
   - component: {fileID: 8695066660057113673}
   - component: {fileID: 8695066660057113672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2788,7 +2788,7 @@ GameObject:
   - component: {fileID: 8695066660222958005}
   - component: {fileID: 8695066660222958004}
   - component: {fileID: 8695066660222958003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3605,7 +3605,7 @@ GameObject:
   - component: {fileID: 8695066660240771016}
   - component: {fileID: 8695066660240771015}
   - component: {fileID: 8695066660240771014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4423,7 +4423,7 @@ GameObject:
   - component: {fileID: 8695066660356650298}
   - component: {fileID: 8695066660356650297}
   - component: {fileID: 8695066660356650296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4704,7 +4704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8695066660380620533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ForwardRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4739,7 +4739,7 @@ GameObject:
   - component: {fileID: 8695066660420993411}
   - component: {fileID: 8695066660420993410}
   - component: {fileID: 8695066660420993409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rotor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5556,7 +5556,7 @@ GameObject:
   - component: {fileID: 8695066660501727315}
   - component: {fileID: 8695066660501727314}
   - component: {fileID: 8695066660501727313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6373,7 +6373,7 @@ GameObject:
   - component: {fileID: 8695066660721153352}
   - component: {fileID: 8695066660721153351}
   - component: {fileID: 8695066660721153350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6702,7 +6702,7 @@ GameObject:
   - component: {fileID: 8695066661070091448}
   - component: {fileID: 8695066661070091447}
   - component: {fileID: 8695066661070091446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6909,7 +6909,7 @@ GameObject:
   - component: {fileID: 8695066661078734591}
   - component: {fileID: 8695066661078734590}
   - component: {fileID: 8695066661078734589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7726,7 +7726,7 @@ GameObject:
   - component: {fileID: 8695066661214232428}
   - component: {fileID: 8695066661214232427}
   - component: {fileID: 8695066661214232426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rotor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8544,7 +8544,7 @@ GameObject:
   - component: {fileID: 8695066661222242045}
   - component: {fileID: 8695066661222242044}
   - component: {fileID: 8695066661222242043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8829,7 +8829,7 @@ GameObject:
   - component: {fileID: 8695066661301431589}
   - component: {fileID: 8695066661301431588}
   - component: {fileID: 8695066661301431587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stabilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9153,7 +9153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8695066661314557768}
   - component: {fileID: 8695066661314557769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9232,7 +9232,7 @@ GameObject:
   - component: {fileID: 8695066661315654321}
   - component: {fileID: 8695066661315654320}
   - component: {fileID: 8695066661315654287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9536,7 +9536,7 @@ GameObject:
   - component: {fileID: 8695066661330700483}
   - component: {fileID: 8695066661330700482}
   - component: {fileID: 8695066661330700481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9865,7 +9865,7 @@ GameObject:
   - component: {fileID: 8695066661433093897}
   - component: {fileID: 8695066661433093896}
   - component: {fileID: 8695066661433093895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10414,7 +10414,7 @@ GameObject:
   - component: {fileID: 8695066661521307306}
   - component: {fileID: 8695066661521307305}
   - component: {fileID: 5385899898824705414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11724,7 +11724,7 @@ GameObject:
   - component: {fileID: 8695066661555369554}
   - component: {fileID: 8695066661555369553}
   - component: {fileID: 8695066661555369552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11940,7 +11940,7 @@ GameObject:
   - component: {fileID: 8695066661578732812}
   - component: {fileID: 8695066661578732811}
   - component: {fileID: 8695066661578732815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12852,7 +12852,7 @@ GameObject:
   - component: {fileID: 8695066661604471234}
   - component: {fileID: 8695066661604471233}
   - component: {fileID: 8695066661604471232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13214,7 +13214,7 @@ GameObject:
   - component: {fileID: 8695066661641537633}
   - component: {fileID: 8695066661641537632}
   - component: {fileID: 8695066661641537663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rotor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14032,7 +14032,7 @@ GameObject:
   - component: {fileID: 8695066661653629215}
   - component: {fileID: 8695066661653629214}
   - component: {fileID: 8695066661653629186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14945,7 +14945,7 @@ GameObject:
   - component: {fileID: 8695066661719592286}
   - component: {fileID: 8695066661719592285}
   - component: {fileID: 8695066661719592257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15857,7 +15857,7 @@ GameObject:
   - component: {fileID: 8695066661820695553}
   - component: {fileID: 8695066661820695552}
   - component: {fileID: 8695066661820695583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16187,7 +16187,7 @@ GameObject:
   - component: {fileID: 8695066661843294628}
   - component: {fileID: 8695066661843294627}
   - component: {fileID: 8695066661843294631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17103,7 +17103,7 @@ GameObject:
   - component: {fileID: 1527336830400275965}
   - component: {fileID: 8695066661870838365}
   - component: {fileID: 8695066661870838364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pref_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17159,7 +17159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8695066661870838366}
   stateDetectorPairs:
   - state: {fileID: 7923487591000799621}
     detector: {fileID: 1527336830400275965}
@@ -17197,8 +17196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: MotherDrone
-  detectedTarget: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc,
-    type: 3}
+  detectedTarget: {fileID: 0}
   delay: 0.1
   radius: 50
 --- !u!114 &7923487591000799621
@@ -17230,8 +17228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  detectedTarget: {fileID: 6296733788711162110, guid: 265989dcb1b992e4f8d7260b6742d2dc,
-    type: 3}
+  detectedTarget: {fileID: 0}
   delay: 0.1
   radius: 3
 --- !u!114 &8695066661870838365
@@ -17277,7 +17274,7 @@ GameObject:
   - component: {fileID: 2252219592754025609}
   - component: {fileID: 7897340416998905929}
   - component: {fileID: 7292889670990593975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17359,7 +17356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9209152602882862892}
   - component: {fileID: 9209152602882862893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scanning Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17493,7 +17490,7 @@ GameObject:
   - component: {fileID: 9209152604519624354}
   - component: {fileID: 9209152604519624357}
   - component: {fileID: 9209152604519624352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17612,7 +17609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9209152604643033031}
   - component: {fileID: 9209152604643033028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scanning Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
