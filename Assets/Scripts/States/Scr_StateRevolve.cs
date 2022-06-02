@@ -32,4 +32,9 @@ public class Scr_StateRevolve : Scr_State
         controller.targetPosition = target.position + (target.forward * distance) + offset;
         target.rotation = targetRotation;
     }
+
+    public override void StateTerminate()
+    {
+        base.StateTerminate();
+    }
 }

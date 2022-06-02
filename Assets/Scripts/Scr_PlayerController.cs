@@ -56,13 +56,13 @@ public class Scr_PlayerController : MonoBehaviour
 
     void FirstPersonMovement()
     {
-        float distanceThreshold = 0.4f;
+        /*float distanceThreshold = 0.4f;
         if ((move.y > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.forward, Quaternion.identity, distanceThreshold))
         || (move.y < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.forward, Quaternion.identity, distanceThreshold)))
             move.y /= 2.0f;
         if ((move.x > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.right, Quaternion.identity, distanceThreshold))
         || (move.x < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.right, Quaternion.identity, distanceThreshold)))
-            move.x /= 2.0f;
+            move.x /= 2.0f;*/
 
         Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
         movement *= movementFactor;

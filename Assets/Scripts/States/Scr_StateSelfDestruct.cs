@@ -16,7 +16,11 @@ public class Scr_StateSelfDestruct : Scr_State
 
     protected override void StateActivity()
     {
-        if (timer <= 0.0f) Destroy(this.gameObject);
+        if (timer <= 0.0f)
+        {
+            detector.detectedTarget.GetComponent<Scr_IDamageable>().Damage(0.4f, gameObject);
+            Destroy(this.gameObject);
+        }
         else timer -= Time.deltaTime;
     }
 

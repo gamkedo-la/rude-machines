@@ -9216,8 +9216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8966148a2746c4e8eb51c44aff2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heaveDistance: 4
-  heaveSpeed: 0.5
+  heaveDistance: 1
+  heaveSpeed: 1
   rotationSpeed: 0.05
 --- !u!1 &8695066661315654284
 GameObject:
@@ -17099,6 +17099,8 @@ GameObject:
   - component: {fileID: 6215989505751229095}
   - component: {fileID: 250345326436607097}
   - component: {fileID: 7110519974685885447}
+  - component: {fileID: 6001653726557446818}
+  - component: {fileID: 7040421447367142990}
   - component: {fileID: 7923487591000799621}
   - component: {fileID: 1527336830400275965}
   - component: {fileID: 8695066661870838365}
@@ -17141,9 +17143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 0.5
-  moveSpeed: 50
+  moveSpeed: 36
   fixYPosition: 0
-  yPositionLimit: 0.5
+  yPositionLimit: 1
   rotation: 1
   tiltRatioFactor: 1.5
   forwardRotationPoint: {fileID: 8695066660380620533}
@@ -17162,6 +17164,8 @@ MonoBehaviour:
   stateDetectorPairs:
   - state: {fileID: 7923487591000799621}
     detector: {fileID: 1527336830400275965}
+  - state: {fileID: 6001653726557446818}
+    detector: {fileID: 7040421447367142990}
   - state: {fileID: 250345326436607097}
     detector: {fileID: 7110519974685885447}
   defaultState: {fileID: 8695066661870838365}
@@ -17178,8 +17182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 0.5882353, g: 1, b: 0, a: 1}
-  lightBlinkDelay: 0.25
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 1
   rotationSpeed: 90
   minDistanceFromTarget: 9
   maxDistanceFromTarget: 16
@@ -17196,9 +17200,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: MotherDrone
-  detectedTarget: {fileID: 0}
   delay: 0.1
+  detectedTarget: {fileID: 0}
   radius: 50
+--- !u!114 &6001653726557446818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c5ad0ccd162c34c88d54d34a1dd332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 2288693141329853211}
+  lightColor: {r: 4, g: 1.3803922, b: 0, a: 1}
+  lightBlinkDelay: 0.5
+  variationOffsetFactor: 5
+  variationOffsetChangeDelay: 1
+--- !u!114 &7040421447367142990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4235c6f91ac55844b0dfad418ab31ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: MotherDrone
+  delay: 0.1
+  detectedTarget: {fileID: 0}
+  detectorContainingStateMessage: {fileID: 7110519974685885447}
+  message: 
 --- !u!114 &7923487591000799621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17212,9 +17250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
-  lightBlinkDelay: 0.05
-  delay: 2
+  lightColor: {r: 8, g: 0, b: 0, a: 1}
+  lightBlinkDelay: 0.1
+  delay: 1
 --- !u!114 &1527336830400275965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17228,9 +17266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  detectedTarget: {fileID: 0}
   delay: 0.1
-  radius: 3
+  detectedTarget: {fileID: 0}
+  radius: 5
 --- !u!114 &8695066661870838365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17244,8 +17282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
-  lightBlinkDelay: 0.4
+  lightColor: {r: 1.5686275, g: 1.5686275, b: 1.5686275, a: 1}
+  lightBlinkDelay: 1.5
   delay: 2
   distance: 3
 --- !u!114 &8695066661870838364

@@ -7698,8 +7698,9 @@ GameObject:
   - component: {fileID: 2662514226612993607}
   - component: {fileID: 7334333507270381244}
   - component: {fileID: 8897978864738494330}
-  - component: {fileID: 8324181652043950892}
+  - component: {fileID: 686839506929762785}
   - component: {fileID: 6830640750480737925}
+  - component: {fileID: 8324181652043950892}
   - component: {fileID: 2662514226612993604}
   - component: {fileID: 2340622815666105521}
   - component: {fileID: 8195665517492033424}
@@ -7741,9 +7742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 0.5
-  moveSpeed: 12
+  moveSpeed: 6
   fixYPosition: 0
-  yPositionLimit: 0.5
+  yPositionLimit: 1
   rotation: 0
   tiltRatioFactor: 0
   forwardRotationPoint: {fileID: 2662514227302099693}
@@ -7759,9 +7760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateDetectorPairs: []
+  stateDetectorPairs:
+  - state: {fileID: 686839506929762785}
+    detector: {fileID: 6830640750480737925}
   defaultState: {fileID: 8324181652043950892}
---- !u!114 &8324181652043950892
+--- !u!114 &686839506929762785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7770,15 +7773,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2662514226612993603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f296293e3ff394cba9de284350a525, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c8c7652d1b012e4bafe4df071fc879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroup: {fileID: 4871524613550597891}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
-  lightBlinkDelay: 1
-  patrolPointGroup: {fileID: 0}
-  patrolPointDistanceThreshold: 6
-  mode: 0
+  lightColor: {r: 5.3403134, g: 0, b: 0, a: 1}
+  lightBlinkDelay: 0.1
+  minCount: 1
+  maxCount: 4
+  count: 1
 --- !u!114 &6830640750480737925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7795,6 +7798,24 @@ MonoBehaviour:
   delay: 0.5
   detectedTarget: {fileID: 0}
   triggerDetection: {fileID: 3874994084512055399}
+--- !u!114 &8324181652043950892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662514226612993603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f296293e3ff394cba9de284350a525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightGroup: {fileID: 4871524613550597891}
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 0.5
+  patrolPointGroup: {fileID: 0}
+  patrolPointDistanceThreshold: 6
+  mode: 0
 --- !u!114 &2662514226612993604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17639,8 +17660,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7595619576829822075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalScale: {x: 1.6, y: 10, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6403293916189952065}
@@ -17674,7 +17695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 451a65a80bafeef4f862e3f12f7d9512, type: 2}
+  - {fileID: 2100000, guid: 8d688829d40e8f7458b0232e4fedfb49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
