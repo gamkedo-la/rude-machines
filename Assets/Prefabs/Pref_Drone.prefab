@@ -17181,6 +17181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e178ac01c510048489fd2f48ff79a017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preStateMinDelay: 0.2
+  preStateMaxDelay: 0.4
   lightGroup: {fileID: 2288693141329853211}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   lightBlinkDelay: 1
@@ -17215,9 +17217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c5ad0ccd162c34c88d54d34a1dd332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preStateMinDelay: 0.6
+  preStateMaxDelay: 1.8
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 4, g: 1.3803922, b: 0, a: 1}
-  lightBlinkDelay: 0.5
+  lightColor: {r: 4, g: 0, b: 0, a: 1}
+  lightBlinkDelay: 0.1
   variationOffsetFactor: 5
   variationOffsetChangeDelay: 1
 --- !u!114 &7040421447367142990
@@ -17249,10 +17253,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 8, g: 0, b: 0, a: 1}
-  lightBlinkDelay: 0.1
-  delay: 1
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
+  lightBlinkDelay: 0.05
+  delay: 0.5
+  destroyObject: {fileID: 8469108317460009798, guid: 3338079b131cf4e42ac4c472d2e2a9af,
+    type: 3}
 --- !u!114 &1527336830400275965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17281,6 +17289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141dcfd4fe0b7c441b3b334de3d088b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
   lightGroup: {fileID: 2288693141329853211}
   lightColor: {r: 1.5686275, g: 1.5686275, b: 1.5686275, a: 1}
   lightBlinkDelay: 1.5

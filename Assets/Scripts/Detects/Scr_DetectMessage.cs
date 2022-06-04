@@ -16,6 +16,7 @@ public class Scr_DetectMessage : Scr_Detect
         {
             detectedTarget = stateMessage.GetDetectedTarget();
             stateMessage.StateTerminate();
+            //Debug.Log(stateMessage.message);
         }
     }
 }

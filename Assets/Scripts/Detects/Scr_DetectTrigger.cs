@@ -26,8 +26,5 @@ public class Scr_DetectTrigger : Scr_Detect
         {
             detectedTarget = null;
         }
-
-        //WIP!
-        if(detectedTarget != null) Debug.Log("Triggered! " + detectedTarget.name);
     }
 }

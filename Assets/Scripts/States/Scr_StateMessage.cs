@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Scr_StateMessage : Scr_State
 {
+    [Space]
+    public string message = "";
     public int minCount = 1;
     public int maxCount = 4;
     [HideInInspector] public int count = 0;
