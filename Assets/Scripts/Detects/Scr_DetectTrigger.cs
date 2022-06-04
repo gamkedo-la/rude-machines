@@ -13,7 +13,7 @@ public class Scr_DetectTrigger : Scr_Detect
             bool targetTagTrigger = false;
             foreach(var detectedTrigger in triggerDetection.detectedTriggers)
             {
-                if(detectedTrigger.tag == targetTag)
+                if(detectedTrigger != null && detectedTrigger.tag == targetTag)
                 {
                     detectedTarget = detectedTrigger;
                     targetTagTrigger = true;

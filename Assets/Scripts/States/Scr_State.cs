@@ -19,7 +19,7 @@ public class Scr_State : MonoBehaviour
     private bool lightAlternate = false;
     protected Scr_Detect detector = null;
 
-    void OnValidate()
+    /*void OnValidate()
     {
         if (lights.Count <= 0) Start();
 
@@ -31,7 +31,7 @@ public class Scr_State : MonoBehaviour
                 l.material.SetColor("_EmissionColor", lightColor);
             }
         }
-    }
+    }*/
 
     public void SetDetector(Scr_Detect newDetector)
     {

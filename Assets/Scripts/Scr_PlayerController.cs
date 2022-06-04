@@ -22,8 +22,8 @@ public class Scr_PlayerController : MonoBehaviour
     [HideInInspector] public Vector2 rotation = Vector2.zero;
 
     private float jumpAcceleration = 0.0f;
-    private float secondsWhenRoundStarted = 0.0f; // to subtract menu time from play time when dying
-    private float secondsWhenDied = 0.0f; 
+    private float surviveTime = 0.0f;
+    public float SurviveTime { get { return surviveTime; } }
 
     void Start()
     {
@@ -32,25 +32,22 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        secondsWhenRoundStarted = Time.timeSinceLevelLoad; 
+        surviveTime = 0.0f;
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
         Debug.Log("Best survival time score is "+bestTime);
     }
 
     public void Die()
     {
-        secondsWhenDied = Time.timeSinceLevelLoad;
-        float timeScore = secondsWhenDied - secondsWhenRoundStarted;
-        Debug.Log("Time score: "+timeScore);
+        Debug.Log("Time score: " + surviveTime);
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        if(timeScore > bestTime){
+        if(surviveTime > bestTime){
             Debug.Log("New best time");
-            PlayerPrefs.SetFloat("bestTime", timeScore);
+            PlayerPrefs.SetFloat("bestTime", surviveTime);
         } else {
             Debug.Log("This was not the best time score");
         }
 
-        // TODO: Make a timer before restart
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -97,6 +94,7 @@ public class Scr_PlayerController : MonoBehaviour
     void Update()
     {
         FirstPersonRotation();
+        surviveTime += Time.deltaTime;
     }
 
     void FixedUpdate()
