@@ -5132,15 +5132,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209818398890108807}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.071, y: 1.281, z: 0.732}
+  m_LocalRotation: {x: -0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 1.07, y: 1.3, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6459124646712429922}
   m_Father: {fileID: 4888310524210884443}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -10, y: 0, z: 0}
 --- !u!1 &3010583854348373356
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,13 +5526,13 @@ MonoBehaviour:
   lightGroup: {fileID: 2107362636515748788}
   lightColor: {r: 16, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
-  projectile: {fileID: 8774191537290426389, guid: ecdba4017351d1748a6906da8fad1e3c,
+  projectile: {fileID: 8774191537290426389, guid: 25ae775f2f06f434fb41456a3f7cea0f,
     type: 3}
   muzzle: {fileID: 8440352827058594713}
   muzzleParticle: {fileID: 3168579320845459325}
   detectionDelay: 1
-  shotSpreadAngle: 20
-  shotDelay: 0.05
+  shotSpreadAngle: 15
+  shotDelay: 0.025
 --- !u!114 &1791848710184502983
 MonoBehaviour:
   m_ObjectHideFlags: 0
