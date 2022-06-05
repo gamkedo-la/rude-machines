@@ -6433,9 +6433,14 @@ MonoBehaviour:
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
   damageFactor: 1
+  damageEffect: {fileID: 0}
+  destroyEffect: {fileID: 2012574628281786327, guid: 35366de28428c7c41860981508ef9e20,
+    type: 3}
   regenerationRate: 0.05
   damageIndicator: {fileID: 453043429192356682}
   maxCircleRadius: 0.3
+  cam: {fileID: 6296733787573860156}
+  damageFOV: 50
 --- !u!114 &7724956029659713831
 MonoBehaviour:
   m_ObjectHideFlags: 0
