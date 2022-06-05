@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_StateCharge : Scr_State
 {
+    [Space]
     public float variationOffsetFactor = 0.0f;
     public float variationOffsetChangeDelay = 0.5f;
 

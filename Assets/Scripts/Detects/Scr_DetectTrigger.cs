@@ -5,26 +5,34 @@ using UnityEngine;
 public class Scr_DetectTrigger : Scr_Detect
 {
     public Scr_TriggerDetection triggerDetection = null;
+    public float delayAfterDetectingTarget = 0.0f;
+
+    private float detectedTargetTimer = 0.0f;
 
     protected override void UpdateDetection()
     {
-        if(triggerDetection.detectedTriggers.Count > 0)
+        if(detectedTargetTimer <= 0.0f)
         {
-            bool targetTagTrigger = false;
-            foreach(var detectedTrigger in triggerDetection.detectedTriggers)
+            if(triggerDetection.detectedTriggers.Count > 0)
             {
-                if(detectedTrigger != null && detectedTrigger.tag == targetTag)
+                foreach(var detectedTrigger in triggerDetection.detectedTriggers)
                 {
-                    detectedTarget = detectedTrigger;
-                    targetTagTrigger = true;
+                    if(detectedTrigger != null && detectedTrigger.tag == targetTag)
+                    {
+                        detectedTarget = detectedTrigger;
+                        detectedTargetTimer = delayAfterDetectingTarget;
+                    }
                 }
+                if(detectedTargetTimer <= 0.0f) detectedTarget = null;
             }
-
-            if(!targetTagTrigger) detectedTarget = null;
+            else
+            {
+                detectedTarget = null;
+            }
         }
         else
         {
-            detectedTarget = null;
+            detectedTargetTimer -= delay;
         }
     }
 }
