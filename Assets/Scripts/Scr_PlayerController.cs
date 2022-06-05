@@ -32,35 +32,21 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         surviveTime = 0.0f;
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        Debug.Log("Best survival time score is "+bestTime);
+        Debug.Log("Best survival time score is " + bestTime);
     }
 
     public void Die()
     {
-        Debug.Log("Time score: " + surviveTime);
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        if(surviveTime > bestTime){
-            Debug.Log("New best time");
-            PlayerPrefs.SetFloat("bestTime", surviveTime);
-        } else {
-            Debug.Log("This was not the best time score");
-        }
-
+        if(surviveTime > bestTime) PlayerPrefs.SetFloat("bestTime", surviveTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FirstPersonMovement()
     {
-        /*float distanceThreshold = 0.4f;
-        if ((move.y > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.forward, Quaternion.identity, distanceThreshold))
-        || (move.y < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.forward, Quaternion.identity, distanceThreshold)))
-            move.y /= 2.0f;
-        if ((move.x > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.right, Quaternion.identity, distanceThreshold))
-        || (move.x < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.right, Quaternion.identity, distanceThreshold)))
-            move.x /= 2.0f;*/
-
         Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
         movement *= movementFactor;
 

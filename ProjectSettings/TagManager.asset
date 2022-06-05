@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - MotherDrone
+  - Boundary
   layers:
   - Default
   - TransparentFX

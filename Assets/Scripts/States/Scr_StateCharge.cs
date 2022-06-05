@@ -25,6 +25,12 @@ public class Scr_StateCharge : Scr_State
 
     protected override void StateActivity()
     {
+        if(controller == null || detector == null || detector.detectedTarget == null)
+        {
+            StateTerminate();
+            return;
+        }
+
         controller.targetPosition = detector.detectedTarget.position + variationOffset;
 
         if(variationOffsetChangeTimer <= 0.0f)
