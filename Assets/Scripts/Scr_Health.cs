@@ -16,6 +16,8 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
 
         if(Value <= 0)
         {
+            Scr_GameManager.instance.SetStuckTime(0.05f, 0.05f);
+
             if(destroyEffect != null)
             {
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
