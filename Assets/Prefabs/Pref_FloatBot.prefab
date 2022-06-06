@@ -4981,8 +4981,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261961057166756932}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 12, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6151060190324733597}
@@ -5052,8 +5052,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726035294910175163}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 60, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 25, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6151060190324733597}
@@ -5299,7 +5299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3159512390679705128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 5}
+  m_LocalPosition: {x: 0, y: -1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5508,7 +5508,7 @@ MonoBehaviour:
   targetTag: Player
   delay: 0.1
   detectedTarget: {fileID: 0}
-  radius: 12
+  radius: 16
 --- !u!114 &8342260618138821483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15360,7 +15360,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6163571444277041724}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
   m_LocalPosition: {x: 0, y: 2, z: 0.5}
   m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
@@ -15369,7 +15369,7 @@ Transform:
   - {fileID: 1565913885695155945}
   m_Father: {fileID: 4498710026846700469}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
 --- !u!114 &4190646454668826700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15382,12 +15382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063bd6692bdf3464aa22d89665d80569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMinAngle: 85
-  xMaxAngle: 100
-  xWobbleSpeed: 0.5
+  xMinAngle: 80
+  xMaxAngle: 90
+  xWobbleSpeed: 0.25
   yMinAngle: -40
   yMaxAngle: 40
-  yWobbleSpeed: 1
+  yWobbleSpeed: 0.5
   zMinAngle: 0
   zMaxAngle: 0
   zWobbleSpeed: 0

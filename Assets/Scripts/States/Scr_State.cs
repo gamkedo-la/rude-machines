@@ -19,20 +19,6 @@ public class Scr_State : MonoBehaviour
     private bool lightAlternate = false;
     protected Scr_Detect detector = null;
 
-    /*void OnValidate()
-    {
-        if (lights.Count <= 0) Start();
-
-        foreach (var l in lights)
-        {
-            if (l != null && l.material != null) // FIXME: causes errors in edit mode
-            {
-                l.material.SetColor("_BaseColor", lightColor);
-                l.material.SetColor("_EmissionColor", lightColor);
-            }
-        }
-    }*/
-
     public void SetDetector(Scr_Detect newDetector)
     {
         detector = newDetector;
