@@ -4982,7 +4982,7 @@ Transform:
   m_GameObject: {fileID: 1261961057166756932}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 12, y: 2, z: 1}
+  m_LocalScale: {x: 7.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6151060190324733597}
@@ -5053,7 +5053,7 @@ Transform:
   m_GameObject: {fileID: 1726035294910175163}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 25, y: 4, z: 0}
+  m_LocalScale: {x: 15, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6151060190324733597}
@@ -5299,7 +5299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3159512390679705128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 5}
+  m_LocalPosition: {x: 0, y: 1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5470,8 +5470,8 @@ MonoBehaviour:
   moveSpeed: 5
   fixYPosition: 1
   yPositionLimit: 0.5
-  rotation: 1
-  tiltRatioFactor: 2
+  rotation: 0
+  tiltRatioFactor: 0
   forwardRotationPoint: {fileID: 3713746773438684207}
   rotationTarget: {fileID: 0}
 --- !u!114 &701998215748364755
@@ -5489,7 +5489,7 @@ MonoBehaviour:
   preStateMinDelay: 0.2
   preStateMaxDelay: 0.4
   lightGroup: {fileID: 2107362636515748788}
-  lightColor: {r: 8, g: 8, b: 0, a: 1}
+  lightColor: {r: 32, g: 32, b: 0, a: 1}
   lightBlinkDelay: 0
   variationOffsetFactor: 0
   variationOffsetChangeDelay: 999
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   preStateMinDelay: 0
   preStateMaxDelay: 0
   lightGroup: {fileID: 2107362636515748788}
-  lightColor: {r: 16, g: 0, b: 0, a: 1}
+  lightColor: {r: 64, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
   projectile: {fileID: 8774191537290426389, guid: 25ae775f2f06f434fb41456a3f7cea0f,
     type: 3}
@@ -5565,7 +5565,7 @@ MonoBehaviour:
   preStateMinDelay: 0
   preStateMaxDelay: 0
   lightGroup: {fileID: 2107362636515748788}
-  lightColor: {r: 4, g: 4, b: 4, a: 1}
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
   lightBlinkDelay: 0.2
   delay: 4
   distance: 8
@@ -15360,7 +15360,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6163571444277041724}
-  m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2, z: 0.5}
   m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
@@ -15369,7 +15369,7 @@ Transform:
   - {fileID: 1565913885695155945}
   m_Father: {fileID: 4498710026846700469}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &4190646454668826700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15382,8 +15382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063bd6692bdf3464aa22d89665d80569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMinAngle: 80
-  xMaxAngle: 90
+  xMinAngle: 90
+  xMaxAngle: 100
   xWobbleSpeed: 0.25
   yMinAngle: -40
   yMaxAngle: 40

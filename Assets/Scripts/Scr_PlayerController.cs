@@ -79,12 +79,14 @@ public class Scr_PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(Time.timeScale <= 0.0f) return;
         FirstPersonRotation();
         surviveTime += Time.deltaTime;
     }
 
     void FixedUpdate()
     {
+        if(Time.timeScale <= 0.0f) return;
         FirstPersonMovement();
         JumpProcess();
     }

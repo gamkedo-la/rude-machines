@@ -34,7 +34,7 @@ public class Scr_Projectile : MonoBehaviour
             Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(damageValue, gameObject);
+                damageable.Damage(damageValue, self);
                 Instantiate(damageSphere, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);

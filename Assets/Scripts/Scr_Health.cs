@@ -16,7 +16,10 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
 
         if(Value <= 0)
         {
-            Scr_GameManager.instance.SetStuckTime(0.05f, 0.05f);
+            if(instigator.tag == "Player")
+            {
+                Scr_GameManager.instance.SetStuckTime(0.08f, 0.04f);
+            }
 
             if(destroyEffect != null)
             {

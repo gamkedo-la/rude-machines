@@ -22016,7 +22016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 0.5
-  moveSpeed: 36
+  moveSpeed: 32
   fixYPosition: 0
   yPositionLimit: 1
   rotation: 1
@@ -22093,8 +22093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c5ad0ccd162c34c88d54d34a1dd332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preStateMinDelay: 0.6
-  preStateMaxDelay: 1.8
+  preStateMinDelay: 1
+  preStateMaxDelay: 2
   lightGroup: {fileID: 2288693141329853211}
   lightColor: {r: 16, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.1
