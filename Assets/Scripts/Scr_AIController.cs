@@ -22,6 +22,7 @@ public class Scr_AIController : MonoBehaviour
     public Transform forwardRotationPoint;
     public Transform rotationTarget = null;
 
+    private Rigidbody rb;
     private Vector3 moveDirection = Vector3.zero;
     private float fixedY = 0.0f;
 
@@ -32,13 +33,14 @@ public class Scr_AIController : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         targetPosition = transform.position;
         fixedY = transform.position.y;
     }
 
     void UpdateDirectionalTilt(Vector3 position)
     {
-        moveDirection = Vector3.Normalize(position - transform.position);
+        moveDirection = Vector3.Normalize(position - rb.position);
         if(moveDirection.magnitude == 0.0f){
             return;
         }
@@ -50,20 +52,17 @@ public class Scr_AIController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(forwardRotation.x * ratio, moveRotation.y, forwardRotation.z * ratio), 5.0f * Time.deltaTime);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 position = transform.position;
-        if (Vector3.Distance(position, targetPosition) > moveThreshold)
+        if (Vector3.Distance(rb.position, targetPosition) > moveThreshold)
         {
-            position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
+            rb.velocity = (targetPosition - rb.position).normalized * moveSpeed;
+            //position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
         }
         
-        if (position.y < yPositionLimit) position.y = yPositionLimit;
-        if (fixYPosition) position.y = fixedY;
+        if (rb.position.y < yPositionLimit || fixYPosition) rb.velocity = new Vector3(rb.velocity.x, 0.0f, rb.velocity.z);
 
-        UpdateDirectionalTilt(rotationTarget == null ? position : rotationTarget.position);
-
-        transform.position = Vector3.Lerp(transform.position, position, 10.0f * Time.deltaTime);
+        UpdateDirectionalTilt(rotationTarget == null ? targetPosition : rotationTarget.position);
     }
 
     private void OnDrawGizmos()

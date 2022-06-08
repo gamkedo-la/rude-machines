@@ -45,12 +45,13 @@ public class Scr_PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void FirstPersonMovement()
+    void FirstPersonMovement(ref Vector3 velocity)
     {
         Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
         movement *= movementFactor;
 
-        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        velocity.x = movement.x;
+        velocity.z = movement.z;
     }
 
     void FirstPersonRotation()
@@ -65,16 +66,14 @@ public class Scr_PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rot);
     }
 
-    void JumpProcess()
+    void JumpProcess(ref Vector3 velocity)
     {
-        Vector2 vel = rb.velocity;
         if (jumpAcceleration > 0.0f)
         {
-            vel.y += jumpAcceleration * Time.fixedDeltaTime;
+            velocity.y += jumpAcceleration * Time.fixedDeltaTime;
             jumpAcceleration -= Time.fixedDeltaTime;
         }
-        vel.y -= jumpDownForce * Time.fixedDeltaTime;
-        rb.velocity = vel;
+        velocity.y -= jumpDownForce * Time.fixedDeltaTime;
     }
 
     void Update()
@@ -87,8 +86,11 @@ public class Scr_PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if(Time.timeScale <= 0.0f) return;
-        FirstPersonMovement();
-        JumpProcess();
+
+        Vector3 velocity = rb.velocity;
+        FirstPersonMovement(ref velocity);
+        JumpProcess(ref velocity);
+        rb.velocity = velocity;
     }
 
     public void Move(InputAction.CallbackContext context)
