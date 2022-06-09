@@ -838,8 +838,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a64a43accbfe4c4f907a2591676a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keys:
+  - name: MotherDrone
+    prefab: {fileID: 2662514226612993603, guid: d48ea5a4a97475f478ca999050421ae0,
+      type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    enemies: []
+  - name: Drone
+    prefab: {fileID: 8695066661870838363, guid: f19fb22a19036ad4fa2fd7b337433a8a,
+      type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    enemies: []
+  - name: FloatBot
+    prefab: {fileID: 4888310524210884516, guid: 4e6ba87fda1c5984aad5441ddc34bb39,
+      type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    enemies: []
   currentWave: 0
-  waves: []
+  waves:
+  - name: SuperWave
+    spawnCommands:
+    - checkAfterTime: 0
+      checkForAmount: 0
+      keysWithTransformIndex: []
+      timer: 0
 --- !u!43 &516342697
 Mesh:
   m_ObjectHideFlags: 0
