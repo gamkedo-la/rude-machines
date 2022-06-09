@@ -9,19 +9,23 @@ public class Scr_HandController : MonoBehaviour
     [SerializeField] private float burstSpreadAngle = 20.0f;
     [SerializeField] private float burstDelayBetweenShots = 0.05f;
     [Space]
-    public GameObject hands;
+    public Transform[] hand;
+    public Transform[] muzzle;
+    public GameObject[] muzzleParticle;
+    [Space]
     public Transform[] rotationPoints; //0-base, 1-up, 2-down, 3-left, 4-right
     public GameObject projectile;
-    public Transform muzzle;
-    public GameObject muzzleParticle;
-
+    
     private Scr_PlayerController playerController;
     private Scr_Power power;
 
-    private Vector2 initHandRot;
+    private Vector3[] initHandPos = { Vector2.zero, Vector2.zero };
+    private Vector2[] initHandRot = { Vector2.zero, Vector2.zero };
 
     private bool burst = false;
     private float burstTimer = 0.0f;
+
+    int currentAttackingHand = 0;
 
     void Start()
     {
@@ -29,11 +33,16 @@ public class Scr_HandController : MonoBehaviour
         power = GetComponent<Scr_Power>();
         power.Value = 1.0f;
 
-        initHandRot = new Vector2(hands.transform.GetChild(0).localRotation.eulerAngles.x, hands.transform.GetChild(0).localRotation.eulerAngles.y);
+        for(int i = 0; i < 2; i++)
+        {
+            initHandPos[i] = new Vector3(hand[i].localPosition.x, hand[i].localPosition.y, hand[i].localPosition.z);
+            initHandRot[i] = new Vector2(hand[i].localRotation.eulerAngles.x, hand[i].localRotation.eulerAngles.y);
+        }
     }
 
     void Update()
     {
+        if(Time.timeScale <= 0.0f) return;
         UpdatePosition();
         UpdateRotation();
         BurstSequence();
@@ -41,37 +50,48 @@ public class Scr_HandController : MonoBehaviour
 
     void UpdatePosition()
     {
-        hands.transform.localPosition = Vector3.Lerp(hands.transform.localPosition, hands.transform.up * playerController.move.magnitude * Mathf.Sin(Time.time * 10.0f) / 20.0f, 12.0f * Time.deltaTime);
+        for(int i = 0; i < 2; i++)
+        {
+            hand[i].localPosition = Vector3.Lerp(hand[i].localPosition, initHandPos[i] + (-hand[i].forward * playerController.move.magnitude * Mathf.Sin(Time.time * 10.0f) / 20.0f), 12.0f * Time.deltaTime);
+        }
     }
 
     void UpdateRotation()
     {
-        Quaternion currentRot = hands.transform.GetChild(0).localRotation;
+        for(int i = 0; i < 2; i++)
+        {
+            Quaternion currentRot = hand[i].localRotation;
 
-        hands.transform.GetChild(0).LookAt(rotationPoints[0]);
-        Quaternion baseRot = hands.transform.GetChild(0).localRotation;
-        hands.transform.GetChild(0).LookAt(playerController.move.y > 0 ? rotationPoints[1] : rotationPoints[2]);
-        Quaternion verticalRot = hands.transform.GetChild(0).localRotation;
-        hands.transform.GetChild(0).LookAt(playerController.move.x > 0 ? rotationPoints[3] : rotationPoints[4]);
-        Quaternion horizontalRot = hands.transform.GetChild(0).localRotation;
+            hand[i].LookAt(rotationPoints[0]);
+            Quaternion baseRot = hand[i].localRotation;
+            hand[i].LookAt(playerController.move.y > 0 ? rotationPoints[1] : rotationPoints[2]);
+            Quaternion verticalRot = hand[i].localRotation;
+            hand[i].LookAt(playerController.move.x > 0 ? rotationPoints[3] : rotationPoints[4]);
+            Quaternion horizontalRot = hand[i].localRotation;
 
-        Quaternion targetRot = baseRot;
-        targetRot = Quaternion.Slerp(targetRot, verticalRot, Mathf.Abs(playerController.move.y));
-        targetRot = Quaternion.Slerp(targetRot, horizontalRot, Mathf.Abs(playerController.move.x));
+            Quaternion targetRot = baseRot;
+            targetRot = Quaternion.Slerp(targetRot, verticalRot, Mathf.Abs(playerController.move.y));
+            targetRot = Quaternion.Slerp(targetRot, horizontalRot, Mathf.Abs(playerController.move.x));
 
-        hands.transform.GetChild(0).localRotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * 12.0f);
+            hand[i].localRotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * 12.0f);
+        }
     }
 
     public void Fire(InputAction.CallbackContext context)
     {
         if (power && power.Value > firePowerCost && !burst && context.started)
         {
-            muzzleParticle.SetActive(true);
-            Vector3 rot = muzzle.rotation.eulerAngles;
+            currentAttackingHand = currentAttackingHand == 0 ? 1 : 0;
+
+            muzzleParticle[currentAttackingHand].SetActive(true);
+
+            Vector3 rot = muzzle[currentAttackingHand].rotation.eulerAngles;
             float spreadAngle = fireSpreadAngle * (1.0f - power.Value);
-            GameObject newProjectile = Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+            GameObject newProjectile = Instantiate(projectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
             newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
-            hands.transform.position -= hands.transform.forward * recoilFactor;
+
+            hand[currentAttackingHand].position -= hand[currentAttackingHand].transform.forward * recoilFactor;
+
             power.Value -= firePowerCost;
         }
     }
@@ -93,14 +113,16 @@ public class Scr_HandController : MonoBehaviour
             {
                 if (power.Value > firePowerCost / 1.5f)
                 {
-                    muzzleParticle.SetActive(true);
+                    currentAttackingHand = currentAttackingHand == 0 ? 1 : 0;
 
-                    Vector3 rot = muzzle.rotation.eulerAngles;
+                    muzzleParticle[currentAttackingHand].SetActive(true);
+
+                    Vector3 rot = muzzle[currentAttackingHand].rotation.eulerAngles;
                     float spreadAngle = burstSpreadAngle * (1.0f - power.Value);
-                    GameObject newProjectile = Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+                    GameObject newProjectile = Instantiate(projectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
                     newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
 
-                    hands.transform.position -= hands.transform.forward * recoilFactor;
+                    hand[currentAttackingHand].position -= hand[currentAttackingHand].forward * recoilFactor;
                     power.Value -= firePowerCost / 1.5f;
 
                     burstTimer = burstDelayBetweenShots;

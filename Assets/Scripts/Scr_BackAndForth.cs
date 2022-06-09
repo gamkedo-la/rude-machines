@@ -29,7 +29,7 @@ public class Scr_BackAndForth : MonoBehaviour
             trail.time = Mathf.Lerp(trail.time, 1.0f - (yRotDiff / (yMaxAngle - yMinAngle)), 12.0f * Time.deltaTime);
         }
 
-        transform.rotation = Quaternion.Euler(rotX, rotY, rotZ);
+        transform.localRotation = Quaternion.Euler(rotX, rotY, rotZ);
         prevRotY = rotY;
     }
 }

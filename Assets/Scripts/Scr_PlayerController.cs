@@ -22,8 +22,8 @@ public class Scr_PlayerController : MonoBehaviour
     [HideInInspector] public Vector2 rotation = Vector2.zero;
 
     private float jumpAcceleration = 0.0f;
-    private float secondsWhenRoundStarted = 0.0f; // to subtract menu time from play time when dying
-    private float secondsWhenDied = 0.0f; 
+    private float surviveTime = 0.0f;
+    public float SurviveTime { get { return surviveTime; } }
 
     void Start()
     {
@@ -32,42 +32,26 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        secondsWhenRoundStarted = Time.timeSinceLevelLoad; 
+
+        surviveTime = 0.0f;
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        Debug.Log("Best survival time score is "+bestTime);
+        Debug.Log("Best survival time score is " + bestTime);
     }
 
     public void Die()
     {
-        secondsWhenDied = Time.timeSinceLevelLoad;
-        float timeScore = secondsWhenDied - secondsWhenRoundStarted;
-        Debug.Log("Time score: "+timeScore);
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        if(timeScore > bestTime){
-            Debug.Log("New best time");
-            PlayerPrefs.SetFloat("bestTime", timeScore);
-        } else {
-            Debug.Log("This was not the best time score");
-        }
-
-        // TODO: Make a timer before restart
+        if(surviveTime > bestTime) PlayerPrefs.SetFloat("bestTime", surviveTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void FirstPersonMovement()
+    void FirstPersonMovement(ref Vector3 velocity)
     {
-        float distanceThreshold = 0.4f;
-        if ((move.y > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.forward, Quaternion.identity, distanceThreshold))
-        || (move.y < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.forward, Quaternion.identity, distanceThreshold)))
-            move.y /= 2.0f;
-        if ((move.x > 0.1f && Physics.BoxCast(transform.position, Vector3.one, transform.right, Quaternion.identity, distanceThreshold))
-        || (move.x < -0.1f && Physics.BoxCast(transform.position, Vector3.one, -transform.right, Quaternion.identity, distanceThreshold)))
-            move.x /= 2.0f;
-
         Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
         movement *= movementFactor;
 
-        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        velocity.x = movement.x;
+        velocity.z = movement.z;
     }
 
     void FirstPersonRotation()
@@ -82,27 +66,31 @@ public class Scr_PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rot);
     }
 
-    void JumpProcess()
+    void JumpProcess(ref Vector3 velocity)
     {
-        Vector2 vel = rb.velocity;
         if (jumpAcceleration > 0.0f)
         {
-            vel.y += jumpAcceleration * Time.fixedDeltaTime;
+            velocity.y += jumpAcceleration * Time.fixedDeltaTime;
             jumpAcceleration -= Time.fixedDeltaTime;
         }
-        vel.y -= jumpDownForce * Time.fixedDeltaTime;
-        rb.velocity = vel;
+        velocity.y -= jumpDownForce * Time.fixedDeltaTime;
     }
 
     void Update()
     {
+        if(Time.timeScale <= 0.0f) return;
         FirstPersonRotation();
+        surviveTime += Time.deltaTime;
     }
 
     void FixedUpdate()
     {
-        FirstPersonMovement();
-        JumpProcess();
+        if(Time.timeScale <= 0.0f) return;
+
+        Vector3 velocity = rb.velocity;
+        FirstPersonMovement(ref velocity);
+        JumpProcess(ref velocity);
+        rb.velocity = velocity;
     }
 
     public void Move(InputAction.CallbackContext context)

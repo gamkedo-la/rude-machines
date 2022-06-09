@@ -4,29 +4,20 @@ using UnityEngine;
 
 public class Scr_State : MonoBehaviour
 {
+    [Header("Pre State")]
+    [SerializeField] public float preStateMinDelay = 0.0f;
+    [SerializeField] public float preStateMaxDelay = 0.2f;
+
     [Header("Light Properties")]
     public Transform lightGroup;
     [ColorUsageAttribute(true, true)] public Color lightColor = Color.white;
     public float lightBlinkDelay = 0.0f;
 
+    private float preStateTimer = 0.0f;
     private List<MeshRenderer> lights = new List<MeshRenderer>();
     private float lightBlinkTimer = 0.0f;
     private bool lightAlternate = false;
     protected Scr_Detect detector = null;
-
-    void OnValidate()
-    {
-        if (lights.Count <= 0) Start();
-
-        foreach (var l in lights)
-        {
-            if (l != null && l.material != null) // FIXME: causes errors in edit mode
-            {
-                l.material.SetColor("_BaseColor", lightColor);
-                l.material.SetColor("_EmissionColor", lightColor);
-            }
-        }
-    }
 
     public void SetDetector(Scr_Detect newDetector)
     {
@@ -36,6 +27,7 @@ public class Scr_State : MonoBehaviour
     public virtual void StateInitialize()
     {
         this.enabled = true;
+        preStateTimer = Random.Range(preStateMinDelay, preStateMaxDelay);
     }
 
     void Start()
@@ -50,7 +42,9 @@ public class Scr_State : MonoBehaviour
 
     void Update()
     {
-        StateActivity();
+        if(preStateTimer <= 0.0f) StateActivity();
+        else preStateTimer -= Time.deltaTime;
+
         UpdateLight();
     }
 

@@ -17,7 +17,7 @@ public class Scr_StateRevolve : Scr_State
     public override void StateInitialize()
     {
         base.StateInitialize();
-        controller = GetComponent<Scr_StateManager>().controller;
+        controller = GetComponent<Scr_AIController>();
         rotation = Random.value * 360.0f;
         distance = Random.Range(minDistanceFromTarget, maxDistanceFromTarget);
         offset = new Vector3(Random.value * 1.0f, Random.value * 1.0f, Random.value * 1.0f);
@@ -25,12 +25,16 @@ public class Scr_StateRevolve : Scr_State
 
     protected override void StateActivity()
     {
-        Transform target = detector.detectedTarget.transform;
-
+        Transform target = detector.detectedTarget;
         rotation += rotationSpeed * Time.deltaTime;
         Quaternion targetRotation = target.rotation;
         target.rotation = Quaternion.Euler(targetRotation.x, rotation, targetRotation.z);
         controller.targetPosition = target.position + (target.forward * distance) + offset;
         target.rotation = targetRotation;
+    }
+
+    public override void StateTerminate()
+    {
+        base.StateTerminate();
     }
 }

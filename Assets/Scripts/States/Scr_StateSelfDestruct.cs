@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Scr_StateSelfDestruct : Scr_State
 {
+    [Space]
     public float delay = 2.0f;
+    public GameObject destroyObject;
 
     private float timer = 0.0f;
 
@@ -16,7 +18,12 @@ public class Scr_StateSelfDestruct : Scr_State
 
     protected override void StateActivity()
     {
-        if (timer <= 0.0f) Destroy(this.gameObject);
+        if (timer <= 0.0f)
+        {
+            detector.detectedTarget.GetComponent<Scr_IDamageable>().Damage(0.4f, gameObject);
+            Instantiate(destroyObject, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
         else timer -= Time.deltaTime;
     }
 
