@@ -7,6 +7,7 @@ public class Scr_UIController : MonoBehaviour
     public VisualTreeAsset gameplayUI;
     [Space]
     public GameObject startQuad;
+    public GameObject enemyManager;
 
     private UIDocument doc;
     private GameObject player;
@@ -45,6 +46,7 @@ public class Scr_UIController : MonoBehaviour
     {
         player.GetComponent<Scr_PlayerController>().enabled = true;
         player.GetComponent<Scr_HandController>().enabled = true;
+        enemyManager.SetActive(true);
         doc.visualTreeAsset = gameplayUI;
     }
 }

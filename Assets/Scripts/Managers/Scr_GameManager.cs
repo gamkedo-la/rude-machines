@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class Scr_GameManager : MonoBehaviour
 {
+    public Transform patrolPointGroups;
     [SerializeField] private Volume stuckTimeVolume;
 
     public static Scr_GameManager instance = null;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_StateIdle : Scr_State
 {
+    [Space]
     public float delay = 0.5f;
     public float distance = 2.0f;
 

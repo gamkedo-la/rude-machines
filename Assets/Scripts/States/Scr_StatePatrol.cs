@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Scr_StatePatrol : Scr_State
 {
-    public Transform patrolPointGroup = null;
     public float patrolPointDistanceThreshold = 1.0f;
     public enum Mode
     {
@@ -14,6 +13,7 @@ public class Scr_StatePatrol : Scr_State
     }
     public Mode mode = Mode.NORMAL;
 
+    private Transform patrolPointGroup = null;
     private Scr_AIController controller;
     private int patrolPointIndex = 0;
     private bool pingPongAlternate = false;
@@ -23,7 +23,10 @@ public class Scr_StatePatrol : Scr_State
         base.StateInitialize();
         controller = GetComponent<Scr_AIController>();
 
-        //Start from the closest patrol point...
+        //Get Random Patrol Point Group
+        patrolPointGroup = Scr_GameManager.instance.patrolPointGroups.GetChild(Random.Range(0, Scr_GameManager.instance.patrolPointGroups.childCount));
+
+        //Start from the Closest Patrol Point in the Group
         float currentDistance = 99999.0f;
         for(int i = 0; i < patrolPointGroup.childCount; i++)
         {

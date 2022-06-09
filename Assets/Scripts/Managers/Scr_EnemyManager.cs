@@ -14,37 +14,18 @@ public class Scr_EnemyManager : MonoBehaviour
         [HideInInspector] public List<GameObject> enemies = new List<GameObject>();
     }
 
-    [System.Serializable]
-    public class Wave
-    {
-        public string name;
-        public List<SpawnCommand> spawnCommands = new List<SpawnCommand>();
-    }
-
-    [System.Serializable]
-    public class SpawnCommand
-    {
-        public float checkAfterTime;
-        public int checkForAmount; //-1 means infinite
-        [Space]
-        //public string[] conditionTypes;
-        //public int[] conditionValues;
-        //[Space]
-        public string[] keysWithTransformIndex;
-
-        [HideInInspector] public float timer = 0.0f;
-    }
-
     [SerializeField] private List<EnemyKey> keys = new List<EnemyKey>();
     [Space]
     public int currentWave = 0;
-    [SerializeField] private List<Wave> waves = new List<Wave>();
+    [SerializeField] private List<Scr_SpawnWave> waves = new List<Scr_SpawnWave>();
 
     private float enemyKeyListTimer = 0.0f;
 
     void Start()
     {
-        
+        foreach(var wave in waves)
+            foreach(var command in wave.commands)
+                command.timer = Random.value * command.checkAfterTime;
     }
 
     EnemyKey GetKey(string name)
@@ -82,18 +63,21 @@ public class Scr_EnemyManager : MonoBehaviour
 
     void Update()
     {
-        List<SpawnCommand> commandsToRemove = new List<SpawnCommand>();
-        foreach(var command in waves[currentWave].spawnCommands)
+        List<Scr_SpawnWave.Command> commandsToRemove = new List<Scr_SpawnWave.Command>();
+        foreach(var command in waves[currentWave].commands)
         {
             if(command.timer <= 0.0f)
             {
-                foreach(var keyTransform in command.keysWithTransformIndex)
+                foreach(var key in command.keys)
                 {
-                    EnemyKey eKey = GetKey(keyTransform);
+                    EnemyKey eKey = GetKey(key.name);
                     if(eKey != null)
                     {
-                        Transform t = transform.GetChild(System.Int32.Parse(keyTransform.Replace(eKey.name, "")));
-                        eKey.enemies.Add(Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation));
+                        for(int i = 0; i < key.amount; i++)
+                        {
+                            Transform t = transform.GetChild(key.transformIndexes[Random.Range(0, key.transformIndexes.Length)]);
+                            eKey.enemies.Add(Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation));
+                        }
                     }
                 }
 
@@ -106,7 +90,7 @@ public class Scr_EnemyManager : MonoBehaviour
             }
         }
 
-        foreach(var command in commandsToRemove) waves[currentWave].spawnCommands.Remove(command);
+        foreach(var command in commandsToRemove) waves[currentWave].commands.Remove(command);
         commandsToRemove.Clear();
     }
 }

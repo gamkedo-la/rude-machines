@@ -7701,6 +7701,8 @@ GameObject:
   - component: {fileID: 686839506929762785}
   - component: {fileID: 6830640750480737925}
   - component: {fileID: 8324181652043950892}
+  - component: {fileID: 8083100393940618957}
+  - component: {fileID: 8643583708627879600}
   - component: {fileID: 2662514226612993604}
   - component: {fileID: 8195665517492033424}
   - component: {fileID: 2340622815666105521}
@@ -7765,7 +7767,9 @@ MonoBehaviour:
   stateDetectorPairs:
   - state: {fileID: 686839506929762785}
     detector: {fileID: 6830640750480737925}
-  defaultState: {fileID: 8324181652043950892}
+  - state: {fileID: 8324181652043950892}
+    detector: {fileID: 8083100393940618957}
+  defaultState: {fileID: 8643583708627879600}
 --- !u!114 &686839506929762785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7784,8 +7788,8 @@ MonoBehaviour:
   lightColor: {r: 5.3403134, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.1
   message: 
-  minCount: 1
-  maxCount: 2
+  minCount: 2
+  maxCount: 3
   count: 1
 --- !u!114 &6830640750480737925
 MonoBehaviour:
@@ -7821,9 +7825,42 @@ MonoBehaviour:
   lightGroup: {fileID: 4871524613550597891}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   lightBlinkDelay: 0.5
-  patrolPointGroup: {fileID: 0}
   patrolPointDistanceThreshold: 6
   mode: 0
+--- !u!114 &8083100393940618957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662514226612993603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Platform
+  delay: 1
+  detectedTarget: {fileID: 0}
+  radius: 60
+--- !u!114 &8643583708627879600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662514226612993603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0190a20e4c331db4f947dabb0b57a022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
+  lightGroup: {fileID: 4871524613550597891}
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 0.5
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2662514226612993604
 MonoBehaviour:
   m_ObjectHideFlags: 0

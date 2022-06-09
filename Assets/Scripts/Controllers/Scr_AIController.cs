@@ -47,16 +47,16 @@ public class Scr_AIController : MonoBehaviour
         Vector3 moveRotation = Quaternion.LookRotation(moveDirection).eulerAngles;
         Vector3 forwardRotation = Quaternion.LookRotation(forwardRotationPoint.position).eulerAngles;
         float ratio = (rotation == RotationUpdateType.YAW_TILT)
-            ? Mathf.Clamp(Vector3.Distance(position, transform.position) * tiltRatioFactor, 0.0f, 1.0f)
+            ? Mathf.Clamp(Vector3.Distance(position, rb.position) * tiltRatioFactor, 0.0f, 1.0f)
             : 0.0f;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(forwardRotation.x * ratio, moveRotation.y, forwardRotation.z * ratio), 5.0f * Time.deltaTime);
+        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(forwardRotation.x * ratio, moveRotation.y, forwardRotation.z * ratio), 5.0f * Time.deltaTime);
     }
 
     void FixedUpdate()
     {
         if (Vector3.Distance(rb.position, targetPosition) > moveThreshold)
         {
-            rb.velocity = (targetPosition - rb.position).normalized * moveSpeed;
+            rb.velocity = (targetPosition - rb.position) * (moveSpeed / 10.0f);
             //position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
         }
         

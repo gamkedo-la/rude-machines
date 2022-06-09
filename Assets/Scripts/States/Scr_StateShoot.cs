@@ -6,8 +6,8 @@ public class Scr_StateShoot : Scr_State
 {
     [Space]
     public GameObject projectile;
-    public Transform muzzle;
-    public GameObject muzzleParticle;
+    public Transform[] muzzle;
+    public GameObject[] muzzleParticle;
     [Space]
     public float detectionDelay = 2.0f;
     public float shotSpreadAngle = 15.0f;
@@ -17,6 +17,8 @@ public class Scr_StateShoot : Scr_State
 
     private float timer = 0.0f;
     private int shotsLeft = 0;
+
+    private int currentMuzzleIndex = 0;
 
     public override void StateInitialize()
     {
@@ -44,16 +46,20 @@ public class Scr_StateShoot : Scr_State
     public override void StateTerminate()
     {
         base.StateTerminate();
-        muzzleParticle.SetActive(false); // not shooting
+        for(int i = 0; i < muzzle.Length; i++)
+            muzzleParticle[i].SetActive(false); // not shooting
         timer = detectionDelay; // no target: re-fill detection timer
         if(controller != null) controller.rotationTarget = null;
     }
 
     void Shoot()
     {
-        muzzleParticle.SetActive(true);
-        Vector3 rot = muzzle.rotation.eulerAngles;
-        GameObject newProjectile = Instantiate(projectile, muzzle.position, Quaternion.Euler(rot.x + Random.Range(-shotSpreadAngle, shotSpreadAngle), rot.y + Random.Range(-shotSpreadAngle, shotSpreadAngle), rot.z));
-        newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
+        for(int i = 0; i < muzzle.Length; i++)
+        {
+            muzzleParticle[i].SetActive(true);
+            Vector3 rot = muzzle[i].rotation.eulerAngles;
+            GameObject newProjectile = Instantiate(projectile, muzzle[i].position, Quaternion.Euler(rot.x + Random.Range(-shotSpreadAngle, shotSpreadAngle), rot.y + Random.Range(-shotSpreadAngle, shotSpreadAngle), rot.z));
+            newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
+        }
     }
 }

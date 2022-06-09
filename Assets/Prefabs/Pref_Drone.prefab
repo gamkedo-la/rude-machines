@@ -21931,6 +21931,8 @@ GameObject:
   - component: {fileID: 1527336830400275965}
   - component: {fileID: 3639468406091175932}
   - component: {fileID: 8695066661870838365}
+  - component: {fileID: -5251856374536474367}
+  - component: {fileID: 7471533935209296392}
   - component: {fileID: 8695066661870838364}
   - component: {fileID: 2294360907930055218}
   - component: {fileID: 2281879467116935685}
@@ -22002,7 +22004,9 @@ MonoBehaviour:
     detector: {fileID: 7110519974685885447}
   - state: {fileID: 6001653726557446818}
     detector: {fileID: 3639468406091175932}
-  defaultState: {fileID: 8695066661870838365}
+  - state: {fileID: 8695066661870838365}
+    detector: {fileID: -5251856374536474367}
+  defaultState: {fileID: 7471533935209296392}
 --- !u!114 &250345326436607097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22146,6 +22150,40 @@ MonoBehaviour:
   lightBlinkDelay: 1.5
   delay: 2
   distance: 3
+--- !u!114 &-5251856374536474367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Platform
+  delay: 1
+  detectedTarget: {fileID: 0}
+  radius: 25
+--- !u!114 &7471533935209296392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0190a20e4c331db4f947dabb0b57a022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
+  lightGroup: {fileID: 2288693141329853211}
+  lightColor: {r: 4, g: 4, b: 4, a: 1}
+  lightBlinkDelay: 1.5
+  targetPosition: {x: 0, y: 15, z: 0}
 --- !u!114 &8695066661870838364
 MonoBehaviour:
   m_ObjectHideFlags: 0
