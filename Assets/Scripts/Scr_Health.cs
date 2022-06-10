@@ -6,6 +6,7 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
     public float damageFactor = 1.0f;
     public GameObject damageEffect = null;
     public GameObject destroyEffect = null;
+    public Vector3 destroyEffectScale = Vector3.one;
 
     virtual public void Damage(float value, GameObject instigator)
     {
@@ -23,7 +24,7 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
 
             if(destroyEffect != null)
             {
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                Instantiate(destroyEffect, transform.position, Quaternion.identity).transform.localScale = destroyEffectScale;
             }
             Destroy(gameObject);
         }

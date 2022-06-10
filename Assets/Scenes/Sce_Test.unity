@@ -7391,6 +7391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_Destroy
       objectReference: {fileID: 0}
+    - target: {fileID: 4762524228075579772, guid: 52587e90229f41d408fa9627580c50f9,
+        type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4762524228075579773, guid: 52587e90229f41d408fa9627580c50f9,
         type: 3}
       propertyPath: m_RootOrder

@@ -34,8 +34,27 @@ public class Scr_Projectile : MonoBehaviour
             Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(damageValue, self);
-                Instantiate(damageSphere, transform.position, Quaternion.identity);
+                GameObject dmgSphere = Instantiate(damageSphere, transform.position, Quaternion.identity);
+
+                float dmg = damageValue;
+                for(int i = 0; i < collision.contactCount; i++)
+                {
+                    if(collision.contacts[i].thisCollider.name == "WEAK"
+                    || collision.contacts[i].otherCollider.name == "WEAK")
+                    {
+                        dmg *= 2.0f;
+                        dmgSphere.transform.localScale *= 2.0f;
+                        break;
+                    }
+                    else if(collision.contacts[i].thisCollider.name == "STRONG"
+                    || collision.contacts[i].otherCollider.name == "STRONG")
+                    {
+                        dmg /= 2.0f;
+                        dmgSphere.transform.localScale /= 2.0f;
+                        break;
+                    }
+                }
+                damageable.Damage(dmg, self);
             }
             Destroy(gameObject);
         }

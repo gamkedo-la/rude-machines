@@ -277,12 +277,12 @@ MonoBehaviour:
   - name: Mother
     prefab: {fileID: 2662514226612993603, guid: d48ea5a4a97475f478ca999050421ae0,
       type: 3}
-    offset: {x: 0, y: 30, z: 0}
+    offset: {x: 0, y: 20, z: 0}
     enemies: []
   - name: Drone
     prefab: {fileID: 8695066661870838363, guid: f19fb22a19036ad4fa2fd7b337433a8a,
       type: 3}
-    offset: {x: 0, y: 15, z: 0}
+    offset: {x: 0, y: 10, z: 0}
     enemies: []
   - name: Float
     prefab: {fileID: 4888310524210884516, guid: 4e6ba87fda1c5984aad5441ddc34bb39,
@@ -311,7 +311,7 @@ MonoBehaviour:
       checkForAmount: 10
       keys:
       - name: Float
-        amount: 2
+        amount: 1
         transformIndexes: 01000000030000000500000007000000090000000b000000
       - name: Drone
         amount: 1
