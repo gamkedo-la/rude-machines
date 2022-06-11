@@ -29,7 +29,9 @@ public class Scr_Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject != self && collision.gameObject.tag != "Platform")
+        if (collision.gameObject != self
+        && collision.gameObject.GetComponent<Scr_Projectile>() == null
+        && collision.gameObject.tag != "Platform")
         {
             Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
             if (damageable != null)
