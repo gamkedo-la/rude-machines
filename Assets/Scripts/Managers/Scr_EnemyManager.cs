@@ -73,10 +73,14 @@ public class Scr_EnemyManager : MonoBehaviour
                     EnemyKey eKey = GetKey(key.name);
                     if(eKey != null)
                     {
+                        Scr_SpawnWave.Limit limit = waves[currentWave].GetLimit(eKey.name);
                         for(int i = 0; i < key.amount; i++)
                         {
-                            Transform t = transform.GetChild(key.transformIndexes[Random.Range(0, key.transformIndexes.Length)]);
-                            eKey.enemies.Add(Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation));
+                            if(limit == null || eKey.enemies.Count < limit.amount)
+                            {
+                                Transform t = transform.GetChild(Random.Range(0, transform.childCount));
+                                eKey.enemies.Add(Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation));
+                            }
                         }
                     }
                 }
@@ -92,5 +96,7 @@ public class Scr_EnemyManager : MonoBehaviour
 
         foreach(var command in commandsToRemove) waves[currentWave].commands.Remove(command);
         commandsToRemove.Clear();
+
+        RemoveDestroyedFromAllKeys();
     }
 }

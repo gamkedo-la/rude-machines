@@ -7706,6 +7706,7 @@ GameObject:
   - component: {fileID: 2662514226612993604}
   - component: {fileID: 8195665517492033424}
   - component: {fileID: 2340622815666105521}
+  - component: {fileID: 8872505772452684298}
   m_Layer: 6
   m_Name: Pref_MotherDrone
   m_TagString: MotherDrone
@@ -7785,6 +7786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preStateMinDelay: 0
   preStateMaxDelay: 0
+  startSound: {fileID: 8300000, guid: dd2d3fb30d74b1149ab8fd9e79272404, type: 3}
   lightGroup: {fileID: 4871524613550597891}
   lightColor: {r: 5.3403134, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.1
@@ -7823,6 +7825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preStateMinDelay: 0
   preStateMaxDelay: 0
+  startSound: {fileID: 0}
   lightGroup: {fileID: 4871524613550597891}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   lightBlinkDelay: 0.5
@@ -7858,6 +7861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preStateMinDelay: 0
   preStateMaxDelay: 0
+  startSound: {fileID: 0}
   lightGroup: {fileID: 4871524613550597891}
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   lightBlinkDelay: 0.5
@@ -7882,6 +7886,8 @@ MonoBehaviour:
   destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
     type: 3}
   destroyEffectScale: {x: 2.5, y: 2.5, z: 2.5}
+  detector: {fileID: 6830640750480737925}
+  pauseDetectorForTime: 0.5
 --- !u!54 &8195665517492033424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7911,6 +7917,102 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8872505772452684298
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662514226612993603}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 73d16eb22a1633c48b4cefe708880fda, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 0.5
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 130
+  DopplerLevel: 2
+  MinDistance: 1
+  MaxDistance: 60
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2662514226876599010
 GameObject:
   m_ObjectHideFlags: 0

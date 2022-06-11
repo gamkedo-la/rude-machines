@@ -8,17 +8,22 @@ public class Scr_Detect : MonoBehaviour
     public float delay = 0.1f;
 
     [HideInInspector] public Transform detectedTarget = null;
-    
-    protected float timer = 0.0f;
+
+    private float timer = 0.0f;
 
     protected virtual void UpdateDetection() {}
+
+    public void SetTimer(float time)
+    {
+        timer = time;
+    }
 
     void Update()
     {
         if (timer <= 0.0f)
         {
             UpdateDetection();
-            timer = delay;
+            SetTimer(delay);
         }
         else
         {

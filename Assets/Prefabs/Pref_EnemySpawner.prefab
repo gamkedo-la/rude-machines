@@ -292,30 +292,31 @@ MonoBehaviour:
   currentWave: 0
   waves:
   - name: OneMother_ManyDrone_FewFloat
+    limits:
+    - name: Mother
+      amount: 1
+    - name: Drone
+      amount: 15
+    - name: Float
+      amount: 10
     commands:
-    - checkAfterTime: 0
-      checkForAmount: 1
+    - checkAfterTime: 1
+      checkForAmount: -1
       keys:
       - name: Mother
         amount: 1
-        transformIndexes: 00000000020000000400000006000000080000000a000000
       timer: 0
     - checkAfterTime: 5
-      checkForAmount: 10
+      checkForAmount: -1
       keys:
       - name: Drone
         amount: 2
-        transformIndexes: 01000000030000000500000007000000090000000b000000
       timer: 0
     - checkAfterTime: 10
-      checkForAmount: 10
+      checkForAmount: -1
       keys:
       - name: Float
         amount: 1
-        transformIndexes: 01000000030000000500000007000000090000000b000000
-      - name: Drone
-        amount: 1
-        transformIndexes: 00000000020000000400000006000000080000000a000000
       timer: 0
 --- !u!1 &3153786141501829715
 GameObject:

@@ -22596,6 +22596,8 @@ MonoBehaviour:
   destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
     type: 3}
   destroyEffectScale: {x: 0.5, y: 0.5, z: 0.5}
+  detector: {fileID: 7040421447367142990}
+  pauseDetectorForTime: 6
 --- !u!82 &2294360907930055218
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22609,15 +22611,15 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b44bc55bb3ae1c041b5fbd88c7c34d22, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.5
+  m_Pitch: 2
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 2.5
-  MinDistance: 4
-  MaxDistance: 24
+  Priority: 40
+  DopplerLevel: 4
+  MinDistance: 0
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -22676,7 +22678,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.027777778
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

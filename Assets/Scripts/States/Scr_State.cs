@@ -7,6 +7,7 @@ public class Scr_State : MonoBehaviour
     [Header("Pre State")]
     [SerializeField] public float preStateMinDelay = 0.0f;
     [SerializeField] public float preStateMaxDelay = 0.2f;
+    [SerializeField] public AudioClip startSound = null;
 
     [Header("Light Properties")]
     public Transform lightGroup;
@@ -14,6 +15,7 @@ public class Scr_State : MonoBehaviour
     public float lightBlinkDelay = 0.0f;
 
     private float preStateTimer = 0.0f;
+    private AudioSource audSrc = null;
     private List<MeshRenderer> lights = new List<MeshRenderer>();
     private float lightBlinkTimer = 0.0f;
     private bool lightAlternate = false;
@@ -28,10 +30,12 @@ public class Scr_State : MonoBehaviour
     {
         this.enabled = true;
         preStateTimer = Random.Range(preStateMinDelay, preStateMaxDelay);
+        if(audSrc != null && startSound != null) audSrc.PlayOneShot(startSound);
     }
 
     void Start()
     {
+        audSrc = GetComponent<AudioSource>();
         StateInitialize();
         lights.Clear();
         foreach (var l in lightGroup.GetComponentsInChildren<MeshRenderer>())
