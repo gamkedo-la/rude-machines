@@ -7883,9 +7883,13 @@ MonoBehaviour:
   barMaxScale: {x: 1, y: 1, z: 1}
   damageFactor: 0.05
   damageEffect: {fileID: 5041326056780481650}
+  damageSFX:
+  - {fileID: 8300000, guid: 69a5784b11ee6084ab4d0946c8ae2f25, type: 3}
+  - {fileID: 8300000, guid: f22a4bea20118f242b99f410f4d2401f, type: 3}
   destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
     type: 3}
   destroyEffectScale: {x: 2.5, y: 2.5, z: 2.5}
+  destroySFX: {fileID: 8300000, guid: d58adf5559799574885139d4138fce71, type: 3}
   detector: {fileID: 6830640750480737925}
   pauseDetectorForTime: 0.5
 --- !u!54 &8195665517492033424
