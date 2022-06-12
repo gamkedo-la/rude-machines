@@ -89,6 +89,7 @@ public class Scr_HandController : MonoBehaviour
             float spreadAngle = fireSpreadAngle * (1.0f - power.Value);
             GameObject newProjectile = Instantiate(projectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
             newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
+            newProjectile.GetComponent<AudioSource>().pitch = Random.Range(1.6f, 1.8f);
 
             hand[currentAttackingHand].position -= hand[currentAttackingHand].transform.forward * recoilFactor;
 

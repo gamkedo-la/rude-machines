@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140401925096}
   m_Layer: 0
-  m_Name: SpawnTransform (1)
+  m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140490893354}
   m_Layer: 0
-  m_Name: SpawnTransform (3)
+  m_Name: D
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140555252503}
   m_Layer: 0
-  m_Name: SpawnTransform (9)
+  m_Name: J
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140685063738}
   m_Layer: 0
-  m_Name: SpawnTransform (5)
+  m_Name: F
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140697732694}
   m_Layer: 0
-  m_Name: SpawnTransform (7)
+  m_Name: H
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786140822916549}
   m_Layer: 0
-  m_Name: SpawnTransform (4)
+  m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141021263673}
   m_Layer: 0
-  m_Name: SpawnTransform (10)
+  m_Name: K
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -278,17 +278,17 @@ MonoBehaviour:
     prefab: {fileID: 2662514226612993603, guid: d48ea5a4a97475f478ca999050421ae0,
       type: 3}
     offset: {x: 0, y: 20, z: 0}
-    enemies: []
+    counter: 0
   - name: Drone
     prefab: {fileID: 8695066661870838363, guid: f19fb22a19036ad4fa2fd7b337433a8a,
       type: 3}
     offset: {x: 0, y: 10, z: 0}
-    enemies: []
+    counter: 0
   - name: Float
     prefab: {fileID: 4888310524210884516, guid: 4e6ba87fda1c5984aad5441ddc34bb39,
       type: 3}
     offset: {x: 0, y: 0.5, z: 0}
-    enemies: []
+    counter: 0
   currentWave: 0
   waves:
   - name: OneMother_ManyDrone_FewFloat
@@ -296,27 +296,27 @@ MonoBehaviour:
     - name: Mother
       amount: 1
     - name: Drone
-      amount: 15
+      amount: 6
     - name: Float
-      amount: 10
+      amount: 9
     commands:
     - checkAfterTime: 1
       checkForAmount: -1
       keys:
       - name: Mother
-        amount: 1
-      timer: 0
-    - checkAfterTime: 5
-      checkForAmount: -1
-      keys:
-      - name: Drone
-        amount: 2
+        transforms: R
       timer: 0
     - checkAfterTime: 10
       checkForAmount: -1
       keys:
+      - name: Drone
+        transforms: ACE
+      timer: 0
+    - checkAfterTime: 15
+      checkForAmount: -1
+      keys:
       - name: Float
-        amount: 1
+        transforms: GIK
       timer: 0
 --- !u!1 &3153786141501829715
 GameObject:
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141501829712}
   m_Layer: 0
-  m_Name: SpawnTransform (8)
+  m_Name: I
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141610480681}
   m_Layer: 0
-  m_Name: SpawnTransform (11)
+  m_Name: L
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141668598144}
   m_Layer: 0
-  m_Name: SpawnTransform (0)
+  m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141847029638}
   m_Layer: 0
-  m_Name: SpawnTransform (2)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153786141907086363}
   m_Layer: 0
-  m_Name: SpawnTransform (6)
+  m_Name: G
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

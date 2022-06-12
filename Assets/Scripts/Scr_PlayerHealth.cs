@@ -13,7 +13,13 @@ public class Scr_PlayerHealth : Scr_Health
     public Camera cam;
     public float damageFOV = 24.0f;
 
+    private AudioSource audSrc;
     private float defaultFOV = 72.0f;
+
+    void Start()
+    {
+        audSrc = GetComponent<AudioSource>();
+    }
 
     void UpdateDamageIndicator()
     {
@@ -36,6 +42,15 @@ public class Scr_PlayerHealth : Scr_Health
 
         cam.fieldOfView = damageFOV;
 
-        if(Value <= 0.0f) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(Value <= 0.0f)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            audSrc.PlayOneShot(damageSFX[Random.Range(0, damageSFX.Length)]);
+            audSrc.pitch = Random.Range(2.4f, 2.6f);
+        }
     }
+    
 }

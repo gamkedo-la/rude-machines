@@ -13,7 +13,7 @@ public class Scr_SpawnWave
     public class Key
     {
         public string name;
-        public int amount;
+        public string transforms;
     }
 
     [System.Serializable]

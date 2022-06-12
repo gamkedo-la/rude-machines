@@ -11,7 +11,7 @@ public class Scr_EnemyManager : MonoBehaviour
         public GameObject prefab;
         public Vector3 offset;
         
-        [HideInInspector] public List<GameObject> enemies = new List<GameObject>();
+        [HideInInspector] public int counter = 0;
     }
 
     [SerializeField] private List<EnemyKey> keys = new List<EnemyKey>();
@@ -21,8 +21,19 @@ public class Scr_EnemyManager : MonoBehaviour
 
     private float enemyKeyListTimer = 0.0f;
 
+    public static Scr_EnemyManager instance = null;
+
+    public void DecrementCounter(string name)
+    {
+        for(int i = 0; i < keys.Count; i++)
+            if(name.Contains(keys[i].name))
+                GetKey(keys[i].name).counter--;
+    }
+
     void Start()
     {
+        instance = this;
+
         foreach(var wave in waves)
             foreach(var command in wave.commands)
                 command.timer = Random.value * command.checkAfterTime;
@@ -40,25 +51,12 @@ public class Scr_EnemyManager : MonoBehaviour
         return null;
     }
 
-    void RemoveDestroyedFromAllKeys()
+    Transform GetTransform(char t)
     {
-        if(enemyKeyListTimer <= 0.0f)
-        {
-            List<GameObject> destroyedEnemies = new List<GameObject>();
-            foreach(var key in keys)
-            {
-                foreach(var enemy in key.enemies)
-                {
-                    destroyedEnemies.Add(enemy);
-                }
-                foreach(var destroyedEnemy in destroyedEnemies)
-                {
-                    key.enemies.Remove(destroyedEnemy);
-                }
-                destroyedEnemies.Clear();
-            }
-            enemyKeyListTimer = 1.0f;
-        }
+        if(t == 'R') return transform.GetChild(Random.Range(0,transform.childCount));
+        for(int i = 0; i < transform.childCount; i++)
+            if(transform.GetChild(i).name[0] == t) return transform.GetChild(i);
+        return null;
     }
 
     void Update()
@@ -74,12 +72,13 @@ public class Scr_EnemyManager : MonoBehaviour
                     if(eKey != null)
                     {
                         Scr_SpawnWave.Limit limit = waves[currentWave].GetLimit(eKey.name);
-                        for(int i = 0; i < key.amount; i++)
+                        for(int i = 0; i < key.transforms.Length; i++)
                         {
-                            if(limit == null || eKey.enemies.Count < limit.amount)
+                            if(limit == null || eKey.counter < limit.amount)
                             {
-                                Transform t = transform.GetChild(Random.Range(0, transform.childCount));
-                                eKey.enemies.Add(Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation));
+                                Transform t = GetTransform(key.transforms[i]);
+                                Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation);
+                                eKey.counter++;
                             }
                         }
                     }
@@ -96,7 +95,5 @@ public class Scr_EnemyManager : MonoBehaviour
 
         foreach(var command in commandsToRemove) waves[currentWave].commands.Remove(command);
         commandsToRemove.Clear();
-
-        RemoveDestroyedFromAllKeys();
     }
 }

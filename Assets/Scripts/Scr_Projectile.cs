@@ -44,14 +44,14 @@ public class Scr_Projectile : MonoBehaviour
                     if(collision.contacts[i].thisCollider.name == "WEAK"
                     || collision.contacts[i].otherCollider.name == "WEAK")
                     {
-                        dmg *= 2.0f;
+                        dmg *= 1.5f;
                         dmgSphere.transform.localScale *= 2.0f;
                         break;
                     }
                     else if(collision.contacts[i].thisCollider.name == "STRONG"
                     || collision.contacts[i].otherCollider.name == "STRONG")
                     {
-                        dmg /= 2.0f;
+                        dmg /= 3.0f;
                         dmgSphere.transform.localScale /= 2.0f;
                         break;
                     }

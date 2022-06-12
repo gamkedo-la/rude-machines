@@ -45,6 +45,7 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
                 newDestroyEffect.transform.localScale = destroyEffectScale;
                 newDestroyEffect.GetComponent<AudioSource>().PlayOneShot(destroySFX);
             }
+            Scr_EnemyManager.instance.DecrementCounter(gameObject.name);
             Destroy(gameObject);
         }
         else
