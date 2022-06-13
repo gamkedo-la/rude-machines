@@ -20,7 +20,7 @@ public class Scr_StateSelfDestruct : Scr_State
     {
         if (timer <= 0.0f)
         {
-            detector.detectedTarget.GetComponent<Scr_IDamageable>().Damage(0.4f, gameObject);
+            detector.detectedTarget.GetComponent<Scr_IDamageable>().Damage(0.5f, gameObject);
             Instantiate(destroyObject, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

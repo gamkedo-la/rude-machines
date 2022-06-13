@@ -13,6 +13,7 @@ public class Scr_EnemyManager : MonoBehaviour
         
         [HideInInspector] public int counter = 0;
     }
+    public GameObject wallerPrefab;
 
     [SerializeField] private List<EnemyKey> keys = new List<EnemyKey>();
     [Space]
@@ -21,6 +22,8 @@ public class Scr_EnemyManager : MonoBehaviour
 
     private float enemyKeyListTimer = 0.0f;
     private GameObject player = null;
+
+    private float waveTimer = 0.0f;
 
     public static Scr_EnemyManager instance = null;
 
@@ -81,39 +84,63 @@ public class Scr_EnemyManager : MonoBehaviour
 
     void Update()
     {
-        List<Scr_SpawnWave.Command> commandsToRemove = new List<Scr_SpawnWave.Command>();
-        foreach(var command in waves[currentWave].commands)
+        if(Scr_GameManager.instance.surviveTime < waves[currentWave].untilSurviveTime)
         {
-            if(command.timer <= 0.0f)
+            List<Scr_SpawnWave.Command> commandsToRemove = new List<Scr_SpawnWave.Command>();
+            foreach(var command in waves[currentWave].commands)
             {
-                foreach(var key in command.keys)
+                if(command.timer <= 0.0f)
                 {
-                    EnemyKey eKey = GetKey(key.name);
-                    if(eKey != null)
+                    foreach(var key in command.keys)
                     {
-                        Scr_SpawnWave.Limit limit = waves[currentWave].GetLimit(eKey.name);
-                        for(int i = 0; i < key.transforms.Length; i++)
+                        EnemyKey eKey = GetKey(key.name);
+                        if(eKey != null)
                         {
-                            if(limit == null || eKey.counter < limit.amount)
+                            Scr_SpawnWave.Limit limit = waves[currentWave].GetLimit(eKey.name);
+                            for(int i = 0; i < key.transforms.Length; i++)
                             {
-                                Transform t = GetTransform(key.transforms[i]);
-                                Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation);
-                                eKey.counter++;
+                                if(limit == null || eKey.counter < limit.amount)
+                                {
+                                    Transform t = GetTransform(key.transforms[i]);
+                                    Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation);
+                                    eKey.counter++;
+                                }
                             }
                         }
                     }
-                }
 
-                if(--command.checkForAmount == 0) commandsToRemove.Add(command);
-                command.timer = command.checkAfterTime;
+                    if(--command.checkForAmount == 0) commandsToRemove.Add(command);
+                    command.timer = command.checkAfterTime;
+                }
+                else
+                {
+                    command.timer -= Time.deltaTime;
+                }
             }
-            else
+
+            foreach(var command in commandsToRemove) waves[currentWave].commands.Remove(command);
+            commandsToRemove.Clear();
+
+            if(waves[currentWave].waller.chance > Random.value)
             {
-                command.timer -= Time.deltaTime;
+                Vector3 direction = Random.onUnitSphere;
+                Vector3 distance = (direction * waves[currentWave].waller.minDistance) + (direction * (Random.value * waves[currentWave].waller.maxDistance));
+                
+                Vector3 spawnPosition = Scr_GameManager.instance.player.transform.position + distance;
+                spawnPosition.y = 0.0f;
+                
+                Instantiate(wallerPrefab, spawnPosition, Quaternion.Euler(0.0f, Random.value * 360.0f, 0.0f));
             }
         }
+        else
+        {
+            currentWave++;
+            Scr_GameManager.instance.waveDisplayTimer = 3.0f;
+        }
+    }
 
-        foreach(var command in commandsToRemove) waves[currentWave].commands.Remove(command);
-        commandsToRemove.Clear();
+    public string GetWaveName()
+    {
+        return waves[currentWave].name;
     }
 }

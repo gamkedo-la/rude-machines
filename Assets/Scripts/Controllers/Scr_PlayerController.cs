@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Scr_PlayerController : MonoBehaviour
 {
@@ -22,8 +21,6 @@ public class Scr_PlayerController : MonoBehaviour
     [HideInInspector] public Vector2 rotation = Vector2.zero;
 
     private float jumpAcceleration = 0.0f;
-    private float surviveTime = 0.0f;
-    public float SurviveTime { get { return surviveTime; } }
 
     void Start()
     {
@@ -33,16 +30,8 @@ public class Scr_PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        surviveTime = 0.0f;
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
         Debug.Log("Best survival time score is " + bestTime);
-    }
-
-    public void Die()
-    {
-        float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        if(surviveTime > bestTime) PlayerPrefs.SetFloat("bestTime", surviveTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FirstPersonMovement(ref Vector3 velocity)
@@ -80,7 +69,6 @@ public class Scr_PlayerController : MonoBehaviour
     {
         if(Time.timeScale <= 0.0f) return;
         FirstPersonRotation();
-        surviveTime += Time.deltaTime;
     }
 
     void FixedUpdate()

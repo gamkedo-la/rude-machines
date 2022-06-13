@@ -11828,7 +11828,6 @@ GameObject:
   - component: {fileID: 9172058256076114956}
   - component: {fileID: 7724956029659713831}
   - component: {fileID: 6296733788711162081}
-  - component: {fileID: 6296733788711162080}
   - component: {fileID: 8338629461182997943}
   m_Layer: 8
   m_Name: Pref_Player
@@ -12167,18 +12166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultEnemy: {fileID: 7818023372127132259, guid: c0b7ed2d1b7a8a546b69e04b4a297b04,
     type: 3}
---- !u!114 &6296733788711162080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296733788711162111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d233be1ddaac42947b9cd4be35578fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &8338629461182997943
 AudioSource:
   m_ObjectHideFlags: 0

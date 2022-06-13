@@ -44,7 +44,7 @@ public class Scr_PlayerHealth : Scr_Health
 
         if(Value <= 0.0f)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Scr_GameManager.instance.Die();
         }
         else
         {

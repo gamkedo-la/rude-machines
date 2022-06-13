@@ -273,6 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a64a43accbfe4c4f907a2591676a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallerPrefab: {fileID: 3155698938448550544, guid: 72fdec9da9e39914d935def5d7b2fa8c,
+    type: 3}
   keys:
   - name: Mother
     prefab: {fileID: 2662514226612993603, guid: d48ea5a4a97475f478ca999050421ae0,
@@ -291,16 +293,83 @@ MonoBehaviour:
     counter: 0
   currentWave: 0
   waves:
-  - name: OneMother_ManyDrone_FewFloat
+  - name: The Beginning
+    untilSurviveTime: 30
+    waller:
+      chance: 0
+      minDistance: 0
+      maxDistance: 0
+    limits:
+    - name: Float
+      amount: 4
+    - name: Drone
+      amount: 1
+    commands:
+    - checkAfterTime: 20
+      checkForAmount: -1
+      keys:
+      - name: Float
+        transforms: AG
+      timer: 0
+    - checkAfterTime: 40
+      checkForAmount: -1
+      keys:
+      - name: Float
+        transforms: DJ
+      timer: 0
+    - checkAfterTime: 15
+      checkForAmount: -1
+      keys:
+      - name: Drone
+        transforms: R
+      timer: 0
+  - name: The Mother
+    untilSurviveTime: 120
+    waller:
+      chance: 0.0005
+      minDistance: 12
+      maxDistance: 24
     limits:
     - name: Mother
       amount: 1
+    - name: Drone
+      amount: 8
+    - name: Float
+      amount: 4
+    commands:
+    - checkAfterTime: 5
+      checkForAmount: -1
+      keys:
+      - name: Mother
+        transforms: R
+      timer: 0
+    - checkAfterTime: 20
+      checkForAmount: -1
+      keys:
+      - name: Drone
+        transforms: ADGJ
+      timer: 0
+    - checkAfterTime: 10
+      checkForAmount: -1
+      keys:
+      - name: Float
+        transforms: P
+      timer: 0
+  - name: Infinita!
+    untilSurviveTime: 9999999
+    waller:
+      chance: 0.001
+      minDistance: 12
+      maxDistance: 24
+    limits:
+    - name: Mother
+      amount: 3
     - name: Drone
       amount: 12
     - name: Float
       amount: 8
     commands:
-    - checkAfterTime: 2
+    - checkAfterTime: 20
       checkForAmount: -1
       keys:
       - name: Mother

@@ -3,11 +3,12 @@ using UnityEngine.UIElements;
 
 public class Scr_UIController : MonoBehaviour
 {
+    public Scr_GameManager gameManager;
+    [Space]
     public VisualTreeAsset startMenuUI;
     public VisualTreeAsset gameplayUI;
     [Space]
     public GameObject startQuad;
-    public GameObject enemyManager;
 
     private UIDocument doc;
     private GameObject player;
@@ -27,17 +28,16 @@ public class Scr_UIController : MonoBehaviour
         playButton = root.Q<Button>("playbutton");
 
         playButton.clicked += Play;
-
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
         if(doc.visualTreeAsset == gameplayUI)
         {
-            surviveTime.text = ((float)Mathf.FloorToInt(player.GetComponent<Scr_PlayerController>().SurviveTime * 10.0f) / 10.0f).ToString() + "s";
-            waveDisplay.style.opacity = 0.0f;
-            waveName.text = "Wave " + "1" + " " + "waveName";
+            if(Scr_GameManager.instance == null) return;
+            surviveTime.text = ((float)Mathf.FloorToInt(Scr_GameManager.instance.surviveTime * 10.0f) / 10.0f).ToString() + "s";
+            waveDisplay.style.opacity = Mathf.Lerp(waveDisplay.style.opacity.value, Scr_GameManager.instance.waveDisplayTimer > 0.0f ? 1.0f : 0.0f, 8.0f * Time.deltaTime);
+            waveName.text = "Wave " + (Scr_EnemyManager.instance.currentWave + 1).ToString() + "\n" + Scr_EnemyManager.instance.GetWaveName();
 
             if(startQuad.activeSelf)
             {
@@ -49,9 +49,7 @@ public class Scr_UIController : MonoBehaviour
 
     void Play()
     {
-        player.GetComponent<Scr_PlayerController>().enabled = true;
-        player.GetComponent<Scr_HandController>().enabled = true;
-        enemyManager.SetActive(true);
+        gameManager.enabled = true;
 
         doc.visualTreeAsset = gameplayUI;
 

@@ -6,8 +6,18 @@ using UnityEngine;
 public class Scr_SpawnWave
 {
     public string name = "Wave";
+    public float untilSurviveTime = 0.0f;
+    public Waller waller;
     public List<Limit> limits = new List<Limit>();
     public List<Command> commands = new List<Command>();
+
+    [System.Serializable]
+    public class Waller
+    {
+        public float chance;
+        public float minDistance;
+        public float maxDistance;
+    }
 
     [System.Serializable]
     public class Key
