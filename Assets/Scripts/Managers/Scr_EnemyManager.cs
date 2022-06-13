@@ -20,6 +20,7 @@ public class Scr_EnemyManager : MonoBehaviour
     [SerializeField] private List<Scr_SpawnWave> waves = new List<Scr_SpawnWave>();
 
     private float enemyKeyListTimer = 0.0f;
+    private GameObject player = null;
 
     public static Scr_EnemyManager instance = null;
 
@@ -33,6 +34,8 @@ public class Scr_EnemyManager : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        player = GameObject.FindGameObjectWithTag("Player");
 
         foreach(var wave in waves)
             foreach(var command in wave.commands)
@@ -51,9 +54,26 @@ public class Scr_EnemyManager : MonoBehaviour
         return null;
     }
 
+    Transform GetClosestTransform(Transform t)
+    {
+        int index = -1;
+        float closestDistance = 99999.0f;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            float distance = Vector3.Distance(transform.GetChild(i).position, t.position);
+            if(distance < closestDistance)
+            {
+                closestDistance = distance;
+                index = i;
+            }
+        }
+        return transform.GetChild(index);
+    }
+
     Transform GetTransform(char t)
     {
         if(t == 'R') return transform.GetChild(Random.Range(0,transform.childCount));
+        if(t == 'P') return GetClosestTransform(player.transform);
         for(int i = 0; i < transform.childCount; i++)
             if(transform.GetChild(i).name[0] == t) return transform.GetChild(i);
         return null;

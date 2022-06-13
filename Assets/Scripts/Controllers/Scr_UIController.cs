@@ -13,6 +13,10 @@ public class Scr_UIController : MonoBehaviour
     private GameObject player;
     private Button playButton;
 
+    private Label surviveTime;
+    private VisualElement waveDisplay;
+    private Label waveName;
+
     void Start()
     {
         UnityEngine.Cursor.visible = true;
@@ -31,9 +35,10 @@ public class Scr_UIController : MonoBehaviour
     {
         if(doc.visualTreeAsset == gameplayUI)
         {
-            var surviveTime = doc.rootVisualElement.Q<Label>("surviveTime");
             surviveTime.text = ((float)Mathf.FloorToInt(player.GetComponent<Scr_PlayerController>().SurviveTime * 10.0f) / 10.0f).ToString() + "s";
-            
+            waveDisplay.style.opacity = 0.0f;
+            waveName.text = "Wave " + "1" + " " + "waveName";
+
             if(startQuad.activeSelf)
             {
                 startQuad.transform.position = Vector3.Lerp(startQuad.transform.position, new Vector3(0.0f, 4.0f, 0.0f), Time.deltaTime * 4.0f);
@@ -47,6 +52,11 @@ public class Scr_UIController : MonoBehaviour
         player.GetComponent<Scr_PlayerController>().enabled = true;
         player.GetComponent<Scr_HandController>().enabled = true;
         enemyManager.SetActive(true);
+
         doc.visualTreeAsset = gameplayUI;
+
+        surviveTime = doc.rootVisualElement.Q<Label>("surviveTime");
+        waveDisplay = doc.rootVisualElement.Q<VisualElement>("waveDisplay");
+        waveName = doc.rootVisualElement.Q<Label>("waveName");
     }
 }

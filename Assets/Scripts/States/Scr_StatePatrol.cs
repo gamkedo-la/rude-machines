@@ -18,15 +18,8 @@ public class Scr_StatePatrol : Scr_State
     private int patrolPointIndex = 0;
     private bool pingPongAlternate = false;
 
-    public override void StateInitialize()
+    void GetClosestPatrolPointInGroup()
     {
-        base.StateInitialize();
-        controller = GetComponent<Scr_AIController>();
-
-        //Get Random Patrol Point Group
-        patrolPointGroup = Scr_GameManager.instance.patrolPointGroups.GetChild(Random.Range(0, Scr_GameManager.instance.patrolPointGroups.childCount));
-
-        //Start from the Closest Patrol Point in the Group
         float currentDistance = 99999.0f;
         for(int i = 0; i < patrolPointGroup.childCount; i++)
         {
@@ -39,27 +32,44 @@ public class Scr_StatePatrol : Scr_State
         }
     }
 
+    public override void StateInitialize()
+    {
+        base.StateInitialize();
+        controller = GetComponent<Scr_AIController>();
+
+        patrolPointGroup = Scr_GameManager.instance.patrolPointGroups.GetChild(Random.Range(0, Scr_GameManager.instance.patrolPointGroups.childCount));
+        GetClosestPatrolPointInGroup();
+    }
+
     protected override void StateActivity()
     {
         controller.targetPosition = patrolPointGroup.GetChild(patrolPointIndex).position;
 
         if(Vector3.Distance(transform.position, controller.targetPosition) <= patrolPointDistanceThreshold)
         {
-            switch(mode)
+            if(Random.value < 0.25f)
             {
-                case Mode.NORMAL:
-                    patrolPointIndex++;
-                    if(patrolPointGroup.childCount <= patrolPointIndex) patrolPointIndex = 0;
-                break;
-                case Mode.REVERSE:
-                    patrolPointIndex--;
-                    if(patrolPointIndex < 0) patrolPointIndex = patrolPointGroup.childCount - 1;
-                break;
-                case Mode.PING_PONG:
-                    patrolPointIndex += pingPongAlternate ? 1 : -1;
-                    if(patrolPointIndex == patrolPointGroup.childCount - 1) pingPongAlternate = false;
-                    else if(patrolPointIndex == 0) pingPongAlternate = true;
-                break;
+                patrolPointGroup = Scr_GameManager.instance.patrolPointGroups.GetChild(Random.Range(0, Scr_GameManager.instance.patrolPointGroups.childCount));
+                GetClosestPatrolPointInGroup();
+            }
+            else
+            {
+                switch(mode)
+                {
+                    case Mode.NORMAL:
+                        patrolPointIndex++;
+                        if(patrolPointGroup.childCount <= patrolPointIndex) patrolPointIndex = 0;
+                    break;
+                    case Mode.REVERSE:
+                        patrolPointIndex--;
+                        if(patrolPointIndex < 0) patrolPointIndex = patrolPointGroup.childCount - 1;
+                    break;
+                    case Mode.PING_PONG:
+                        patrolPointIndex += pingPongAlternate ? 1 : -1;
+                        if(patrolPointIndex == patrolPointGroup.childCount - 1) pingPongAlternate = false;
+                        else if(patrolPointIndex == 0) pingPongAlternate = true;
+                    break;
+                }
             }
         }
     }
