@@ -7788,8 +7788,8 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 8300000, guid: dd2d3fb30d74b1149ab8fd9e79272404, type: 3}
   lightGroup: {fileID: 4871524613550597891}
-  lightColor: {r: 5.3403134, g: 0, b: 0, a: 1}
-  lightBlinkDelay: 0.1
+  lightColor: {r: 32, g: 0, b: 0, a: 1}
+  lightBlinkDelay: 0.05
   message: 
   minCount: 1
   maxCount: 2
@@ -7827,7 +7827,7 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 0}
   lightGroup: {fileID: 4871524613550597891}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
   lightBlinkDelay: 0.5
   patrolPointDistanceThreshold: 6
   mode: 0
@@ -7863,7 +7863,7 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 0}
   lightGroup: {fileID: 4871524613550597891}
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
   lightBlinkDelay: 0.5
   targetPosition: {x: 0, y: 20, z: 0}
 --- !u!114 &2662514226612993604

@@ -22415,8 +22415,8 @@ MonoBehaviour:
   preStateMaxDelay: 0.4
   startSound: {fileID: 0}
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 16, g: 16, b: 16, a: 1}
-  lightBlinkDelay: 1
+  lightColor: {r: 64, g: 64, b: 64, a: 1}
+  lightBlinkDelay: 0.5
   rotationSpeed: 90
   minDistanceFromTarget: 9
   maxDistanceFromTarget: 16
@@ -22452,7 +22452,7 @@ MonoBehaviour:
   preStateMaxDelay: 2
   startSound: {fileID: 0}
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 32, g: 0, b: 0, a: 1}
+  lightColor: {r: 256, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.1
   variationOffsetFactor: 5
   variationOffsetChangeDelay: 1
@@ -22489,7 +22489,7 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 8300000, guid: 16552fdfb0826a34d913b6ec579a0ede, type: 3}
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 64, g: 64, b: 64, a: 1}
+  lightColor: {r: 1024, g: 1024, b: 1024, a: 1}
   lightBlinkDelay: 0.05
   delay: 0.5
   destroyObject: {fileID: 8469108317460009798, guid: 3338079b131cf4e42ac4c472d2e2a9af,
@@ -22542,8 +22542,8 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 0}
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 4, g: 4, b: 4, a: 1}
-  lightBlinkDelay: 1.5
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
+  lightBlinkDelay: 1
   delay: 2
   distance: 3
 --- !u!114 &-5251856374536474367
@@ -22578,8 +22578,8 @@ MonoBehaviour:
   preStateMaxDelay: 0
   startSound: {fileID: 0}
   lightGroup: {fileID: 2288693141329853211}
-  lightColor: {r: 4, g: 4, b: 4, a: 1}
-  lightBlinkDelay: 1.5
+  lightColor: {r: 16, g: 16, b: 16, a: 1}
+  lightBlinkDelay: 1
   targetPosition: {x: 0, y: 10, z: 0}
 --- !u!114 &8695066661870838364
 MonoBehaviour:

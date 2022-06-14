@@ -13,6 +13,8 @@ public class Scr_PlayerController : MonoBehaviour
     public float jumpUpAcceleration = 1.0f;
     public float jumpUpThrust = 600.0f;
     public float jumpDownForce = 10.0f;
+    [Space]
+    public AudioSource footstepsAudSrc;
 
     private Rigidbody rb;
     private Camera cam;
@@ -29,9 +31,6 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-        float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
-        Debug.Log("Best survival time score is " + bestTime);
     }
 
     void FirstPersonMovement(ref Vector3 velocity)
@@ -41,6 +40,8 @@ public class Scr_PlayerController : MonoBehaviour
 
         velocity.x = movement.x;
         velocity.z = movement.z;
+
+        footstepsAudSrc.enabled = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.z) > 0.5f && IsGrounded();
     }
 
     void FirstPersonRotation()
