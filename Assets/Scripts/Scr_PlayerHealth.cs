@@ -44,6 +44,12 @@ public class Scr_PlayerHealth : Scr_Health
 
         if(Value <= 0.0f)
         {
+            if(destroyEffect != null)
+            {
+                GameObject newDestroyEffect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                newDestroyEffect.transform.localScale = destroyEffectScale;
+                newDestroyEffect.GetComponent<AudioSource>().PlayOneShot(destroySFX);
+            }
             Scr_GameManager.instance.Die();
         }
         else

@@ -84,6 +84,8 @@ public class Scr_EnemyManager : MonoBehaviour
 
     void Update()
     {
+        if(player == null) return;
+
         if(Scr_GameManager.instance.surviveTime < waves[currentWave].untilSurviveTime)
         {
             List<Scr_SpawnWave.Command> commandsToRemove = new List<Scr_SpawnWave.Command>();

@@ -10,6 +10,8 @@ public class Scr_UIController : MonoBehaviour
     [Space]
     public GameObject startQuad;
 
+    private AudioSource audSrc;
+
     private UIDocument doc;
     private GameObject player;
     private Button playButton;
@@ -20,6 +22,8 @@ public class Scr_UIController : MonoBehaviour
 
     void Start()
     {
+        audSrc = GetComponent<AudioSource>();
+
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;
 
@@ -56,5 +60,7 @@ public class Scr_UIController : MonoBehaviour
         surviveTime = doc.rootVisualElement.Q<Label>("surviveTime");
         waveDisplay = doc.rootVisualElement.Q<VisualElement>("waveDisplay");
         waveName = doc.rootVisualElement.Q<Label>("waveName");
+
+        audSrc.Play();
     }
 }

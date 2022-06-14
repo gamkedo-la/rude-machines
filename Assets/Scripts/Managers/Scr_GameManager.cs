@@ -10,6 +10,7 @@ public class Scr_GameManager : MonoBehaviour
     public GameObject enemyManager;
     public Transform patrolPointGroups;
     [SerializeField] private Volume stuckTimeVolume;
+    [SerializeField] private float endTime = 3.0f;
 
     [HideInInspector] public float surviveTime = 0.0f;
     [HideInInspector] public float waveDisplayTimer = 3.0f;
@@ -23,7 +24,12 @@ public class Scr_GameManager : MonoBehaviour
     {
         float bestTime = PlayerPrefs.GetFloat("bestTime", 0.0f);
         if(surviveTime > bestTime) PlayerPrefs.SetFloat("bestTime", surviveTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        GameObject cameraObject = player.transform.GetChild(0).gameObject;
+        cameraObject.transform.parent = null;
+        for(int i = 0; i < cameraObject.transform.childCount; i++)
+            Destroy(cameraObject.transform.GetChild(i).gameObject);
+        Destroy(player);
     }
 
     public void SetStuckTime(float time, float pre = 0)
@@ -43,6 +49,19 @@ public class Scr_GameManager : MonoBehaviour
 
     void Update()
     {
+        if(player == null)
+        {
+            if(endTime <= 0.0f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                endTime -= Time.deltaTime;
+            }
+            return;
+        }
+
         if(preStuckTime <= 0.0f)
         {
             if(stuckTime <= 0.0f)

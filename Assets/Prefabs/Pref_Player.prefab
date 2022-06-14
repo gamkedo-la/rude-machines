@@ -12125,9 +12125,9 @@ MonoBehaviour:
   damageEffect: {fileID: 0}
   damageSFX:
   - {fileID: 8300000, guid: 27eef3757c251b4499e0483130405783, type: 3}
-  destroyEffect: {fileID: 2012574628281786327, guid: 35366de28428c7c41860981508ef9e20,
+  destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
     type: 3}
-  destroyEffectScale: {x: 1, y: 1, z: 1}
+  destroyEffectScale: {x: 2, y: 2, z: 2}
   destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
   detector: {fileID: 0}
   pauseDetectorForTime: 0
