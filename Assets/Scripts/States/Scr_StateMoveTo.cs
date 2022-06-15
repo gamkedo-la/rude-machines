@@ -15,6 +15,8 @@ public class Scr_StateMoveTo : Scr_State
         controller = GetComponent<Scr_AIController>();
     }
 
+
+
     protected override void StateActivity()
     {
         controller.targetPosition = targetPosition;
