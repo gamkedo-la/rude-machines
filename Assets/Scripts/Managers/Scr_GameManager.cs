@@ -10,7 +10,10 @@ public class Scr_GameManager : MonoBehaviour
     public GameObject enemyManager;
     public Transform patrolPointGroups;
     [SerializeField] private Volume stuckTimeVolume;
+    [Space]
     [SerializeField] private float endTime = 3.0f;
+    [SerializeField] private GameObject gameplayCanvas;
+    [SerializeField] private GameObject gameoverCanvas;
 
     [HideInInspector] public float surviveTime = 0.0f;
     [HideInInspector] public float waveDisplayTimer = 3.0f;
@@ -30,6 +33,9 @@ public class Scr_GameManager : MonoBehaviour
         for(int i = 0; i < cameraObject.transform.childCount; i++)
             Destroy(cameraObject.transform.GetChild(i).gameObject);
         Destroy(player);
+
+        gameplayCanvas.SetActive(false);
+        gameoverCanvas.SetActive(true);
     }
 
     public void SetStuckTime(float time, float pre = 0)
