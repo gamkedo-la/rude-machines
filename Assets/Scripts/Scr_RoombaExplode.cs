@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Scr_RoombaExplode : MonoBehaviour
 {
-    [SerializeField] float xLowerBound, xUpperBound; //Bounds of the platform, make them public variables so you can easily change them later if you need to
+    [SerializeField] float xLowerBound, xUpperBound; //Bounds of the platform
     [SerializeField] float zLowerBound, zUpperBound;
 
     [SerializeField] float randomDirectionRange = 22; //How much randomness do we want when we rotate the bot. MAXIMUM value of 45
     [SerializeField] float movementSpeed = 5;
     [SerializeField] float Radius = 5f;
     [SerializeField] Transform player;
+    [SerializeField] float timeToDestroy = 5f;
     float distanceToPlayer = Mathf.Infinity;
 
     private void Update()
@@ -19,7 +20,7 @@ public class Scr_RoombaExplode : MonoBehaviour
 
         if(distanceToPlayer < Radius)
         {
-            movementSpeed /= 2;
+         //   movementSpeed /= 2;
             StartCoroutine(ExplodeCounter());
         }
     }
@@ -64,7 +65,11 @@ public class Scr_RoombaExplode : MonoBehaviour
     {
 
         float randomRotate; //Random angle to add
-        if (towardsCenter == Vector3.zero) randomRotate = Random.Range(0, 360); //Any direction
+        if (towardsCenter == Vector3.zero)
+        {
+            randomRotate = Random.Range(0, 360); //Any direction
+            towardsCenter = Vector3.forward;
+        }
         else randomRotate = Random.Range(-1f * randomDirectionRange, randomDirectionRange); //Restrict to move the bot back in bounds
       //  towardsCenter = Vector3.forward;
 
@@ -90,8 +95,8 @@ public class Scr_RoombaExplode : MonoBehaviour
 
     IEnumerator ExplodeCounter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(20);
 
-        Destroy(gameObject);
+      //  Destroy(gameObject);
     }
 }
