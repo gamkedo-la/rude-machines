@@ -45,6 +45,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1597410685525982167}
+  - component: {fileID: 402921362}
+  - component: {fileID: 402921363}
+  - component: {fileID: 5514989824608701580}
   m_Layer: 0
   m_Name: Pref_RoombaBotMelee
   m_TagString: Untagged
@@ -62,12 +65,59 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5853677823670569579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402921362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f0248017ab61a4db83e8beaa2e5ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLowerBound: -29
+  xUpperBound: 20
+  zLowerBound: -23
+  zUpperBound: 23
+  randomDirectionRange: 22
+  movementSpeed: 5
+--- !u!65 &402921363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3235776, y: 0.64719623, z: 3.1626287}
+  m_Center: {x: 0.37115157, y: -0.17640188, z: 0.14066482}
+--- !u!54 &5514989824608701580
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2293766596923730584
 GameObject:
   m_ObjectHideFlags: 0

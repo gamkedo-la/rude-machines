@@ -9,9 +9,14 @@ public class Scr_BotMeleebehaviour : MonoBehaviour
 
     [SerializeField] float randomDirectionRange = 22; //How much randomness do we want when we rotate the bot. MAXIMUM value of 45
     [SerializeField] float movementSpeed = 5;
+    Scr_PlayerHealth playerHealth;
 
 
+    private void Start()
+    {
+        playerHealth = FindObjectOfType<Scr_PlayerHealth>();
 
+    }
     void FixedUpdate()
     {
 
@@ -67,9 +72,12 @@ public class Scr_BotMeleebehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Bot_Rotate(Vector3.zero);
+            if (playerHealth != null)
+            {
+                playerHealth.Damage(1, gameObject);
+            }
         }
     }
 
