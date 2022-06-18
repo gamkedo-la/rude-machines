@@ -95,6 +95,9 @@ GameObject:
   - component: {fileID: 350125993}
   - component: {fileID: 350125995}
   - component: {fileID: 350125994}
+  - component: {fileID: 535892377}
+  - component: {fileID: 2243597992782551824}
+  - component: {fileID: 535892379}
   m_Layer: 0
   m_Name: Pref_RoombaBotExplode
   m_TagString: Untagged
@@ -165,9 +168,59 @@ MonoBehaviour:
   zUpperBound: 23
   randomDirectionRange: 22
   movementSpeed: 10
-  Radius: 3
-  player: {fileID: 0}
-  timeToDestroy: 5
+--- !u!114 &535892377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764509448460408143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  delay: 0.1
+  detectedTarget: {fileID: 0}
+  radius: 10
+--- !u!114 &2243597992782551824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764509448460408143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1422164356424d47abf2ffc0508d569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
+  startSound: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
+  lightGroup: {fileID: 1656306798548952930}
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 0.05
+  delay: 2
+  destroyObject: {fileID: 8469108317460009798, guid: 3338079b131cf4e42ac4c472d2e2a9af,
+    type: 3}
+--- !u!114 &535892379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764509448460408143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetectorPairs:
+  - state: {fileID: 2243597992782551824}
+    detector: {fileID: 535892377}
+  defaultState: {fileID: 2243597992782551824}
 --- !u!1 &2826282122525639178
 GameObject:
   m_ObjectHideFlags: 0

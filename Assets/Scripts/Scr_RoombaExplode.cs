@@ -9,21 +9,8 @@ public class Scr_RoombaExplode : MonoBehaviour
 
     [SerializeField] float randomDirectionRange = 22; //How much randomness do we want when we rotate the bot. MAXIMUM value of 45
     [SerializeField] float movementSpeed = 5;
-    [SerializeField] float Radius = 5f;
-    [SerializeField] Transform player;
-    [SerializeField] float timeToDestroy = 5f;
-    float distanceToPlayer = Mathf.Infinity;
 
-    private void Update()
-    {
-        distanceToPlayer = Vector3.Distance(player.position, transform.position);
-
-        if(distanceToPlayer < Radius)
-        {
-         //   movementSpeed /= 2;
-            StartCoroutine(ExplodeCounter());
-        }
-    }
+    
 
     void FixedUpdate()
     {
@@ -83,20 +70,10 @@ public class Scr_RoombaExplode : MonoBehaviour
         if (!other.CompareTag("Player"))
         {
             Bot_Rotate(Vector3.zero);
-            Debug.Log("Trigger");
         }
     }
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, Radius);
-    }
+    
 
-    IEnumerator ExplodeCounter()
-    {
-        yield return new WaitForSeconds(20);
-
-      //  Destroy(gameObject);
-    }
+    
 }
