@@ -48,7 +48,7 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
             Scr_EnemyManager.instance.DecrementCounter(gameObject.name);
             Destroy(gameObject);
         }
-        else
+        else if(audSrc != null && damageSFX.Length > 0)
         {
             audSrc.PlayOneShot(damageSFX[Random.Range(0, damageSFX.Length)]);
         }

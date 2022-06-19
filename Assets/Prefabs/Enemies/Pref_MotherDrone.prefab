@@ -7704,6 +7704,7 @@ GameObject:
   - component: {fileID: 8083100393940618957}
   - component: {fileID: 8643583708627879600}
   - component: {fileID: 2662514226612993604}
+  - component: {fileID: -8002961572383640407}
   - component: {fileID: 8195665517492033424}
   - component: {fileID: 2340622815666105521}
   - component: {fileID: 8872505772452684298}
@@ -7892,6 +7893,20 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: d58adf5559799574885139d4138fce71, type: 3}
   detector: {fileID: 6830640750480737925}
   pauseDetectorForTime: 0.5
+--- !u!114 &-8002961572383640407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2662514226612993603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b53291dab581949b2a7b8210dbd8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  damageRate: 1
 --- !u!54 &8195665517492033424
 Rigidbody:
   m_ObjectHideFlags: 0

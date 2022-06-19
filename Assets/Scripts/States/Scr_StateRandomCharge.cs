@@ -37,7 +37,7 @@ public class Scr_StateRandomCharge : Scr_State
         }
         else
         {
-            controller.targetPosition = transform.position + (transform.forward * targetPositionDistance);
+            controller.targetPosition = transform.position + (transform.forward * targetPositionDistance) - transform.up;
             forceMoveTimer -= Time.deltaTime;
         }
     }

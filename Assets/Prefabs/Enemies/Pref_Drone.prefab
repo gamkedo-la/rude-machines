@@ -22325,6 +22325,7 @@ GameObject:
   - component: {fileID: -5251856374536474367}
   - component: {fileID: 7471533935209296392}
   - component: {fileID: 8695066661870838364}
+  - component: {fileID: -4397617253184898311}
   - component: {fileID: 2294360907930055218}
   - component: {fileID: 2281879467116935685}
   m_Layer: 6
@@ -22607,6 +22608,20 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: deed3ce1f58c8b049be7f63ac1014123, type: 3}
   detector: {fileID: 7040421447367142990}
   pauseDetectorForTime: 6
+--- !u!114 &-4397617253184898311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695066661870838363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b53291dab581949b2a7b8210dbd8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  damageRate: 0.25
 --- !u!82 &2294360907930055218
 AudioSource:
   m_ObjectHideFlags: 0

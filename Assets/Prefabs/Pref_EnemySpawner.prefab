@@ -291,6 +291,15 @@ MonoBehaviour:
       type: 3}
     offset: {x: 0, y: 0.5, z: 0}
     counter: 0
+  - name: RoombaMelee
+    prefab: {fileID: 1597410685525982166, guid: 780c858d57656574fafeaf51dd13720c,
+      type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    counter: 0
+  - name: RoombaExplode
+    prefab: {fileID: 764509448460408143, guid: ba4db1cff87b17e42b6d1b99642ed930, type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    counter: 0
   currentWave: 0
   waves:
   - name: The Beginning
@@ -300,21 +309,21 @@ MonoBehaviour:
       minDistance: 0
       maxDistance: 0
     limits:
-    - name: Float
-      amount: 4
+    - name: RoombaMelee
+      amount: 8
     - name: Drone
       amount: 1
     commands:
-    - checkAfterTime: 20
+    - checkAfterTime: 5
       checkForAmount: -1
       keys:
-      - name: Float
+      - name: RoombaMelee
         transforms: AG
       timer: 0
-    - checkAfterTime: 40
+    - checkAfterTime: 10
       checkForAmount: -1
       keys:
-      - name: Float
+      - name: RoombaMelee
         transforms: DJ
       timer: 0
     - checkAfterTime: 15
@@ -334,8 +343,8 @@ MonoBehaviour:
       amount: 1
     - name: Drone
       amount: 8
-    - name: Float
-      amount: 4
+    - name: RoombaExplode
+      amount: 6
     commands:
     - checkAfterTime: 5
       checkForAmount: -1
@@ -349,10 +358,10 @@ MonoBehaviour:
       - name: Drone
         transforms: ADGJ
       timer: 0
-    - checkAfterTime: 10
+    - checkAfterTime: 5
       checkForAmount: -1
       keys:
-      - name: Float
+      - name: RoombaExplode
         transforms: P
       timer: 0
   - name: Infinita!

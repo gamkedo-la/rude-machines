@@ -58,10 +58,4 @@ public class Scr_Wall : MonoBehaviour
             waitTimer -= Time.deltaTime;
         }
     }
-
-    void OnCollisionStay(Collision coll)
-    {
-        Scr_IDamageable damageable = coll.gameObject.GetComponentInParent<Scr_IDamageable>();
-        damageable.Damage(0.1f, gameObject);
-    }
 }

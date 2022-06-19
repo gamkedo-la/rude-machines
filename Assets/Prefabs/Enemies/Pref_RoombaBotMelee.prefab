@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &895239357544776473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5501766048009738198}
+  - component: {fileID: 6364599641778288319}
+  m_Layer: 9
+  m_Name: RadarElement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5501766048009738198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895239357544776473}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597410685525982167}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &6364599641778288319
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895239357544776473}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f40bada7d1855994f9fa128eaadb42ce, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 42.97, y: 42.97}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1354068209878148518
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,10 +130,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1597410685525982167}
   - component: {fileID: 7888865887995428968}
+  - component: {fileID: 6954802473972566570}
   - component: {fileID: 402921362}
+  - component: {fileID: 1179033519036258819}
+  - component: {fileID: 4054437830762485967}
+  - component: {fileID: 1930229635695764838}
+  - component: {fileID: 806536276277482983}
   - component: {fileID: 402921363}
   - component: {fileID: 5514989824608701580}
-  m_Layer: 0
+  - component: {fileID: -3596648337268187295}
+  m_Layer: 6
   m_Name: Pref_RoombaBotMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,8 +158,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5853677823670569579}
   - {fileID: 7726167693995309}
+  - {fileID: 5853677823670569579}
+  - {fileID: 5501766048009738198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,13 +178,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 16
+  moveSpeed: 8
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
   tiltRatioFactor: 1
   forwardRotationPoint: {fileID: 7726167693995309}
   rotationTarget: {fileID: 0}
+--- !u!114 &6954802473972566570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54baff22f1e73e04e9f616cfe98108af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetectorPairs:
+  - state: {fileID: 402921362}
+    detector: {fileID: 1179033519036258819}
+  defaultState: {fileID: 4054437830762485967}
 --- !u!114 &402921362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +222,81 @@ MonoBehaviour:
   radius: 26
   rotationRate: 150
   reflectionDeviation: 0.5
-  targetPositionDistance: 4
+  targetPositionDistance: 8
+--- !u!114 &1179033519036258819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61682d3e7778c354396fef40696e5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Platform
+  delay: 1
+  detectedTarget: {fileID: 0}
+  radius: 4
+--- !u!114 &4054437830762485967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0190a20e4c331db4f947dabb0b57a022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preStateMinDelay: 0
+  preStateMaxDelay: 0
+  startSound: {fileID: 0}
+  lightGroup: {fileID: 6817492918790355335}
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightBlinkDelay: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1930229635695764838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18116dc47d5df848a391bd8deebf32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  barMinScale: {x: 0, y: 0, z: 0}
+  barMaxScale: {x: 1, y: 1, z: 1}
+  damageFactor: 0.5
+  damageEffect: {fileID: 1173218104913008686, guid: 4e6ba87fda1c5984aad5441ddc34bb39,
+    type: 3}
+  damageSFX: []
+  destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
+    type: 3}
+  destroyEffectScale: {x: 1, y: 1, z: 1}
+  destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
+  detector: {fileID: 0}
+  pauseDetectorForTime: 0
+--- !u!114 &806536276277482983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b53291dab581949b2a7b8210dbd8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  damageRate: 1
 --- !u!65 &402921363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,8 +324,104 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &-3596648337268187295
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597410685525982166}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1861176982931578331
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726167693995309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ForwardRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -174,7 +451,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1597410685525982167}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2293766596923730584
 GameObject:
@@ -187,7 +464,7 @@ GameObject:
   - component: {fileID: 6074238912823265993}
   - component: {fileID: 8109033759101974750}
   - component: {fileID: 4491414051470346633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeSawParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5081,7 +5358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5853677823670569579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5105,7 +5382,7 @@ Transform:
   - {fileID: 1270470237041743545}
   - {fileID: 6817492918790355335}
   m_Father: {fileID: 1597410685525982167}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4987227061866243249
 GameObject:
@@ -5450,7 +5727,7 @@ GameObject:
   - component: {fileID: 8448604631300400841}
   - component: {fileID: 2685513652774971252}
   - component: {fileID: 6874061178091466803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeSawParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10314,6 +10591,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6337196142614957403, guid: e163a550b8d9cbf4ebb0ccf1a96e25c0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6069442980732329321, guid: e163a550b8d9cbf4ebb0ccf1a96e25c0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -5276667479382046749, guid: e163a550b8d9cbf4ebb0ccf1a96e25c0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10323,6 +10610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomba-bot-melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e163a550b8d9cbf4ebb0ccf1a96e25c0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2080066236634708223, guid: e163a550b8d9cbf4ebb0ccf1a96e25c0,
         type: 3}
@@ -10408,6 +10700,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomba-bot-melee-saw-R
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18e13529b5b239d4d8bc5a3b98c23590,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e13529b5b239d4d8bc5a3b98c23590, type: 3}
@@ -10514,6 +10811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roomba-bot-melee-saw-L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18e13529b5b239d4d8bc5a3b98c23590,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e13529b5b239d4d8bc5a3b98c23590, type: 3}
