@@ -211,11 +211,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_RoombaBotExplode
       objectReference: {fileID: 0}
-    - target: {fileID: 764509448460408143, guid: ba4db1cff87b17e42b6d1b99642ed930,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5036220072186642119, guid: ba4db1cff87b17e42b6d1b99642ed930,
         type: 3}
       propertyPath: m_RootOrder
@@ -234,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 5036220072186642119, guid: ba4db1cff87b17e42b6d1b99642ed930,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22
+      value: -18.5
       objectReference: {fileID: 0}
     - target: {fileID: 5036220072186642119, guid: ba4db1cff87b17e42b6d1b99642ed930,
         type: 3}
@@ -5467,6 +5462,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pref_RoombaBotMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 1597410685525982166, guid: 780c858d57656574fafeaf51dd13720c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1597410685525982167, guid: 780c858d57656574fafeaf51dd13720c,
         type: 3}
       propertyPath: m_RootOrder
@@ -5475,7 +5475,7 @@ PrefabInstance:
     - target: {fileID: 1597410685525982167, guid: 780c858d57656574fafeaf51dd13720c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 1597410685525982167, guid: 780c858d57656574fafeaf51dd13720c,
         type: 3}
@@ -5485,7 +5485,7 @@ PrefabInstance:
     - target: {fileID: 1597410685525982167, guid: 780c858d57656574fafeaf51dd13720c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.95
+      value: -23.22
       objectReference: {fileID: 0}
     - target: {fileID: 1597410685525982167, guid: 780c858d57656574fafeaf51dd13720c,
         type: 3}
