@@ -21,6 +21,7 @@ public class Scr_AIController : MonoBehaviour
     public float tiltRatioFactor = 1.0f;
     public Transform forwardRotationPoint;
     public Transform rotationTarget = null;
+    public Vector3 rotationTargetOffset = Vector3.zero;
 
     private Rigidbody rb;
     private Vector3 moveDirection = Vector3.zero;
@@ -44,7 +45,7 @@ public class Scr_AIController : MonoBehaviour
         fixedY = transform.position.y;
     }
 
-    void UpdateDirectionalTilt(Vector3 position)
+    void UpdateDirectionalTilt(Vector3 position, Vector3 rotationOffset)
     {
         moveDirection = Vector3.Normalize(position - rb.position);
         if(moveDirection.magnitude == 0.0f) return;
@@ -53,7 +54,7 @@ public class Scr_AIController : MonoBehaviour
         float ratio = (rotation == RotationUpdateType.YAW_TILT)
             ? Mathf.Clamp(Vector3.Distance(position, rb.position) * tiltRatioFactor, 0.0f, 1.0f)
             : 0.0f;
-        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(forwardRotation.x * ratio, moveRotation.y, forwardRotation.z * ratio), 5.0f * Time.deltaTime);
+        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler((forwardRotation.x * ratio) + rotationOffset.x, moveRotation.y + rotationOffset.y, (forwardRotation.z * ratio) + rotationOffset.z), 5.0f * Time.deltaTime);
     }
 
     void FixedUpdate()
@@ -63,7 +64,7 @@ public class Scr_AIController : MonoBehaviour
         
         if (rb.position.y < yPositionLimit || fixYPosition) rb.velocity = new Vector3(rb.velocity.x, 0.0f, rb.velocity.z);
 
-        UpdateDirectionalTilt(rotationTarget == null ? targetPosition : rotationTarget.position);
+        UpdateDirectionalTilt(rotationTarget == null ? targetPosition : rotationTarget.position, rotationTarget == null ? Vector3.zero : rotationTargetOffset);
     }
 
     private void OnDrawGizmos()

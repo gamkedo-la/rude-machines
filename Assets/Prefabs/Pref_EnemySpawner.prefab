@@ -300,6 +300,11 @@ MonoBehaviour:
     prefab: {fileID: 764509448460408143, guid: ba4db1cff87b17e42b6d1b99642ed930, type: 3}
     offset: {x: 0, y: 0, z: 0}
     counter: 0
+  - name: Blue
+    prefab: {fileID: 8695066661870838363, guid: e362f9e80a1834541803aea482fd5fcc,
+      type: 3}
+    offset: {x: 0, y: 8, z: 0}
+    counter: 0
   currentWave: 0
   waves:
   - name: The Beginning
@@ -309,28 +314,36 @@ MonoBehaviour:
       minDistance: 0
       maxDistance: 0
     limits:
+    - name: RoombaExplode
+      amount: 4
     - name: RoombaMelee
       amount: 8
     - name: Drone
       amount: 1
     commands:
-    - checkAfterTime: 5
+    - checkAfterTime: 4
       checkForAmount: -1
       keys:
       - name: RoombaMelee
         transforms: AG
       timer: 0
-    - checkAfterTime: 10
+    - checkAfterTime: 8
       checkForAmount: -1
       keys:
       - name: RoombaMelee
         transforms: DJ
       timer: 0
-    - checkAfterTime: 15
+    - checkAfterTime: 16
       checkForAmount: -1
       keys:
       - name: Drone
         transforms: R
+      timer: 0
+    - checkAfterTime: 12
+      checkForAmount: -1
+      keys:
+      - name: RoombaExplode
+        transforms: AGDJ
       timer: 0
   - name: The Mother
     untilSurviveTime: 120

@@ -19,7 +19,8 @@ public class Scr_StateRandomCharge : Scr_State
         base.StateInitialize();
         controller = GetComponent<Scr_AIController>();
 
-        newRotation = Quaternion.LookRotation(-transform.forward + (transform.right * ((Random.value - 0.5f) * 2.0f) * reflectionDeviation));
+        //Not inverse!
+        newRotation = Quaternion.LookRotation(transform.forward + (transform.right * ((Random.value - 0.5f) * 2.0f) * reflectionDeviation));
     }
 
     protected override void StateActivity()

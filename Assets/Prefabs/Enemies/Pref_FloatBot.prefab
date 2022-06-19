@@ -5597,6 +5597,7 @@ MonoBehaviour:
   tiltRatioFactor: 0
   forwardRotationPoint: {fileID: 3713746773438684207}
   rotationTarget: {fileID: 0}
+  rotationTargetOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &701998215748364755
 MonoBehaviour:
   m_ObjectHideFlags: 0

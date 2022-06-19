@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 350125995}
   - component: {fileID: -7039499672844243103}
   m_Layer: 6
-  m_Name: Pref_RoombaBotExplode
+  m_Name: Pref_RoombaExplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 8
+  moveSpeed: 12
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   radius: 26
   rotationRate: 150
   reflectionDeviation: 0.5
-  targetPositionDistance: 8
+  targetPositionDistance: 12
 --- !u!114 &3525114754641786461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,11 +220,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preStateMinDelay: 0
   preStateMaxDelay: 0
-  startSound: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
+  startSound: {fileID: 8300000, guid: 16552fdfb0826a34d913b6ec579a0ede, type: 3}
   lightGroup: {fileID: 1656306798548952930}
   lightColor: {r: 256, g: 256, b: 256, a: 1}
   lightBlinkDelay: 0.05
-  delay: 1
+  delay: 0.5
   destroyObject: {fileID: 8469108317460009798, guid: 3338079b131cf4e42ac4c472d2e2a9af,
     type: 3}
 --- !u!114 &535892377
@@ -242,7 +242,7 @@ MonoBehaviour:
   targetTag: Player
   delay: 0.1
   detectedTarget: {fileID: 0}
-  radius: 10
+  radius: 5
 --- !u!114 &7675454475180909372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!82 &-7039499672844243103
 AudioSource:
@@ -618,7 +618,7 @@ Transform:
   m_GameObject: {fileID: 4233431597712715750}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5036220072186642119}

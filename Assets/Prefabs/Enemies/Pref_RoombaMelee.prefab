@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 895239357544776473}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1597410685525982167}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5514989824608701580}
   - component: {fileID: -3596648337268187295}
   m_Layer: 6
-  m_Name: Pref_RoombaBotMelee
+  m_Name: Pref_RoombaMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 8
+  moveSpeed: 12
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   radius: 26
   rotationRate: 150
   reflectionDeviation: 0.5
-  targetPositionDistance: 8
+  targetPositionDistance: 12
 --- !u!114 &1179033519036258819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!82 &-3596648337268187295
 AudioSource:
@@ -1118,7 +1118,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.5
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -1201,7 +1201,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -2208,7 +2208,7 @@ ParticleSystem:
     orbitalZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6381,7 +6381,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.5
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -6464,7 +6464,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -7471,7 +7471,7 @@ ParticleSystem:
     orbitalZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -10
+      scalar: -20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10734,7 +10734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: 0
-  zSpeed: -2160
+  zSpeed: -3240
 --- !u!1001 &1597410687119339858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10845,4 +10845,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: 0
-  zSpeed: 2160
+  zSpeed: 3240
