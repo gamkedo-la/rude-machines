@@ -4883,7 +4883,7 @@ GameObject:
   - component: {fileID: 8469108317460009799}
   - component: {fileID: 6946531985999506404}
   m_Layer: 0
-  m_Name: Pref_DroneSelfDestructParticles
+  m_Name: Pref_SelfDestructParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -31,6 +31,12 @@ public class Scr_AIController : MonoBehaviour
         targetPosition = position;
     }
 
+    public void Stop()
+    {
+        targetPosition = rb.position;
+        rb.velocity = Vector3.zero;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -41,9 +47,7 @@ public class Scr_AIController : MonoBehaviour
     void UpdateDirectionalTilt(Vector3 position)
     {
         moveDirection = Vector3.Normalize(position - rb.position);
-        if(moveDirection.magnitude == 0.0f){
-            return;
-        }
+        if(moveDirection.magnitude == 0.0f) return;
         Vector3 moveRotation = Quaternion.LookRotation(moveDirection).eulerAngles;
         Vector3 forwardRotation = Quaternion.LookRotation(forwardRotationPoint.position).eulerAngles;
         float ratio = (rotation == RotationUpdateType.YAW_TILT)
@@ -55,10 +59,7 @@ public class Scr_AIController : MonoBehaviour
     void FixedUpdate()
     {
         if (Vector3.Distance(rb.position, targetPosition) > moveThreshold)
-        {
             rb.velocity = (targetPosition - rb.position) * (moveSpeed / 10.0f);
-            //position = Vector3.Lerp(position, targetPosition, moveSpeed * Time.deltaTime);
-        }
         
         if (rb.position.y < yPositionLimit || fixYPosition) rb.velocity = new Vector3(rb.velocity.x, 0.0f, rb.velocity.z);
 
