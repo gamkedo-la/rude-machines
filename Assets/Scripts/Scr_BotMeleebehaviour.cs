@@ -12,9 +12,22 @@ public class Scr_BotMeleebehaviour : MonoBehaviour
     Scr_PlayerHealth playerHealth;
 
 
-    private void Start()
+    private void Awake()
     {
         playerHealth = FindObjectOfType<Scr_PlayerHealth>();
+    }
+
+    private void Update()
+    {
+        if (playerHealth == null)
+        {
+            Debug.Log("Out");
+        }
+
+        else
+        {
+            Debug.Log("In");
+        }
 
     }
     void FixedUpdate()
@@ -74,10 +87,10 @@ public class Scr_BotMeleebehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (playerHealth != null)
-            {
-                playerHealth.Damage(1, gameObject);
-            }
+            
+         playerHealth.Damage(1, gameObject);
+         Debug.Log("Player Dead");
+            
         }
     }
 
