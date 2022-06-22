@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - MotherDrone
   - Boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX

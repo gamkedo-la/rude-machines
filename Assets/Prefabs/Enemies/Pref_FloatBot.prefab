@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3957948548358135736}
   m_Layer: 6
   m_Name: C (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4213635455497034443}
   m_Layer: 6
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5528,7 +5528,7 @@ GameObject:
   - component: {fileID: 5902042557042225122}
   m_Layer: 6
   m_Name: Pref_FloatBot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15603,7 +15603,7 @@ GameObject:
   - component: {fileID: 7176245015017351863}
   m_Layer: 6
   m_Name: STRONG
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15649,7 +15649,7 @@ GameObject:
   - component: {fileID: 6921003850361990642}
   m_Layer: 6
   m_Name: STRONG
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15834,7 +15834,7 @@ GameObject:
   - component: {fileID: 4591803806893196832}
   m_Layer: 6
   m_Name: C (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15880,7 +15880,7 @@ GameObject:
   - component: {fileID: 1688089370483068898}
   m_Layer: 6
   m_Name: WEAK
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15925,7 +15925,7 @@ GameObject:
   - component: {fileID: 8060061974941237257}
   m_Layer: 6
   m_Name: STRONG
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15971,7 +15971,7 @@ GameObject:
   - component: {fileID: 4513215020945262273}
   m_Layer: 6
   m_Name: C (0)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

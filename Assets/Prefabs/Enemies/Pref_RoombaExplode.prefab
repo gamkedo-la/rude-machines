@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: -7039499672844243103}
   m_Layer: 6
   m_Name: Pref_RoombaExplode
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Player
   damageRate: 0.1
+  delay: 0.1
 --- !u!65 &350125993
 BoxCollider:
   m_ObjectHideFlags: 0

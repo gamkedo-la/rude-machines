@@ -4966,7 +4966,7 @@ GameObject:
   - component: {fileID: 3415468656920426638}
   m_Layer: 6
   m_Name: C (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4979,7 +4979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2566254014631868208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4997,7 +4997,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.6, z: 2}
+  m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2638044221325695413
 GameObject:
@@ -5011,7 +5011,7 @@ GameObject:
   - component: {fileID: 14902110974750374}
   m_Layer: 6
   m_Name: C (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5042,7 +5042,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3129004724134201054
 GameObject:
@@ -5139,7 +5139,7 @@ GameObject:
   - component: {fileID: 1869291937191312173}
   m_Layer: 6
   m_Name: WEAK
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5170,7 +5170,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3519904324765138701
 GameObject:
@@ -5351,7 +5351,7 @@ GameObject:
   - component: {fileID: 5178926180875533383}
   m_Layer: 6
   m_Name: C (0)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5382,7 +5382,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5239604225414135952
 GameObject:
@@ -5396,7 +5396,7 @@ GameObject:
   - component: {fileID: 6896813693919271525}
   m_Layer: 6
   m_Name: C (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5427,7 +5427,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7197199122265352711
 GameObject:
@@ -5441,7 +5441,7 @@ GameObject:
   - component: {fileID: 9199357177430971004}
   m_Layer: 6
   m_Name: C (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5472,7 +5472,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7537582106552549683
 GameObject:
@@ -5485,7 +5485,7 @@ GameObject:
   - component: {fileID: 7174102919663412744}
   m_Layer: 6
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14447,9 +14447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8966148a2746c4e8eb51c44aff2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heaveDistance: 0.5
+  heaveDistance: 0.25
   heaveSpeed: 1
-  rotationSpeed: 0.05
+  rotationSpeed: 0.5
 --- !u!1 &8695066661315654284
 GameObject:
   m_ObjectHideFlags: 0
@@ -22330,7 +22330,7 @@ GameObject:
   - component: {fileID: 2281879467116935685}
   m_Layer: 6
   m_Name: Pref_Drone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22623,6 +22623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Player
   damageRate: 0.25
+  delay: 0.1
 --- !u!82 &2294360907930055218
 AudioSource:
   m_ObjectHideFlags: 0

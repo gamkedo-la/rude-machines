@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: -3596648337268187295}
   m_Layer: 6
   m_Name: Pref_RoombaMelee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Player
   damageRate: 1
+  delay: 0.1
 --- !u!65 &402921363
 BoxCollider:
   m_ObjectHideFlags: 0

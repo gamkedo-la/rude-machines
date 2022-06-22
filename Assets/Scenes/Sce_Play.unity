@@ -2225,7 +2225,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30842
+  m_Name: pb_Mesh31000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6651,7 +6651,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
+      propertyPath: waves.Array.data[0].commands.Array.data[0].keys.Array.data[0].name
+      value: Float
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
+        type: 3}
+      propertyPath: waves.Array.data[0].commands.Array.data[1].keys.Array.data[0].name
+      value: Float
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
+        type: 3}
       propertyPath: waves.Array.data[0].commands.Array.data[2].keys.Array.data[0].name
+      value: Float
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
+        type: 3}
+      propertyPath: waves.Array.data[0].commands.Array.data[3].keys.Array.data[0].name
       value: Float
       objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
