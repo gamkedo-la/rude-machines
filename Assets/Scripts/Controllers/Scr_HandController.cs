@@ -52,7 +52,7 @@ public class Scr_HandController : MonoBehaviour
     {
         for(int i = 0; i < 2; i++)
         {
-            hand[i].localPosition = Vector3.Lerp(hand[i].localPosition, initHandPos[i] + (-hand[i].forward * playerController.move.magnitude * Mathf.Sin(Time.time * 10.0f) / 20.0f), 12.0f * Time.deltaTime);
+            hand[i].localPosition = Vector3.Lerp(hand[i].localPosition, initHandPos[i] + (-hand[i].forward * playerController.move.magnitude * Mathf.Sin(Time.time * 10.0f) / 20.0f), 12.0f * Time.unscaledDeltaTime);
         }
     }
 
@@ -73,7 +73,7 @@ public class Scr_HandController : MonoBehaviour
             targetRot = Quaternion.Slerp(targetRot, verticalRot, Mathf.Abs(playerController.move.y));
             targetRot = Quaternion.Slerp(targetRot, horizontalRot, Mathf.Abs(playerController.move.x));
 
-            hand[i].localRotation = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * 12.0f);
+            hand[i].localRotation = Quaternion.Slerp(currentRot, targetRot, Time.unscaledDeltaTime * 12.0f);
         }
     }
 
@@ -136,7 +136,7 @@ public class Scr_HandController : MonoBehaviour
             }
             else
             {
-                burstTimer -= Time.deltaTime;
+                burstTimer -= Time.unscaledDeltaTime;
             }
         }
     }

@@ -24,6 +24,8 @@ public class Scr_PlayerController : MonoBehaviour
 
     private float jumpAcceleration = 0.0f;
 
+    private bool slowMoControl = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,10 +40,10 @@ public class Scr_PlayerController : MonoBehaviour
         Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
         movement *= movementFactor;
 
-        velocity.x = movement.x;
-        velocity.z = movement.z;
+        velocity.x = movement.x * (Time.timeScale < 1.0f ? 5.0f : 1.0f);
+        velocity.z = movement.z * (Time.timeScale < 1.0f ? 5.0f : 1.0f);
 
-        footstepsAudSrc.enabled = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.z) > 0.5f && IsGrounded();
+        footstepsAudSrc.enabled = Mathf.Abs(move.x) + Mathf.Abs(move.y) > 0.5f && IsGrounded();
     }
 
     void FirstPersonRotation()
@@ -60,16 +62,26 @@ public class Scr_PlayerController : MonoBehaviour
     {
         if (jumpAcceleration > 0.0f)
         {
-            velocity.y += jumpAcceleration * Time.fixedDeltaTime;
-            jumpAcceleration -= Time.fixedDeltaTime;
+            velocity.y += jumpAcceleration * Time.fixedDeltaTime * (Time.timeScale < 1.0f ? 10.0f : 1.0f);
+            jumpAcceleration -= Time.fixedDeltaTime * (Time.timeScale < 1.0f ? 5.0f : 1.0f);
         }
-        velocity.y -= jumpDownForce * Time.fixedDeltaTime;
+        velocity.y -= jumpDownForce * Time.fixedDeltaTime * (Time.timeScale < 1.0f ? 5.0f : 1.0f);
     }
 
     void Update()
     {
         if(Time.timeScale <= 0.0f) return;
         FirstPersonRotation();
+
+        if (slowMoControl)
+        {
+            if (Scr_GameManager.instance.SlowMo < Time.deltaTime * 5.0f) //if less than 5 frames worth of slow mo
+            {
+                Scr_GameManager.instance.SlowMo += Time.deltaTime * 5.0f; //get 5 more frames worth of slow mo
+
+                //decrease slow mo gauge here!!! -= Time.deltaTime * 5.0f
+            }
+        }
     }
 
     void FixedUpdate()
@@ -100,6 +112,12 @@ public class Scr_PlayerController : MonoBehaviour
             jumpAcceleration = jumpUpAcceleration;
             rb.AddForce(transform.up * jumpUpThrust, ForceMode.Impulse);
         }
+    }
+
+    public void SlowMo(InputAction.CallbackContext context)
+    {
+        if (context.started) slowMoControl = true;
+        else if(context.canceled) slowMoControl = false;
     }
 
     bool IsGrounded()

@@ -10,6 +10,8 @@ public class Scr_GameManager : MonoBehaviour
     public GameObject enemyManager;
     public Transform patrolPointGroups;
     [SerializeField] private Volume stuckTimeVolume;
+    [SerializeField] private Volume slowMoVolume;
+    [SerializeField] private float slowMoTimeScale = 0.2f;
     [Space]
     [SerializeField] private float endTime = 3.0f;
     [SerializeField] private GameObject gameplayCanvas;
@@ -20,6 +22,8 @@ public class Scr_GameManager : MonoBehaviour
 
     private float preStuckTime = 0.0f;
     private float stuckTime = 0.0f;
+    public float slowMoTime = 0.0f;
+    public float SlowMo { get { return slowMoTime; } set { slowMoTime = value; } }
 
     public static Scr_GameManager instance = null;
 
@@ -68,11 +72,24 @@ public class Scr_GameManager : MonoBehaviour
             return;
         }
 
-        if(preStuckTime <= 0.0f)
+        if (slowMoTime > 0.0f)
+        {
+            Time.timeScale = slowMoTimeScale;
+            slowMoTime -= Time.unscaledDeltaTime;
+            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 1.0f, Time.unscaledDeltaTime * 8.0f);
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0.0f, Time.unscaledDeltaTime * 8.0f);
+        }
+
+        if (preStuckTime <= 0.0f)
         {
             if(stuckTime <= 0.0f)
             {
-                Time.timeScale = 1.0f;
+                if (slowMoTime <= 0.0f)
+                    Time.timeScale = 1.0f;
                 stuckTimeVolume.weight = 0.0f;
             }
             else
@@ -88,7 +105,6 @@ public class Scr_GameManager : MonoBehaviour
         }
 
         surviveTime += Time.deltaTime;
-
         if(waveDisplayTimer > 0.0f) waveDisplayTimer -= Time.deltaTime;
     }
 }

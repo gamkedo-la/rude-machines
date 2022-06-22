@@ -8,13 +8,24 @@ public class Scr_DamageOnCollision : MonoBehaviour
     [SerializeField] private float damageRate = 0.2f;
     [SerializeField] private float delay = 0.0f;
 
+    public float DamageRate { get { return damageRate; } set { damageRate = value; } }
+
     private float timer = 0.0f;
-    private bool isPlayer = false;
+    private GameObject ownerObject = null;
+
+    public void SetOwner(GameObject obj)
+    {
+        ownerObject = obj;
+    }
+
+    private void Start()
+    {
+        if(ownerObject == null) ownerObject = gameObject;
+    }
 
     private void Update()
     {
         timer -= Time.deltaTime;
-        isPlayer = targetTag != "Player";
     }
 
     private void OnCollisionStay(Collision coll)
@@ -27,7 +38,7 @@ public class Scr_DamageOnCollision : MonoBehaviour
                 if (damageable == null && coll.transform.parent != null) damageable = coll.gameObject.GetComponentInParent<Scr_IDamageable>();
                 if (damageable == null && coll.transform.parent != null && coll.transform.parent.parent != null) damageable = coll.transform.parent.GetComponentInParent<Scr_IDamageable>();
 
-                if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, isPlayer ? Scr_GameManager.instance.player : gameObject);
+                if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, ownerObject);
 
                 timer = delay;
             }
@@ -44,7 +55,7 @@ public class Scr_DamageOnCollision : MonoBehaviour
                 if (damageable == null && coll.transform.parent != null) damageable = coll.GetComponentInParent<Scr_IDamageable>();
                 if (damageable == null && coll.transform.parent != null && coll.transform.parent.parent != null) damageable = coll.transform.parent.GetComponentInParent<Scr_IDamageable>();
 
-                if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, isPlayer ? Scr_GameManager.instance.player : gameObject);
+                if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, ownerObject);
 
                 timer = delay;
             }

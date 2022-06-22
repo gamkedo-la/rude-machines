@@ -7,6 +7,6 @@ public class Scr_Power : Scr_BarProperty
 
     public void Update()
     {
-        Value += regenerationRate * Time.deltaTime;
+        Value += regenerationRate * Time.unscaledDeltaTime;
     }
 }

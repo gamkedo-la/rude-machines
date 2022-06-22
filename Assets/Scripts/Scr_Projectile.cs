@@ -31,14 +31,13 @@ public class Scr_Projectile : MonoBehaviour
     {
         if (collision.gameObject != self
         && collision.gameObject.GetComponent<Scr_Projectile>() == null)
-        //&& collision.gameObject.tag != "Platform")
         {
-            //Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
-            //if (damageable != null)
-            {
-                GameObject dmgSphere = Instantiate(damageSphere, transform.position, Quaternion.identity);
+            GameObject dmgSphere = Instantiate(damageSphere, transform.position, Quaternion.identity);
+            dmgSphere.GetComponent<Scr_DamageOnCollision>().SetOwner(self);
 
-                /*
+            Scr_IDamageable damageable = collision.gameObject.GetComponentInParent<Scr_IDamageable>();
+            if (damageable != null)
+            {
                 float dmg = damageValue;
                 for(int i = 0; i < collision.contactCount; i++)
                 {
@@ -58,7 +57,6 @@ public class Scr_Projectile : MonoBehaviour
                     }
                 }
                 damageable.Damage(dmg, self);
-                */
             }
             Destroy(gameObject);
         }

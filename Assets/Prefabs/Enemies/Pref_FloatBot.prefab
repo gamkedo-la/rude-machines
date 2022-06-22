@@ -5661,8 +5661,10 @@ MonoBehaviour:
   - {fileID: 3168579320845459325}
   - {fileID: 8807311105327325339}
   detectionDelay: 1
-  shotSpreadAngle: 12
+  shotSpreadAngle: 10
   shotDelay: 0.04
+  shotStartingSpreadAngle: 50
+  shotSpreadAngleNormalizeDelay: 0.125
 --- !u!114 &1791848710184502983
 MonoBehaviour:
   m_ObjectHideFlags: 0

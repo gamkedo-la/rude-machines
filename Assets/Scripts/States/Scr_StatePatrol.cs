@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_StatePatrol : Scr_State
 {
+    [Space]
     public float patrolPointDistanceThreshold = 1.0f;
     public enum Mode
     {
@@ -12,6 +13,7 @@ public class Scr_StatePatrol : Scr_State
         PING_PONG
     }
     public Mode mode = Mode.NORMAL;
+    public float fixedY = -1.0f;
 
     private Transform patrolPointGroup = null;
     private Scr_AIController controller;
@@ -44,6 +46,7 @@ public class Scr_StatePatrol : Scr_State
     protected override void StateActivity()
     {
         controller.targetPosition = patrolPointGroup.GetChild(patrolPointIndex).position;
+        if (fixedY > 0.0f) controller.targetPosition.y = fixedY;
 
         if(Vector3.Distance(transform.position, controller.targetPosition) <= patrolPointDistanceThreshold)
         {
@@ -63,11 +66,6 @@ public class Scr_StatePatrol : Scr_State
                     case Mode.REVERSE:
                         patrolPointIndex--;
                         if(patrolPointIndex < 0) patrolPointIndex = patrolPointGroup.childCount - 1;
-                    break;
-                    case Mode.PING_PONG:
-                        patrolPointIndex += pingPongAlternate ? 1 : -1;
-                        if(patrolPointIndex == patrolPointGroup.childCount - 1) pingPongAlternate = false;
-                        else if(patrolPointIndex == 0) pingPongAlternate = true;
                     break;
                 }
             }

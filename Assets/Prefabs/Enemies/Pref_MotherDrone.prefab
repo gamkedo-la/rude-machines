@@ -7710,7 +7710,7 @@ GameObject:
   - component: {fileID: 8872505772452684298}
   m_Layer: 6
   m_Name: Pref_MotherDrone
-  m_TagString: Enemy
+  m_TagString: MotherDrone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7793,7 +7793,7 @@ MonoBehaviour:
   lightColor: {r: 32, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
   message: 
-  minCount: 3
+  minCount: 2
   maxCount: 4
   count: 1
 --- !u!114 &6830640750480737925
@@ -7833,6 +7833,7 @@ MonoBehaviour:
   lightBlinkDelay: 0.5
   patrolPointDistanceThreshold: 6
   mode: 0
+  fixedY: -1
 --- !u!114 &8083100393940618957
 MonoBehaviour:
   m_ObjectHideFlags: 0
