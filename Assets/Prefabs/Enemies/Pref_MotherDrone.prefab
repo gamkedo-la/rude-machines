@@ -7755,6 +7755,7 @@ MonoBehaviour:
   tiltRatioFactor: 0
   forwardRotationPoint: {fileID: 2662514227302099693}
   rotationTarget: {fileID: 0}
+  rotationTargetOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &8897978864738494330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7792,8 +7793,8 @@ MonoBehaviour:
   lightColor: {r: 32, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
   message: 
-  minCount: 1
-  maxCount: 2
+  minCount: 3
+  maxCount: 4
   count: 1
 --- !u!114 &6830640750480737925
 MonoBehaviour:

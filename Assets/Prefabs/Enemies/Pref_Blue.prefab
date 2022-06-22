@@ -22535,7 +22535,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
-  damageFactor: 1
+  damageFactor: 4
   damageEffect: {fileID: 2212406751793057902}
   damageSFX:
   - {fileID: 8300000, guid: 4c9737a243469954b98644d0d6736523, type: 3}

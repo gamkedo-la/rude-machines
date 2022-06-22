@@ -22376,6 +22376,7 @@ MonoBehaviour:
   tiltRatioFactor: 1.5
   forwardRotationPoint: {fileID: 8695066660380620533}
   rotationTarget: {fileID: 0}
+  rotationTargetOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &6215989505751229095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22597,7 +22598,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
-  damageFactor: 1
+  damageFactor: 4
   damageEffect: {fileID: 2212406751793057902}
   damageSFX:
   - {fileID: 8300000, guid: 4c9737a243469954b98644d0d6736523, type: 3}

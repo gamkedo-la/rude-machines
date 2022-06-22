@@ -38,7 +38,7 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
 
         if(Value <= 0.0f)
         {
-            if(isPlayer) Scr_GameManager.instance.SetStuckTime(0.08f, 0.04f);
+            if(isPlayer && damageFactor <= 1.5f) Scr_GameManager.instance.SetStuckTime(0.08f, 0.04f);
             if(destroyEffect != null)
             {
                 GameObject newDestroyEffect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
