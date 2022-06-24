@@ -6670,7 +6670,7 @@ PrefabInstance:
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
       propertyPath: waves.Array.data[0].commands.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
@@ -6735,7 +6735,7 @@ PrefabInstance:
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
       propertyPath: waves.Array.data[0].commands.Array.data[3].keys.Array.data[0].name
-      value: Float
+      value: RoombaExplode
       objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}

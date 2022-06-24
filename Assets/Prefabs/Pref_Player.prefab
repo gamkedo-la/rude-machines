@@ -12319,6 +12319,7 @@ MonoBehaviour:
   jumpUpAcceleration: 2.5
   jumpUpThrust: 0
   jumpDownForce: 40
+  strafePoint: {fileID: 0}
   footstepsAudSrc: {fileID: 158312008965418991}
   slowMoBar: {fileID: 4421362080695758537}
   slowMoConsumptionRate: 0.125

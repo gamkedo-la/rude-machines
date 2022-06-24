@@ -5516,7 +5516,7 @@ GameObject:
   - component: {fileID: 4888310524210884443}
   - component: {fileID: 6410759471606275914}
   - component: {fileID: 6566782407427072878}
-  - component: {fileID: 701998215748364755}
+  - component: {fileID: 3598552343282199693}
   - component: {fileID: 6581899557720604741}
   - component: {fileID: 8342260618138821483}
   - component: {fileID: 1791848710184502983}
@@ -5571,7 +5571,7 @@ MonoBehaviour:
   stateDetectorPairs:
   - state: {fileID: 8342260618138821483}
     detector: {fileID: 1791848710184502983}
-  - state: {fileID: 701998215748364755}
+  - state: {fileID: 3598552343282199693}
     detector: {fileID: 6581899557720604741}
   - state: {fileID: 7918860404232831055}
     detector: {fileID: 8778017434766458826}
@@ -5598,7 +5598,7 @@ MonoBehaviour:
   forwardRotationPoint: {fileID: 3713746773438684207}
   rotationTarget: {fileID: 0}
   rotationTargetOffset: {x: 0, y: 0, z: 0}
---- !u!114 &701998215748364755
+--- !u!114 &3598552343282199693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5607,17 +5607,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4888310524210884516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8c5ad0ccd162c34c88d54d34a1dd332, type: 3}
+  m_Script: {fileID: 11500000, guid: d3cefc18a854dba44a0b3d6bf0ea3f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preStateMinDelay: 0.2
   preStateMaxDelay: 0.4
   startSound: {fileID: 0}
   lightGroup: {fileID: 2107362636515748788}
-  lightColor: {r: 256, g: 256, b: 0, a: 1}
+  lightColor: {r: 64, g: 64, b: 0, a: 1}
   lightBlinkDelay: 0.1
-  variationOffsetFactor: 0
-  variationOffsetChangeDelay: 999
+  minDistance: 12
+  maxDistance: 14
+  angleRate: 16
 --- !u!114 &6581899557720604741
 MonoBehaviour:
   m_ObjectHideFlags: 0
