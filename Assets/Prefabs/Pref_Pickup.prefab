@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615469144459673310}
+  - component: {fileID: 616106271136259742}
+  - component: {fileID: 7413685772986180509}
+  - component: {fileID: 5460811062819458113}
   m_Layer: 0
   m_Name: Pref_Pickup
   m_TagString: Untagged
@@ -32,6 +35,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &616106271136259742
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615469144459673311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7413685772986180509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615469144459673311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a75407141d33247b159165a20e783e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0.2
+--- !u!114 &5460811062819458113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615469144459673311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44dcaf31b65e1de47a2ca359c628020e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 5
 --- !u!1 &1615469144669181164
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 1615469144669181164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1615469145584858167}
@@ -78,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heaveDistance: 0.2
-  heaveSpeed: 2
-  rotationSpeed: 15
+  heaveSpeed: 4
+  rotationSpeed: 60
 --- !u!1 &1615469144804302515
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +234,6 @@ GameObject:
   - component: {fileID: 1615469145584858163}
   - component: {fileID: 1615469145584858164}
   - component: {fileID: 1615469145584858165}
-  - component: {fileID: 1615469145584858166}
   m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
@@ -2134,18 +2175,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615469145584858168}
-  m_Mesh: {fileID: 0}
---- !u!64 &1615469145584858166
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615469145584858168}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

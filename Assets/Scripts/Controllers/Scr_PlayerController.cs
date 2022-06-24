@@ -15,6 +15,9 @@ public class Scr_PlayerController : MonoBehaviour
     public float jumpDownForce = 10.0f;
     [Space]
     public AudioSource footstepsAudSrc;
+    [Space]
+    [SerializeField] private Scr_BarProperty slowMoBar;
+    [SerializeField] private float slowMoConsumptionRate = 1.0f;
 
     private Rigidbody rb;
     private Camera cam;
@@ -25,6 +28,11 @@ public class Scr_PlayerController : MonoBehaviour
     private float jumpAcceleration = 0.0f;
 
     private bool slowMoControl = false;
+
+    public void AddSlowMo(float value)
+    {
+        slowMoBar.Value += value;
+    }
 
     void Start()
     {
@@ -75,11 +83,12 @@ public class Scr_PlayerController : MonoBehaviour
 
         if (slowMoControl)
         {
-            if (Scr_GameManager.instance.SlowMo < Time.deltaTime * 5.0f) //if less than 5 frames worth of slow mo
+            float slowMoStep = Time.unscaledDeltaTime * 5.0f;
+            if (slowMoBar.Value >= slowMoStep * slowMoConsumptionRate
+            && Scr_GameManager.instance.SlowMo < slowMoStep)
             {
-                Scr_GameManager.instance.SlowMo += Time.deltaTime * 5.0f; //get 5 more frames worth of slow mo
-
-                //decrease slow mo gauge here!!! -= Time.deltaTime * 5.0f
+                Scr_GameManager.instance.SlowMo += slowMoStep;
+                slowMoBar.Value -= slowMoStep * slowMoConsumptionRate;
             }
         }
     }

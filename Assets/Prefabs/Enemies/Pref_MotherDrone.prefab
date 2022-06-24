@@ -7895,6 +7895,8 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: d58adf5559799574885139d4138fce71, type: 3}
   detector: {fileID: 6830640750480737925}
   pauseDetectorForTime: 0.5
+  pickup: {fileID: 0}
+  pickupChance: 1
 --- !u!114 &-8002961572383640407
 MonoBehaviour:
   m_ObjectHideFlags: 0

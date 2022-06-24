@@ -13,6 +13,9 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
     [Space]
     public Scr_Detect detector = null;
     public float pauseDetectorForTime = 0.0f;
+    [Space]
+    public GameObject pickup;
+    public float pickupChance = 1.0f;
 
     private AudioSource audSrc;
 
@@ -46,6 +49,10 @@ public class Scr_Health : Scr_BarProperty, Scr_IDamageable
                 newDestroyEffect.GetComponent<AudioSource>().PlayOneShot(destroySFX);
             }
             Scr_EnemyManager.instance.DecrementCounter(gameObject.name);
+
+            if(pickup != null && Random.value < pickupChance)
+                Instantiate(pickup, new Vector3(transform.position.x, 1.0f, transform.position.z), Quaternion.identity);
+
             Destroy(gameObject);
         }
         else if(audSrc != null && damageSFX.Length > 0)

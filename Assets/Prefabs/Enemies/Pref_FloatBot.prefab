@@ -5763,6 +5763,8 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
   detector: {fileID: 1791848710184502983}
   pauseDetectorForTime: 2.5
+  pickup: {fileID: 1615469144459673311, guid: aa00e78cfe4422e429f9a623612fc2ef, type: 3}
+  pickupChance: 1
 --- !u!54 &6137861215413959236
 Rigidbody:
   m_ObjectHideFlags: 0

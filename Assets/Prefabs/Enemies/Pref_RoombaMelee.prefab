@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 12
+  moveSpeed: 24
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   lightGroup: {fileID: 6817492918790355335}
   lightColor: {r: 16, g: 0, b: 0, a: 1}
   lightBlinkDelay: 1
-  radius: 26
+  radius: 25
   rotationRate: 150
   reflectionDeviation: 0.5
   targetPositionDistance: 12
@@ -285,6 +285,8 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
   detector: {fileID: 0}
   pauseDetectorForTime: 0
+  pickup: {fileID: 1615469144459673311, guid: aa00e78cfe4422e429f9a623612fc2ef, type: 3}
+  pickupChance: 0.1
 --- !u!114 &806536276277482983
 MonoBehaviour:
   m_ObjectHideFlags: 0

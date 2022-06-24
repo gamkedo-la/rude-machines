@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: -3814803591366900359}
   - component: {fileID: -2761962575328702908}
   - component: {fileID: 350125993}
+  - component: {fileID: 2621562848235329714}
   - component: {fileID: 350125995}
   - component: {fileID: -7039499672844243103}
   m_Layer: 6
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 12
+  moveSpeed: 24
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
@@ -188,7 +189,7 @@ MonoBehaviour:
   lightGroup: {fileID: 1656306798548952930}
   lightColor: {r: 64, g: 0, b: 0, a: 1}
   lightBlinkDelay: 1
-  radius: 26
+  radius: 25
   rotationRate: 150
   reflectionDeviation: 0.5
   targetPositionDistance: 12
@@ -207,7 +208,7 @@ MonoBehaviour:
   targetTag: Platform
   delay: 1
   detectedTarget: {fileID: 0}
-  radius: 4
+  radius: 2
 --- !u!114 &2243597992782551824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +290,8 @@ MonoBehaviour:
   destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
   detector: {fileID: 0}
   pauseDetectorForTime: 0
+  pickup: {fileID: 1615469144459673311, guid: aa00e78cfe4422e429f9a623612fc2ef, type: 3}
+  pickupChance: 0.2
 --- !u!114 &-2761962575328702908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +320,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5, z: 2}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &2621562848235329714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764509448460408143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 0.75, z: 0.5}
+  m_Center: {x: 0, y: 0.875, z: 0.5}
 --- !u!54 &350125995
 Rigidbody:
   m_ObjectHideFlags: 0
