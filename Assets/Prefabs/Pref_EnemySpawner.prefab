@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3153786141409515440
 Transform:
   m_ObjectHideFlags: 0
@@ -307,57 +307,133 @@ MonoBehaviour:
     counter: 0
   currentWave: 0
   waves:
-  - name: The Beginning
-    untilSurviveTime: 30
+  - name: First Steps
+    untilSurviveTime: 60
     waller:
       chance: 0
       minDistance: 0
       maxDistance: 0
     limits:
-    - name: RoombaExplode
-      amount: 4
     - name: RoombaMelee
-      amount: 8
-    - name: Drone
-      amount: 1
+      amount: 4
+    - name: Blue
+      amount: 2
     commands:
-    - checkAfterTime: 4
+    - checkAfterTime: 10
       checkForAmount: -1
       keys:
       - name: RoombaMelee
-        transforms: AG
+        transforms: AGDJ
       timer: 0
-    - checkAfterTime: 8
+    - checkAfterTime: 20
       checkForAmount: -1
       keys:
-      - name: RoombaMelee
-        transforms: DJ
-      timer: 0
-    - checkAfterTime: 16
-      checkForAmount: -1
-      keys:
-      - name: Drone
+      - name: Blue
         transforms: R
       timer: 0
-    - checkAfterTime: 12
+  - name: Corner Cutting
+    untilSurviveTime: 180
+    waller:
+      chance: 0.0002
+      minDistance: 16
+      maxDistance: 24
+    limits:
+    - name: Blue
+      amount: 2
+    - name: RoombaMelee
+      amount: 4
+    - name: RoombaExplode
+      amount: 1
+    commands:
+    - checkAfterTime: 10
+      checkForAmount: -1
+      keys:
+      - name: RoombaMelee
+        transforms: AGDJ
+      timer: 0
+    - checkAfterTime: 15
       checkForAmount: -1
       keys:
       - name: RoombaExplode
-        transforms: AGDJ
+        transforms: P
+      timer: 0
+    - checkAfterTime: 20
+      checkForAmount: -1
+      keys:
+      - name: Blue
+        transforms: PR
+      timer: 0
+  - name: Sudden Impulsion
+    untilSurviveTime: 270
+    waller:
+      chance: 0.0002
+      minDistance: 16
+      maxDistance: 20
+    limits:
+    - name: Drone
+      amount: 2
+    - name: RoombaExplode
+      amount: 8
+    commands:
+    - checkAfterTime: 10
+      checkForAmount: -1
+      keys:
+      - name: RoombaExplode
+        transforms: ADGJ
+      timer: 0
+    - checkAfterTime: 15
+      checkForAmount: -1
+      keys:
+      - name: Drone
+        transforms: P
+      timer: 0
+  - name: Heavy Gunners on the Way!
+    untilSurviveTime: 400
+    waller:
+      chance: 0.0004
+      minDistance: 15
+      maxDistance: 18
+    limits:
+    - name: Float
+      amount: 1
+    - name: Blue
+      amount: 3
+    - name: RoombaMelee
+      amount: 8
+    commands:
+    - checkAfterTime: 20
+      checkForAmount: -1
+      keys:
+      - name: Float
+        transforms: P
+      timer: 0
+    - checkAfterTime: 10
+      checkForAmount: -1
+      keys:
+      - name: Blue
+        transforms: RR
+      timer: 0
+    - checkAfterTime: 5
+      checkForAmount: -1
+      keys:
+      - name: RoombaMelee
+        transforms: ADGJ
       timer: 0
   - name: The Mother
-    untilSurviveTime: 120
+    untilSurviveTime: 600
     waller:
-      chance: 0.0005
-      minDistance: 12
-      maxDistance: 24
+      chance: 0.0008
+      minDistance: 14
+      maxDistance: 16
     limits:
     - name: Mother
       amount: 1
     - name: Drone
       amount: 8
-    - name: RoombaExplode
-      amount: 6
+    - name: Blue
+      amount: 2
+    - name: RoombaMelee
+      amount: 8
     commands:
     - checkAfterTime: 5
       checkForAmount: -1
@@ -371,11 +447,17 @@ MonoBehaviour:
       - name: Drone
         transforms: ADGJ
       timer: 0
-    - checkAfterTime: 5
+    - checkAfterTime: 15
       checkForAmount: -1
       keys:
-      - name: RoombaExplode
+      - name: Blue
         transforms: P
+      timer: 0
+    - checkAfterTime: 15
+      checkForAmount: -1
+      keys:
+      - name: RoombaMelee
+        transforms: BEFK
       timer: 0
   - name: Infinita!
     untilSurviveTime: 9999999

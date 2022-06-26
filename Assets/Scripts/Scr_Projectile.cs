@@ -58,6 +58,7 @@ public class Scr_Projectile : MonoBehaviour
                 }
                 damageable.Damage(dmg, self);
             }
+
             Destroy(gameObject);
         }
     }

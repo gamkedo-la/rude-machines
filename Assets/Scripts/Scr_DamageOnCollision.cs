@@ -40,6 +40,9 @@ public class Scr_DamageOnCollision : MonoBehaviour
 
                 if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, ownerObject);
 
+                Scr_CollisionDetectionForPattern collisionDetectionForPattern = coll.gameObject.GetComponent<Scr_CollisionDetectionForPattern>();
+                if (collisionDetectionForPattern != null) collisionDetectionForPattern.collided = true;
+
                 timer = delay;
             }
         }
@@ -56,6 +59,9 @@ public class Scr_DamageOnCollision : MonoBehaviour
                 if (damageable == null && coll.transform.parent != null && coll.transform.parent.parent != null) damageable = coll.transform.parent.GetComponentInParent<Scr_IDamageable>();
 
                 if (damageable != null) damageable.Damage(damageRate * Time.deltaTime, ownerObject);
+
+                Scr_CollisionDetectionForPattern collisionDetectionForPattern = coll.GetComponent<Scr_CollisionDetectionForPattern>();
+                if (collisionDetectionForPattern != null) collisionDetectionForPattern.collided = true;
 
                 timer = delay;
             }

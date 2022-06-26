@@ -5387,7 +5387,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 72}
+  m_SizeDelta: {x: 1600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816107781
 MonoBehaviour:
@@ -6150,7 +6150,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23354
+  m_Name: pb_Mesh47726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6485,125 +6485,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].waller.chance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].limits.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].waller.maxDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].waller.minDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].limits.Array.data[2].name
-      value: Float
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].limits.Array.data[3].name
-      value: Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].limits.Array.data[3].amount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[4].checkAfterTime
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[4].checkForAmount
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[5].checkAfterTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[5].checkForAmount
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[4].keys.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[5].keys.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[0].keys.Array.data[0].name
-      value: Float
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[1].keys.Array.data[0].name
-      value: Float
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[2].keys.Array.data[0].name
-      value: Float
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[3].keys.Array.data[0].name
-      value: RoombaExplode
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[4].keys.Array.data[0].name
-      value: Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[5].keys.Array.data[0].name
-      value: RoombaMelee
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[4].keys.Array.data[0].transforms
-      value: R
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[5].keys.Array.data[0].transforms
-      value: R
-      objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515443, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
       propertyPath: m_Name
       value: Pref_EnemySpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515443, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72a9bc7ed523f44997c6296e5e3bf09, type: 3}
