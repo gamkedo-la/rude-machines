@@ -12,6 +12,9 @@ public class Scr_PlayerHealth : Scr_Health
     [Space]
     public Camera cam;
     public float damageFOV = 24.0f;
+    [Space]
+    public GameObject directionalDamageIndicator;
+    public GameObject directionalDamageIndicatorGroup;
 
     private AudioSource audSrc;
     private float defaultFOV = 72.0f;
@@ -42,7 +45,16 @@ public class Scr_PlayerHealth : Scr_Health
 
         cam.fieldOfView = damageFOV;
 
-        if(Value <= 0.0f)
+        if (instigator != null)
+        {
+            float angle = Vector2.Angle(new Vector2(instigator.transform.position.x, instigator.transform.position.z), new Vector2(transform.position.x, transform.position.z));
+            GameObject newDirectionalDamageIndicator = Instantiate(directionalDamageIndicator, Vector3.zero, Quaternion.identity);
+            newDirectionalDamageIndicator.transform.parent = directionalDamageIndicatorGroup.transform;
+            newDirectionalDamageIndicator.transform.localPosition = Vector3.zero;
+            newDirectionalDamageIndicator.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, angle);
+        }
+
+        if (Value <= 0.0f)
         {
             if(destroyEffect != null)
             {

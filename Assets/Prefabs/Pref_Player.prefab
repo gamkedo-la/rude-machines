@@ -5682,6 +5682,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2817777082720845396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5632588745962562017}
+  m_Layer: 8
+  m_Name: DirectionalDamageIndicators
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5632588745962562017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817777082720845396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6296733787573860159}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3322070975413030298
 GameObject:
   m_ObjectHideFlags: 0
@@ -11486,6 +11517,7 @@ Transform:
   - {fileID: 6296733788935230932}
   - {fileID: 6296733787326221049}
   - {fileID: 3833986872155265871}
+  - {fileID: 5632588745962562017}
   m_Father: {fileID: 6296733788711162110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12319,7 +12351,6 @@ MonoBehaviour:
   jumpUpAcceleration: 2.5
   jumpUpThrust: 0
   jumpDownForce: 40
-  strafePoint: {fileID: 0}
   footstepsAudSrc: {fileID: 158312008965418991}
   slowMoBar: {fileID: 4421362080695758537}
   slowMoConsumptionRate: 0.125
@@ -12574,6 +12605,9 @@ MonoBehaviour:
   maxCircleRadius: 0.3
   cam: {fileID: 6296733787573860156}
   damageFOV: 50
+  directionalDamageIndicator: {fileID: 6199475543556615414, guid: cf0416d5dd8585c4ebfb901239a65e0d,
+    type: 3}
+  directionalDamageIndicatorGroup: {fileID: 2817777082720845396}
 --- !u!114 &7724956029659713831
 MonoBehaviour:
   m_ObjectHideFlags: 0

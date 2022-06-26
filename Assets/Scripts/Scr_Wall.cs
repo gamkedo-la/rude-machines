@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Scr_Wall : MonoBehaviour
 {
+    public float startingTimer = 0.0f;
+    [Space]
     public float waitTimer = 1.0f;
     public float delay = 1.0f;
     [Space]
@@ -14,12 +16,17 @@ public class Scr_Wall : MonoBehaviour
     private Collider coll = null;
     private float timer = 0.0f;
 
+    private float startTimer = 0.0f;
+    private float startDelay = 0.5f;
+
     void Awake()
     {
         basePosition = transform.localPosition;
         Vector3 position = transform.localPosition;
         position.y = -1.0f;
         transform.localPosition = position;
+
+        startTimer = startDelay;
     }
 
     void Start()
@@ -32,7 +39,21 @@ public class Scr_Wall : MonoBehaviour
 
     void Update()
     {
-        if(waitTimer <= 0.0f)
+        if (startingTimer > 0.0f)
+        {
+            startingTimer -= Time.deltaTime;
+            return;
+        }
+
+        if(startTimer > 0.0f)
+        {
+            Vector3 position = transform.localPosition;
+            position.y = basePosition.y + (upCurve.Evaluate(1.0f - (startTimer / startDelay)) * (upCurveIntensity / 4.0f));
+            transform.localPosition = position;
+
+            startTimer -= Time.deltaTime;
+        }
+        else if(waitTimer <= 0.0f)
         {
             coll.enabled = true;
 

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 1
-  moveSpeed: 24
+  moveSpeed: 16
   fixYPosition: 1
   yPositionLimit: 0
   rotation: 0
