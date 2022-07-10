@@ -22624,7 +22624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  damageRate: 0.25
+  damageRate: 5
   delay: 0.1
 --- !u!82 &2294360907930055218
 AudioSource:

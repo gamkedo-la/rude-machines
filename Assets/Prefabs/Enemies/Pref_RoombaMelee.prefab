@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  damageRate: 2
+  damageRate: 10
   delay: 0.1
 --- !u!65 &402921363
 BoxCollider:

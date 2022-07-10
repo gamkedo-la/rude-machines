@@ -14,7 +14,8 @@ public class Scr_HandController : MonoBehaviour
     public GameObject[] muzzleParticle;
     [Space]
     public Transform[] rotationPoints; //0-base, 1-up, 2-down, 3-left, 4-right
-    public GameObject projectile;
+    public GameObject singleProjectile;
+    public GameObject burstProjectile;
     
     private Scr_PlayerController playerController;
     private Scr_Power power;
@@ -87,7 +88,7 @@ public class Scr_HandController : MonoBehaviour
 
             Vector3 rot = muzzle[currentAttackingHand].rotation.eulerAngles;
             float spreadAngle = fireSpreadAngle * (1.0f - power.Value);
-            GameObject newProjectile = Instantiate(projectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+            GameObject newProjectile = Instantiate(singleProjectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
             newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
             newProjectile.GetComponent<AudioSource>().pitch = Random.Range(1.6f, 1.8f);
 
@@ -120,7 +121,7 @@ public class Scr_HandController : MonoBehaviour
 
                     Vector3 rot = muzzle[currentAttackingHand].rotation.eulerAngles;
                     float spreadAngle = burstSpreadAngle * (1.0f - power.Value);
-                    GameObject newProjectile = Instantiate(projectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
+                    GameObject newProjectile = Instantiate(burstProjectile, muzzle[currentAttackingHand].position, Quaternion.Euler(rot.x + Random.Range(-spreadAngle, spreadAngle), rot.y + Random.Range(-spreadAngle, spreadAngle), rot.z));
                     newProjectile.GetComponent<Scr_Projectile>().SetGameobject(gameObject);
 
                     hand[currentAttackingHand].position -= hand[currentAttackingHand].forward * recoilFactor;

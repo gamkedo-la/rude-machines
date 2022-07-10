@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4953,10 +4953,10 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.125
+  m_Time: 0.08
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.15
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -5036,7 +5036,7 @@ GameObject:
   - component: {fileID: -6236945887170894861}
   - component: {fileID: 650225402591472774}
   m_Layer: 0
-  m_Name: Pref_PlayerProjectile
+  m_Name: Pref_PlayerSingleProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5051,7 +5051,7 @@ Transform:
   m_GameObject: {fileID: 8774191537290426389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.913, y: 2, z: 1.816}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7132503371451705010}
@@ -5120,7 +5120,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8774191537290426384
 Rigidbody:
@@ -5163,8 +5163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de18e22081aa45346b49a582b95b7511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageValue: 0.1
-  force: 50
+  damageValue: 0.125
+  force: 120
   damageSphere: {fileID: 2012574628281786327, guid: 35366de28428c7c41860981508ef9e20,
     type: 3}
 --- !u!82 &650225402591472774
