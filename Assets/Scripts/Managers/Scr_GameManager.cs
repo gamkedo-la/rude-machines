@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Scr_GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Scr_GameManager : MonoBehaviour
     [SerializeField] private float endTime = 3.0f;
     [SerializeField] private GameObject gameplayCanvas;
     [SerializeField] private GameObject gameoverCanvas;
+
+    public AudioMixer masterMixer;
 
     [HideInInspector] public float surviveTime = 0.0f;
     [HideInInspector] public float waveDisplayTimer = 3.0f;
@@ -83,6 +86,8 @@ public class Scr_GameManager : MonoBehaviour
             Time.timeScale = 1.0f;
             slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0.0f, Time.unscaledDeltaTime * 8.0f);
         }
+
+        masterMixer.SetFloat("pitch", Mathf.Clamp(Time.timeScale, 0.25f, 1.0f));
 
         if (preStuckTime <= 0.0f)
         {

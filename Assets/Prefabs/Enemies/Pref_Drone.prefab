@@ -22624,7 +22624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  damageRate: 5
+  damageRate: 8
   delay: 0.1
 --- !u!82 &2294360907930055218
 AudioSource:
@@ -22635,7 +22635,8 @@ AudioSource:
   m_GameObject: {fileID: 8695066661870838363}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 827c8cdebc14d4540a51bfb310d1ece8,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b44bc55bb3ae1c041b5fbd88c7c34d22, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75

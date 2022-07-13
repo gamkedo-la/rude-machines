@@ -1133,6 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a297b825f2adb0143adb7a62e675a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingTimer: 0
   waitTimer: 1
   delay: 0.5
   upCurve:
@@ -1182,5 +1183,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  damageRate: 1.5
-  delay: 0
+  damageRate: 40
+  delay: 0.1

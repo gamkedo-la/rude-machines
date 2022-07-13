@@ -19,7 +19,7 @@ public class Scr_Follow : MonoBehaviour
         else
         {
             transform.position = Vector3.Lerp(transform.position, target.position + offset + (target.forward * forwardOffset), 12.0f * Time.deltaTime);
-            
+
             Vector3 rotation = transform.rotation.eulerAngles;
             rotation.y = target.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Euler(rotation);

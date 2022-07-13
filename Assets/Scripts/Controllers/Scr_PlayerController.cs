@@ -14,6 +14,7 @@ public class Scr_PlayerController : MonoBehaviour
     public float jumpUpThrust = 600.0f;
     public float jumpDownForce = 10.0f;
     [Space]
+    public AudioClip jumpClip;
     public AudioSource footstepsAudSrc;
     [Space]
     [SerializeField] private Scr_BarProperty slowMoBar;
@@ -120,6 +121,7 @@ public class Scr_PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpStartVelocity);
             jumpAcceleration = jumpUpAcceleration;
             rb.AddForce(transform.up * jumpUpThrust, ForceMode.Impulse);
+            footstepsAudSrc.PlayOneShot(jumpClip);
         }
     }
 
