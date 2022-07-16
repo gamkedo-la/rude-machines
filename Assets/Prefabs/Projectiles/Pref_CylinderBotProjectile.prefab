@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de18e22081aa45346b49a582b95b7511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageValue: 0.2
+  damageValue: 0.5
   force: 25
   damageSphere: {fileID: 2012574628281786327, guid: 35366de28428c7c41860981508ef9e20,
     type: 3}

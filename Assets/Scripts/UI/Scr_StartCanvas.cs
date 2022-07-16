@@ -13,6 +13,12 @@ public class Scr_StartCanvas : MonoBehaviour
     [SerializeField] private Image fader;
     [Space]
     public GameObject startQuad;
+    [Space]
+    public Camera cam;
+    public LayerMask normalLayers;
+    public LayerMask lowResLayers;
+    public GameObject[] lowResObjects;
+    public TextMeshProUGUI styleText;
 
     [ContextMenu("Reset Best Time")]
     public void ResetBestTime()
@@ -62,6 +68,18 @@ public class Scr_StartCanvas : MonoBehaviour
 
     public void Settings()
     {
+        if (!lowResObjects[0].activeSelf)
+        {
+            for (int i = 0; i < lowResObjects.Length; i++)
+                lowResObjects[i].SetActive(true);
+        }
+        else
+        {
+            for (int i = 0; i < lowResObjects.Length; i++)
+                lowResObjects[i].SetActive(false);
+        }
 
+        cam.cullingMask = !lowResObjects[0].activeSelf ? normalLayers : lowResLayers;
+        styleText.text = !lowResObjects[0].activeSelf ? "Style: Normal" : "Style: Low Res.";
     }
 }
