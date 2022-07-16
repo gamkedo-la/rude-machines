@@ -305,6 +305,11 @@ MonoBehaviour:
       type: 3}
     offset: {x: 0, y: 8, z: 0}
     counter: 0
+  - name: Cylinder
+    prefab: {fileID: 1802219053403979272, guid: 0852e7c54510ab64bbe59a755ba0d858,
+      type: 3}
+    offset: {x: 0, y: 0, z: 0}
+    counter: 0
   currentWave: 0
   waves:
   - name: First Steps
@@ -314,7 +319,7 @@ MonoBehaviour:
       minDistance: 0
       maxDistance: 0
     limits:
-    - name: RoombaMelee
+    - name: Cylinder
       amount: 4
     - name: Blue
       amount: 2

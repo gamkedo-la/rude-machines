@@ -5184,7 +5184,7 @@ MonoBehaviour:
   lightGroup: {fileID: 5182195168455080472}
   lightColor: {r: 1024, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
-  projectile: {fileID: 8774191537290426389, guid: 25ae775f2f06f434fb41456a3f7cea0f,
+  projectile: {fileID: 8774191537290426389, guid: 48d64a082c76e9943a87cc64c83f9403,
     type: 3}
   muzzle:
   - {fileID: 3455993774268461621}
