@@ -64,7 +64,10 @@ public class Scr_GameManager : MonoBehaviour
     {
         if(player == null)
         {
-            if(endTime <= 0.0f)
+            Time.timeScale = 1.0f;
+            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0.0f, Time.unscaledDeltaTime * 8.0f);
+
+            if (endTime <= 0.0f)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }

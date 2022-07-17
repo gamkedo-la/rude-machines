@@ -12,6 +12,8 @@ public class Scr_StartCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestText;
     [SerializeField] private Image fader;
     [Space]
+    public AudioClip clip;
+    [Space]
     public GameObject startQuad;
     [Space]
     public Camera cam;
@@ -81,5 +83,12 @@ public class Scr_StartCanvas : MonoBehaviour
 
         cam.cullingMask = !lowResObjects[0].activeSelf ? normalLayers : lowResLayers;
         styleText.text = !lowResObjects[0].activeSelf ? "Style: Normal" : "Style: Low Res.";
+
+        PlaySound();
+    }
+
+    public void PlaySound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
 }

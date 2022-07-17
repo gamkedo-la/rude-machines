@@ -288,7 +288,7 @@ MonoBehaviour:
   destroyEffect: {fileID: 4762524228075579770, guid: 52587e90229f41d408fa9627580c50f9,
     type: 3}
   destroyEffectScale: {x: 1, y: 1, z: 1}
-  destroySFX: {fileID: 8300000, guid: 0c7de5eaee1d0c84897e373c8baffad2, type: 3}
+  destroySFX: {fileID: 8300000, guid: e0c90fabe1c1b614ab334aedd5153026, type: 3}
   detector: {fileID: 0}
   pauseDetectorForTime: 0
   pickup: {fileID: 1615469144459673311, guid: aa00e78cfe4422e429f9a623612fc2ef, type: 3}
@@ -361,20 +361,20 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 827c8cdebc14d4540a51bfb310d1ece8,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b072af7dafafc2f488626d9e1f1c70b7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Pitch: 2
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  Priority: 80
+  DopplerLevel: 4
+  MinDistance: 5
+  MaxDistance: 15
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -407,7 +407,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

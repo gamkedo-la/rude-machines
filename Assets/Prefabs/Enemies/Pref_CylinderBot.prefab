@@ -5004,7 +5004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107155128159226768}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0.5}
+  m_LocalPosition: {x: -0.08, y: 2.7, z: 0.3}
   m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5288,7 +5288,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
-  damageFactor: 0.2
+  damageFactor: 0.25
   damageEffect: {fileID: 5376202347805706626}
   damageSFX:
   - {fileID: 8300000, guid: 7c5b15a264be00249a3baac8d44bdaa8, type: 3}

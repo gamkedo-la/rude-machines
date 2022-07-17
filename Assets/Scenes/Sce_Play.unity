@@ -959,6 +959,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 554789699}
+        m_TargetAssemblyTypeName: Scr_StartCanvas, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &137820441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,6 +2268,7 @@ MonoBehaviour:
   gameManager: {fileID: 1122525571}
   bestText: {fileID: 926263422}
   fader: {fileID: 245231241}
+  clip: {fileID: 8300000, guid: 823eb5dd4de87454ebca3c32805eb8cd, type: 3}
   startQuad: {fileID: 32164723}
   cam: {fileID: 1156733798}
   normalLayers:
@@ -4152,6 +4165,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 554789699}
+        m_TargetAssemblyTypeName: Scr_StartCanvas, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6422,7 +6447,7 @@ MonoBehaviour:
     Zhang, Rodrigo Bonzerr Lopez, Tyler Funk, Patrick McKeown\n\nGame Developed by
     members in HomeTeam GameDev Outpost"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 107aeff3be3e9fb43b4cc567719861b6, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6486,7 +6511,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 115.69095}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1834928996
@@ -7127,7 +7152,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25552
+  m_Name: pb_Mesh23426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7462,15 +7487,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3153786141409515441, guid: d72a9bc7ed523f44997c6296e5e3bf09,
-        type: 3}
-      propertyPath: waves.Array.data[0].commands.Array.data[0].keys.Array.data[0].name
-      value: Cylinder
-      objectReference: {fileID: 0}
     - target: {fileID: 3153786141409515443, guid: d72a9bc7ed523f44997c6296e5e3bf09,
         type: 3}
       propertyPath: m_Name
       value: Pref_EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153786141409515443, guid: d72a9bc7ed523f44997c6296e5e3bf09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72a9bc7ed523f44997c6296e5e3bf09, type: 3}

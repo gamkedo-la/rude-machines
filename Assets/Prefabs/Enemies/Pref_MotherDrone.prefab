@@ -7788,7 +7788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preStateMinDelay: 0
   preStateMaxDelay: 0
-  startSound: {fileID: 8300000, guid: dd2d3fb30d74b1149ab8fd9e79272404, type: 3}
+  startSound: {fileID: 8300000, guid: 90f99561266540949b4f95033e315aee, type: 3}
   lightGroup: {fileID: 4871524613550597891}
   lightColor: {r: 32, g: 0, b: 0, a: 1}
   lightBlinkDelay: 0.05
@@ -7884,7 +7884,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   barMinScale: {x: 0, y: 0, z: 0}
   barMaxScale: {x: 1, y: 1, z: 1}
-  damageFactor: 0.04
+  damageFactor: 0.05
   damageEffect: {fileID: 5041326056780481650}
   damageSFX:
   - {fileID: 8300000, guid: 69a5784b11ee6084ab4d0946c8ae2f25, type: 3}
@@ -7955,7 +7955,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 73d16eb22a1633c48b4cefe708880fda, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
-  m_Pitch: 0.5
+  m_Pitch: 0.6
   Loop: 1
   Mute: 0
   Spatialize: 0
