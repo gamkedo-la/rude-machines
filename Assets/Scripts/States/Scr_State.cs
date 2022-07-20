@@ -21,6 +21,8 @@ public class Scr_State : MonoBehaviour
     private bool lightAlternate = false;
     protected Scr_Detect detector = null;
 
+    public static bool block = false;
+
     public void SetDetector(Scr_Detect newDetector)
     {
         detector = newDetector;
@@ -46,6 +48,8 @@ public class Scr_State : MonoBehaviour
 
     void Update()
     {
+        if (block) return;
+
         if(preStateTimer <= 0.0f) StateActivity();
         else preStateTimer -= Time.deltaTime;
 

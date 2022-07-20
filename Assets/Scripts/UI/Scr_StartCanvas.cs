@@ -6,6 +6,7 @@ using TMPro;
 
 public class Scr_StartCanvas : MonoBehaviour
 {
+    [SerializeField] private GameObject startCanvas;
     [SerializeField] private GameObject gameplayCanvas;
     [Space]
     [SerializeField] private Scr_GameManager gameManager;
@@ -20,7 +21,8 @@ public class Scr_StartCanvas : MonoBehaviour
     public LayerMask normalLayers;
     public LayerMask lowResLayers;
     public GameObject[] lowResObjects;
-    public TextMeshProUGUI styleText;
+    [Space]
+    public GameObject crosshair;
 
     [ContextMenu("Reset Best Time")]
     public void ResetBestTime()
@@ -28,10 +30,22 @@ public class Scr_StartCanvas : MonoBehaviour
         PlayerPrefs.SetFloat("bestTime", 0.0f);
     }
 
+    public void Quit()
+    {
+        if (!Application.isEditor)
+            Application.Quit();
+
+        Debug.Log("Quit");
+    }
+
     void Start()
     {
-        UnityEngine.Cursor.visible = true;
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        gameManager.pausedCanvas.GetComponent<Scr_SettingsCanvas>().InitializeSettings();
+        Time.timeScale = 1.0f;
+        Scr_State.block = false;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         gameplayCanvas.SetActive(false);
 
@@ -49,12 +63,14 @@ public class Scr_StartCanvas : MonoBehaviour
             if(startQuad.transform.position.y >= 3.8f)
             {
                 startQuad.SetActive(false);
-                gameObject.SetActive(false);
+                startCanvas.SetActive(false);
 
-                for(int i = 0; i < transform.childCount; i++)
-                    transform.GetChild(i).gameObject.SetActive(true);
+                for(int i = 0; i < startCanvas.transform.childCount; i++)
+                    startCanvas.transform.GetChild(i).gameObject.SetActive(true);
 
                 gameplayCanvas.SetActive(true);
+
+                enabled = false;
             }
         }
     }
@@ -64,27 +80,44 @@ public class Scr_StartCanvas : MonoBehaviour
         gameManager.enabled = true;
         GetComponent<AudioSource>().Play();
 
-        for(int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).gameObject.SetActive(false);
+        for(int i = 0; i < startCanvas.transform.childCount; i++)
+            startCanvas.transform.GetChild(i).gameObject.SetActive(false);
     }
 
-    public void Settings()
+    public void ChangeStyle(GameObject valueTextObject)
     {
         if (!lowResObjects[0].activeSelf)
         {
             for (int i = 0; i < lowResObjects.Length; i++)
                 lowResObjects[i].SetActive(true);
+            cam.cullingMask = lowResLayers;
+            valueTextObject.GetComponent<TextMeshProUGUI>().text = "Low Res.";
+            PlayerPrefs.SetInt("style", 1);
         }
         else
         {
             for (int i = 0; i < lowResObjects.Length; i++)
                 lowResObjects[i].SetActive(false);
+            cam.cullingMask = normalLayers;
+            valueTextObject.GetComponent<TextMeshProUGUI>().text = "Standard";
+            PlayerPrefs.SetInt("style", 0);
         }
+    }
 
-        cam.cullingMask = !lowResObjects[0].activeSelf ? normalLayers : lowResLayers;
-        styleText.text = !lowResObjects[0].activeSelf ? "Style: Normal" : "Style: Low Res.";
-
-        PlaySound();
+    public void ToggleCrosshair(GameObject valueTextObject)
+    {
+        if(crosshair.activeSelf)
+        {
+            crosshair.SetActive(false);
+            valueTextObject.GetComponent<TextMeshProUGUI>().text = "Disabled";
+            PlayerPrefs.SetInt("crosshair", 0);
+        }
+        else
+        {
+            crosshair.SetActive(true);
+            valueTextObject.GetComponent<TextMeshProUGUI>().text = "Enabled";
+            PlayerPrefs.SetInt("crosshair", 1);
+        }
     }
 
     public void PlaySound()

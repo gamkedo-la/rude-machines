@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Scr_GameManager : MonoBehaviour
 {
@@ -14,10 +17,16 @@ public class Scr_GameManager : MonoBehaviour
     [SerializeField] private Volume slowMoVolume;
     [SerializeField] private float slowMoTimeScale = 0.2f;
     [Space]
-    [SerializeField] private float endTime = 3.0f;
     [SerializeField] private GameObject gameplayCanvas;
     [SerializeField] private GameObject gameoverCanvas;
-
+    [Space]
+    [SerializeField] private Light[] lightsAffectedByBrightness;
+    [SerializeField] private Volume globalVolume;
+    [Space]
+    public GameObject pausedCanvas;
+    public GameObject pauseDeactivate;
+    public GameObject pauseActivate;
+    [Space]
     public AudioMixer masterMixer;
 
     [HideInInspector] public float surviveTime = 0.0f;
@@ -29,6 +38,68 @@ public class Scr_GameManager : MonoBehaviour
     public float SlowMo { get { return slowMoTime; } set { slowMoTime = value; } }
 
     public static Scr_GameManager instance = null;
+
+    public void ChangeBrightness(float value)
+    {
+        for(int i = 0; i < lightsAffectedByBrightness.Length; i++)
+        {
+            lightsAffectedByBrightness[i].intensity = value;
+        }
+        ColorAdjustments cd;
+        if (globalVolume.profile.TryGet<ColorAdjustments>(out cd))
+        {
+            cd.postExposure.value = value + 0.1f;
+        }
+        PlayerPrefs.SetFloat("brightness", value);
+    }
+
+    public void ChangeSensitivity(float value)
+    {
+        if(player) player.GetComponent<Scr_PlayerController>().rotationFactor = value;
+        PlayerPrefs.SetFloat("sensitivity", value);
+    }
+
+    public void ChangeVolume(float value)
+    {
+        masterMixer.SetFloat("volume", value);
+        PlayerPrefs.SetFloat("volume", value);
+    }
+
+    public void TogglePause(InputAction.CallbackContext context)
+    {
+        if(context.started) _TogglePause();
+    }
+
+    public void _TogglePause()
+    {
+        if (!pausedCanvas.activeSelf)
+        {
+            pausedCanvas.SetActive(true);
+            pauseActivate.SetActive(true);
+            pauseDeactivate.SetActive(false);
+            Time.timeScale = 0.0f;
+            Scr_State.block = true;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            pausedCanvas.SetActive(false);
+            pauseActivate.SetActive(false);
+            pauseDeactivate.SetActive(true);
+            Time.timeScale = 1.0f;
+            Scr_State.block = false;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void Die()
     {
@@ -62,19 +133,12 @@ public class Scr_GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Scr_State.block) return;
+
         if(player == null)
         {
             Time.timeScale = 1.0f;
             slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0.0f, Time.unscaledDeltaTime * 8.0f);
-
-            if (endTime <= 0.0f)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            else
-            {
-                endTime -= Time.deltaTime;
-            }
             return;
         }
 

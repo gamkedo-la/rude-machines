@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scr_GameoverCanvas : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI gameoverText;
     [SerializeField] private TextMeshProUGUI bestText;
-    [SerializeField] private float faderDelay = 2.0f;
     [SerializeField] private Image fader;
+    public bool back = false;
+
+    public void Back() { back = true; }
 
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         string newBestStr = (Scr_GameManager.instance.surviveTime >= PlayerPrefs.GetFloat("bestTime") ? "NEW! " : "");
         gameoverText.text = "GAMEOVER!\n" + newBestStr + ((float)Mathf.FloorToInt(Scr_GameManager.instance.surviveTime * 10.0f) / 10.0f).ToString() + "s";
 
@@ -21,9 +27,12 @@ public class Scr_GameoverCanvas : MonoBehaviour
 
     void Update()
     {
-        if(faderDelay <= 0.0f)
-            fader.color = Color.Lerp(fader.color, Color.black, 8.0f * Time.deltaTime);
-        else
-            faderDelay -= Time.deltaTime;
+        if (back)
+        {
+            fader.color = Color.Lerp(fader.color, Color.black, 12.0f * Time.deltaTime);
+
+            if(fader.color == Color.black)
+                SceneManager.LoadScene(0);
+        }
     }
 }

@@ -43,7 +43,7 @@ public class Scr_HandController : MonoBehaviour
 
     void Update()
     {
-        if(Time.timeScale <= 0.0f) return;
+        if(Time.timeScale <= 0.0f || Scr_State.block) return;
         UpdatePosition();
         UpdateRotation();
         BurstSequence();
@@ -80,7 +80,7 @@ public class Scr_HandController : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (power && power.Value > firePowerCost && !burst && context.started)
+        if (power && power.Value > firePowerCost && !burst && context.started && !Scr_State.block)
         {
             currentAttackingHand = currentAttackingHand == 0 ? 1 : 0;
 
@@ -100,7 +100,7 @@ public class Scr_HandController : MonoBehaviour
 
     public void AltFire(InputAction.CallbackContext context)
     {
-        if (power && power.Value > firePowerCost * 2.5f && context.started)
+        if (power && power.Value > firePowerCost * 2.5f && context.started && !Scr_State.block)
         {
             burst = true;
             burstTimer = 0.0f;

@@ -19,6 +19,8 @@ public class Scr_PlayerController : MonoBehaviour
     [Space]
     [SerializeField] private Scr_BarProperty slowMoBar;
     [SerializeField] private float slowMoConsumptionRate = 1.0f;
+    [Space]
+    public GameObject UI;
 
     private Rigidbody rb;
     private Camera cam;
@@ -42,6 +44,8 @@ public class Scr_PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        UI.SetActive(true);
     }
 
     void FirstPersonMovement(ref Vector3 velocity)
@@ -79,7 +83,7 @@ public class Scr_PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(Time.timeScale <= 0.0f) return;
+        if(Time.timeScale <= 0.0f || Scr_State.block) return;
         FirstPersonRotation();
 
         if (slowMoControl)
@@ -96,7 +100,7 @@ public class Scr_PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Time.timeScale <= 0.0f) return;
+        if(Time.timeScale <= 0.0f || Scr_State.block) return;
 
         Vector3 velocity = rb.velocity;
         FirstPersonMovement(ref velocity);
