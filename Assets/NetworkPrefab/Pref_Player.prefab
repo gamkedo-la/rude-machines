@@ -11631,6 +11631,7 @@ MonoBehaviour:
   UI: {fileID: 4113026350723428520}
   move: {x: 0, y: 0}
   rotation: {x: 0, y: 0}
+  sensitivity: 7
 --- !u!114 &6436888064627260476
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ public class Scr_PlayerController : MonoBehaviour
     private float jumpAcceleration = 0.0f;
 
     private bool slowMoControl = false;
+    public float sensitivity;
 
     public void AddSlowMo(float value)
     {
@@ -61,13 +62,15 @@ public class Scr_PlayerController : MonoBehaviour
 
     void FirstPersonRotation()
     {
+        Vector2 input = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
+        input *= sensitivity;
         Vector3 rot = cam.transform.localRotation.eulerAngles;
-        rot.x += (yRotationInvert ? -1.0f : 1.0f) * rotation.y * rotationFactor;
+        rot.x += (yRotationInvert ? -1.0f : 1.0f) * input.y * rotationFactor;
         rot.y = rot.z = 0.0f;
         cam.transform.localRotation = Quaternion.Euler(rot);
 
         rot = transform.localRotation.eulerAngles;
-        rot.y += rotation.x * rotationFactor;
+        rot.y += input.x * rotationFactor;
         transform.localRotation = Quaternion.Euler(rot);
     }
 
