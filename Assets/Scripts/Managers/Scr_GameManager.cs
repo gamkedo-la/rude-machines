@@ -67,7 +67,7 @@ public class Scr_GameManager : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context)
     {
-        if(context.started) _TogglePause();
+        if(context.started && player.GetComponent<Scr_PlayerController>().enabled) _TogglePause();
     }
 
     public void _TogglePause()
