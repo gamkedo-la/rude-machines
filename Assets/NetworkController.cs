@@ -11,14 +11,14 @@ public class NetworkController : NetworkBehaviour
     public Scr_Power powerController;
     public Scr_BarProperty barcontroller;
     public PlayerInput input;
-    public GameObject cam;
+    public Camera cam;
     void Start()
     {
         playerController.enabled = isLocalPlayer;
-        handController.enabled = isLocalPlayer;
-        healthController.enabled = isLocalPlayer;
-        powerController.enabled = isLocalPlayer;
-        barcontroller.enabled = isLocalPlayer;
+      //  handController.enabled = isLocalPlayer;
+      //  healthController.enabled = isLocalPlayer;
+       // powerController.enabled = isLocalPlayer;
+       // barcontroller.enabled = isLocalPlayer;
         
         if (!isLocalPlayer)
         {
@@ -27,11 +27,29 @@ public class NetworkController : NetworkBehaviour
         }
 
     }
+    #region Shoot 
+    [Command]
+    public void CmdShoot()
+    {
+        RpcShoot();
+    }
+    [ClientRpc]
+    public void RpcShoot()
+    {
+        
+        handController.Shoot();
+    }
+    #endregion
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isLocalPlayer) return;
+        if (Input.GetMouseButton(0))
+        {
+            CmdShoot();
+        }
     }
    
 }

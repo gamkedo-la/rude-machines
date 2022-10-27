@@ -49,7 +49,8 @@ public class Scr_PlayerController : MonoBehaviour
 
     void FirstPersonMovement(ref Vector3 velocity)
     {
-        Vector3 movement = (transform.forward * move.y) + (transform.right * move.x);
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector3 movement = (transform.forward * input.y) + (transform.right * input.x);
         movement *= movementFactor;
 
         velocity.x = movement.x * (Time.timeScale < 1.0f ? 5.0f : 1.0f);

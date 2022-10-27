@@ -81,6 +81,13 @@ public class Scr_HandController : MonoBehaviour
     {
         if (power && power.Value > firePowerCost && !burst && context.started && !Scr_State.block)
         {
+            
+        }
+    }
+    public void Shoot()
+    {
+        if(power && power.Value > firePowerCost && !burst  && !Scr_State.block)
+        {
             currentAttackingHand = currentAttackingHand == 0 ? 1 : 0;
 
             muzzleParticle[currentAttackingHand].SetActive(true);
@@ -96,7 +103,6 @@ public class Scr_HandController : MonoBehaviour
             power.Value -= firePowerCost;
         }
     }
-
     public void AltFire(InputAction.CallbackContext context)
     {
         if (power && power.Value > firePowerCost * 2.5f && context.started && !Scr_State.block)
