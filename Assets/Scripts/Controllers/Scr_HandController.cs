@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class Scr_HandController : MonoBehaviour
 {
     [SerializeField] private float firePowerCost = 0.25f;

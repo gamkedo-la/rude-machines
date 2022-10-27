@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class Scr_PlayerController : MonoBehaviour
 {
     public float movementFactor = 1.0f;
@@ -71,7 +70,7 @@ public class Scr_PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rot);
     }
 
-    void JumpProcess(ref Vector3 velocity)
+    public void JumpProcess(ref Vector3 velocity)
     {
         if (jumpAcceleration > 0.0f)
         {
@@ -83,9 +82,9 @@ public class Scr_PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(Time.timeScale <= 0.0f || Scr_State.block) return;
+        if (Time.timeScale <= 0.0f || Scr_State.block) return;
         FirstPersonRotation();
-
+        print("player controller working");
         if (slowMoControl)
         {
             float slowMoStep = Time.unscaledDeltaTime * 5.0f;
@@ -100,7 +99,7 @@ public class Scr_PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Time.timeScale <= 0.0f || Scr_State.block) return;
+        if (Time.timeScale <= 0.0f || Scr_State.block) return;
 
         Vector3 velocity = rb.velocity;
         FirstPersonMovement(ref velocity);
@@ -111,6 +110,7 @@ public class Scr_PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
+        print($"move: {move}");
     }
 
     public void Look(InputAction.CallbackContext context)
