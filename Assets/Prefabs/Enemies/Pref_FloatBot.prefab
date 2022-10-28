@@ -10523,6 +10523,8 @@ GameObject:
   - component: {fileID: 3088218589905248410}
   - component: {fileID: 6137861215413959236}
   - component: {fileID: 5902042557042225122}
+  - component: {fileID: 7345028368725112850}
+  - component: {fileID: 5934958922533173800}
   m_Layer: 6
   m_Name: Pref_FloatBot
   m_TagString: Enemy
@@ -10587,11 +10589,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7091566b18a214c8c3239081adccdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   targetPosition: {x: 0, y: 0, z: 0}
   moveThreshold: 0.5
   moveSpeed: 5
   fixYPosition: 1
   yPositionLimit: 0.5
+  hasAuth: 0
   rotation: 0
   tiltRatioFactor: 0
   forwardRotationPoint: {fileID: 3713746773438684207}
@@ -10918,6 +10923,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7345028368725112850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888310524210884516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 4e6ba87fda1c5984aad5441ddc34bb39
+  hasSpawned: 0
+--- !u!114 &5934958922533173800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888310524210884516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  sendRate: 30
+  bufferTimeMultiplier: 2
+  bufferSizeLimit: 64
+  catchupNegativeThreshold: -1
+  catchupPositiveThreshold: 1
+  catchupSpeed: 0.009999999776482582
+  slowdownSpeed: 0.009999999776482582
+  driftEmaDuration: 1
+  dynamicAdjustment: 1
+  dynamicAdjustmentTolerance: 1
+  deliveryTimeEmaDuration: 2
+  onlySyncOnChange: 1
+  bufferResetMultiplier: 5
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!1 &5547399516065508891
 GameObject:
   m_ObjectHideFlags: 0

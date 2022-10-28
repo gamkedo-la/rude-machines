@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Scr_AIController : MonoBehaviour
+using Mirror;
+public class Scr_AIController : NetworkBehaviour
 {
     public Vector3 targetPosition;
     public float moveThreshold = 4.0f;
     public float moveSpeed = 10.0f;
     public bool fixYPosition = false;
     public float yPositionLimit = 0.5f;
+    public bool hasAuth;
 
     public enum RotationUpdateType
     {
@@ -43,6 +44,7 @@ public class Scr_AIController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         targetPosition = transform.position;
         fixedY = transform.position.y;
+        hasAuth = hasAuthority;
     }
 
     void UpdateDirectionalTilt(Vector3 position, Vector3 rotationOffset)
@@ -59,6 +61,7 @@ public class Scr_AIController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!hasAuth) return;
         if (Vector3.Distance(rb.position, targetPosition) > moveThreshold)
             rb.velocity = (targetPosition - rb.position) * (moveSpeed / 10.0f);
         

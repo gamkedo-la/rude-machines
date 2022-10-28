@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Scr_EnemyManager : MonoBehaviour
+using Mirror;
+public class Scr_EnemyManager : NetworkBehaviour
 {
     [System.Serializable]
     public class EnemyKey
@@ -11,6 +11,7 @@ public class Scr_EnemyManager : MonoBehaviour
         public string name;
         public GameObject prefab;
         public Vector3 offset;
+        public int index;
         
         [HideInInspector] public int counter = 0;
     }
@@ -27,6 +28,7 @@ public class Scr_EnemyManager : MonoBehaviour
     private float waveTimer = 0.0f;
 
     public static Scr_EnemyManager instance = null;
+    public GameObject tmpPlayScreen;
 
     public void DecrementCounter(string name)
     {
@@ -38,7 +40,8 @@ public class Scr_EnemyManager : MonoBehaviour
     void Start()
     {
         instance = this;
-
+        if (!isServer)
+            Destroy(tmpPlayScreen);
         player = GameObject.FindGameObjectWithTag("Player");
 
         foreach(var wave in waves)
@@ -85,7 +88,17 @@ public class Scr_EnemyManager : MonoBehaviour
 
     void Update()
     {
-        if(player == null) return;
+        if (!isServer) return;
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+
+            foreach (var wave in waves)
+                foreach (var command in wave.commands)
+                    command.timer = Random.value * command.checkAfterTime;
+            return;
+        }
+        
 
         if(Scr_GameManager.instance.surviveTime < waves[currentWave].untilSurviveTime)
         {
@@ -105,8 +118,10 @@ public class Scr_EnemyManager : MonoBehaviour
                                 if(limit == null || eKey.counter < limit.amount)
                                 {
                                     Transform t = GetTransform(key.transforms[i]);
-                                    Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation);
-                                    eKey.counter++;
+                                    NetworkController.instance.spawn(eKey.index);
+                                    //GameObject o =  Instantiate(eKey.prefab, t.position + eKey.offset, t.rotation);
+                                    //CmdSpawn(eKey.prefab,t.position,eKey.offset);
+                                     eKey.counter++;
                                 }
                             }
                         }
@@ -141,7 +156,7 @@ public class Scr_EnemyManager : MonoBehaviour
             Scr_GameManager.instance.waveDisplayTimer = 3.0f;
         }
     }
-
+    
     public string GetWaveName()
     {
         return waves[currentWave].name;

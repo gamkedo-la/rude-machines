@@ -125,9 +125,9 @@ public class Scr_GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Scr_PlayerController>().enabled = true;
-        player.GetComponent<Scr_HandController>().enabled = true;
+       // player = GameObject.FindGameObjectWithTag("Player");
+       // player.GetComponent<Scr_PlayerController>().enabled = true;
+        //player.GetComponent<Scr_HandController>().enabled = true;
         enemyManager.SetActive(true);
     }
 

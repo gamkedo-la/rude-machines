@@ -26,11 +26,11 @@ public class Scr_SettingsCanvas : MonoBehaviour
         volumeSlider.onValueChanged.Invoke(volumeSlider.value);
 
         crosshairValue.text = PlayerPrefs.GetInt("crosshair", 0) == 1 ? "Enabled" : "Disabled";
-        startCanvas.crosshair.SetActive(crosshairValue.text == "Enabled");
+       // startCanvas.crosshair.SetActive(crosshairValue.text == "Enabled");
 
         styleValue.text = PlayerPrefs.GetInt("style", 0) == 1 ? "Low Res." : "Standard";
-        for (int i = 0; i < startCanvas.lowResObjects.Length; i++)
-            startCanvas.lowResObjects[i].SetActive(styleValue.text == "Low Res.");
-        startCanvas.cam.cullingMask = styleValue.text == "Low Res." ? startCanvas.lowResLayers : startCanvas.normalLayers;
+        //for (int i = 0; i < startCanvas.lowResObjects.Length; i++)
+         //   startCanvas.lowResObjects[i].SetActive(styleValue.text == "Low Res.");
+        //startCanvas.cam.cullingMask = styleValue.text == "Low Res." ? startCanvas.lowResLayers : startCanvas.normalLayers;
     }
 }

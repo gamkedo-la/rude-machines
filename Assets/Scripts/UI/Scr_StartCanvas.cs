@@ -23,6 +23,7 @@ public class Scr_StartCanvas : MonoBehaviour
     public GameObject[] lowResObjects;
     [Space]
     public GameObject crosshair;
+    public static Scr_StartCanvas instance;
 
     [ContextMenu("Reset Best Time")]
     public void ResetBestTime()
@@ -43,7 +44,7 @@ public class Scr_StartCanvas : MonoBehaviour
         gameManager.pausedCanvas.GetComponent<Scr_SettingsCanvas>().InitializeSettings();
         Time.timeScale = 1.0f;
         Scr_State.block = false;
-
+        instance = this;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
